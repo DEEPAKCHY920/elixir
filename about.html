@@ -365,18 +365,19 @@
     </div>
 </section>
 
-<!-- 👩⚕️ 5. Meet Our Experts Section -->
+<!-- 👩⚕️ 5. Meet Our Experts Section (Infinite Marquee) -->
 <section class="py-stack-lg bg-background" id="experts">
-    <div class="max-w-container-max mx-auto px-gutter">
-        <div class="text-center mb-16 reveal-on-scroll">
-            <span class="font-label-caps text-[10px] font-bold text-primary tracking-widest uppercase mb-3 inline-block font-navigation">Medical leadership</span>
-            <h2 class="font-display-lg text-display-lg text-deep-navy">Meet Our Visionaries</h2>
-            <p class="text-on-surface-variant max-w-xl mx-auto mt-3 text-xs font-medium">Internationally certified surgeons and dermatologists directing Elixir's clinical practice.</p>
-        </div>
+    <div class="max-w-container-max mx-auto px-gutter mb-12 text-center">
+        <span class="font-label-caps text-[10px] font-bold text-primary tracking-widest uppercase mb-3 inline-block font-navigation">Medical leadership</span>
+        <h2 class="font-display-lg text-display-lg text-deep-navy">Meet Our Visionaries</h2>
+        <p class="text-on-surface-variant max-w-xl mx-auto mt-3 text-xs font-medium">Internationally certified surgeons and dermatologists directing Elixir's clinical practice.</p>
+    </div>
 
-        <div class="grid md:grid-cols-3 gap-8">
-            <!-- Expert 1 -->
-            <div class="glass-card rounded-[40px] overflow-hidden group reveal-on-scroll">
+    <div class="marquee-container w-full">
+        <div class="marquee-track flex gap-8">
+            
+            <!-- Doctor 1 -->
+            <div class="min-w-[340px] md:min-w-[380px] glass-card rounded-[40px] overflow-hidden group">
                 <div class="h-[400px] relative overflow-hidden">
                     <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="assets/doctor_1.png" alt="Dr. Devendra Sen Senior Aesthetic Surgeon">
                     <div class="absolute inset-0 bg-gradient-to-t from-deep-navy/85 via-transparent to-transparent flex flex-col justify-end p-6 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -387,11 +388,12 @@
                 <div class="p-6 space-y-2">
                     <h4 class="font-display-lg text-lg text-deep-navy font-bold">Dr. Devendra Sen</h4>
                     <p class="text-primary font-label-caps text-[10px] font-bold uppercase tracking-wider">Senior Aesthetic Surgeon</p>
-                    <p class="text-[10px] text-on-surface-variant">MBBS, MS, MCh (Plastic Surgery). Fellow at the Association of Plastic Surgeons of India (APSI).</p>
+                    <p class="text-[10px] text-on-surface-variant leading-relaxed">MBBS, MS, MCh (Plastic Surgery). Fellow at the Association of Plastic Surgeons of India (APSI).</p>
                 </div>
             </div>
-            <!-- Expert 2 -->
-            <div class="glass-card rounded-[40px] overflow-hidden group reveal-on-scroll" style="transition-delay: 0.1s;">
+
+            <!-- Doctor 2 -->
+            <div class="min-w-[340px] md:min-w-[380px] glass-card rounded-[40px] overflow-hidden group">
                 <div class="h-[400px] relative overflow-hidden">
                     <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="assets/doctor_2.png" alt="Dr. Ananya Iyer Lead Dermatologist">
                     <div class="absolute inset-0 bg-gradient-to-t from-deep-navy/85 via-transparent to-transparent flex flex-col justify-end p-6 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -402,11 +404,12 @@
                 <div class="p-6 space-y-2">
                     <h4 class="font-display-lg text-lg text-deep-navy font-bold">Dr. Ananya Iyer</h4>
                     <p class="text-primary font-label-caps text-[10px] font-bold uppercase tracking-wider">Lead Dermatologist</p>
-                    <p class="text-[10px] text-on-surface-variant">MD, DNB (Dermatology). Active member of the Indian Association of Dermatologists (IADVL).</p>
+                    <p class="text-[10px] text-on-surface-variant leading-relaxed">MD, DNB (Dermatology). Active member of the Indian Association of Dermatologists (IADVL).</p>
                 </div>
             </div>
-            <!-- Expert 3 -->
-            <div class="glass-card rounded-[40px] overflow-hidden group reveal-on-scroll" style="transition-delay: 0.2s;">
+
+            <!-- Doctor 3 -->
+            <div class="min-w-[340px] md:min-w-[380px] glass-card rounded-[40px] overflow-hidden group">
                 <div class="h-[400px] relative overflow-hidden">
                     <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="assets/doctor_3.png" alt="Dr. Kabir Kapoor Anti-Aging Specialist">
                     <div class="absolute inset-0 bg-gradient-to-t from-deep-navy/85 via-transparent to-transparent flex flex-col justify-end p-6 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -417,9 +420,156 @@
                 <div class="p-6 space-y-2">
                     <h4 class="font-display-lg text-lg text-deep-navy font-bold">Dr. Kabir Kapoor</h4>
                     <p class="text-primary font-label-caps text-[10px] font-bold uppercase tracking-wider">Anti-Aging Specialist</p>
-                    <p class="text-[10px] text-on-surface-variant">MD (Medicine), Fellowship in Aesthetic & Regenerative Medicine (American Academy AAD).</p>
+                    <p class="text-[10px] text-on-surface-variant leading-relaxed">MD (Medicine), Fellowship in Aesthetic & Regenerative Medicine (American Academy AAD).</p>
                 </div>
             </div>
+
+            <!-- Doctor 4 -->
+            <div class="min-w-[340px] md:min-w-[380px] glass-card rounded-[40px] overflow-hidden group">
+                <div class="h-[400px] relative overflow-hidden">
+                    <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="assets/about_doctor.png" alt="Dr. Meera Nair Ayurvedic Wellness Consultant">
+                    <div class="absolute inset-0 bg-gradient-to-t from-deep-navy/85 via-transparent to-transparent flex flex-col justify-end p-6 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-[11px] italic mb-3 font-medium">"Integrating classical Ayurveda with modern clinical diagnostics."</p>
+                        <p class="text-[10px] uppercase font-bold tracking-widest border-t border-white/20 pt-2">Exp: 10+ Years</p>
+                    </div>
+                </div>
+                <div class="p-6 space-y-2">
+                    <h4 class="font-display-lg text-lg text-deep-navy font-bold">Dr. Meera Nair</h4>
+                    <p class="text-primary font-label-caps text-[10px] font-bold uppercase tracking-wider">Ayurvedic Wellness Consultant</p>
+                    <p class="text-[10px] text-on-surface-variant leading-relaxed">MD (Ayurveda), BAMS. Certified Panchakarma Specialist with 10+ years experience in integrated skincare.</p>
+                </div>
+            </div>
+
+            <!-- Doctor 5 -->
+            <div class="min-w-[340px] md:min-w-[380px] glass-card rounded-[40px] overflow-hidden group">
+                <div class="h-[400px] relative overflow-hidden">
+                    <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="assets/hero_doctor.jpg" alt="Dr. Rohan Sharma Hair Restoration Expert">
+                    <div class="absolute inset-0 bg-gradient-to-t from-deep-navy/85 via-transparent to-transparent flex flex-col justify-end p-6 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-[11px] italic mb-3 font-medium">"Specialist in micro-follicular transplants and scalp restoration."</p>
+                        <p class="text-[10px] uppercase font-bold tracking-widest border-t border-white/20 pt-2">Exp: 8+ Years</p>
+                    </div>
+                </div>
+                <div class="p-6 space-y-2">
+                    <h4 class="font-display-lg text-lg text-deep-navy font-bold">Dr. Rohan Sharma</h4>
+                    <p class="text-primary font-label-caps text-[10px] font-bold uppercase tracking-wider">Hair Restoration Expert</p>
+                    <p class="text-[10px] text-on-surface-variant leading-relaxed">MBBS, MS, Fellowship in Hair Restoration Surgery (ISHRS). Specializes in FUE and follicular implants.</p>
+                </div>
+            </div>
+
+            <!-- Doctor 6 -->
+            <div class="min-w-[340px] md:min-w-[380px] glass-card rounded-[40px] overflow-hidden group">
+                <div class="h-[400px] relative overflow-hidden">
+                    <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="assets/asset_5_d7573c820a.jpg" alt="Dr. Shalini Vyas Laser & Skin Aesthetics Specialist">
+                    <div class="absolute inset-0 bg-gradient-to-t from-deep-navy/85 via-transparent to-transparent flex flex-col justify-end p-6 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-[11px] italic mb-3 font-medium">"Pioneering non-surgical skin resurfacing and collagen-building procedures."</p>
+                        <p class="text-[10px] uppercase font-bold tracking-widest border-t border-white/20 pt-2">Exp: 9+ Years</p>
+                    </div>
+                </div>
+                <div class="p-6 space-y-2">
+                    <h4 class="font-display-lg text-lg text-deep-navy font-bold">Dr. Shalini Vyas</h4>
+                    <p class="text-primary font-label-caps text-[10px] font-bold uppercase tracking-wider">Laser & Skin Aesthetics Specialist</p>
+                    <p class="text-[10px] text-on-surface-variant leading-relaxed">MD (Dermatology), Certified Laser Practitioner (AALMS). Specializes in non-surgical lifting and resurfacing.</p>
+                </div>
+            </div>
+
+
+            <!-- Cloned List of Doctors (to achieve infinite scrolling) -->
+            <!-- Doctor 1 (Clone) -->
+            <div class="min-w-[340px] md:min-w-[380px] glass-card rounded-[40px] overflow-hidden group">
+                <div class="h-[400px] relative overflow-hidden">
+                    <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="assets/doctor_1.png" alt="Dr. Devendra Sen Senior Aesthetic Surgeon">
+                    <div class="absolute inset-0 bg-gradient-to-t from-deep-navy/85 via-transparent to-transparent flex flex-col justify-end p-6 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-[11px] italic mb-3 font-medium">"True beauty is an alignment of health, symmetry, and confidence."</p>
+                        <p class="text-[10px] uppercase font-bold tracking-widest border-t border-white/20 pt-2">Exp: 15+ Years</p>
+                    </div>
+                </div>
+                <div class="p-6 space-y-2">
+                    <h4 class="font-display-lg text-lg text-deep-navy font-bold">Dr. Devendra Sen</h4>
+                    <p class="text-primary font-label-caps text-[10px] font-bold uppercase tracking-wider">Senior Aesthetic Surgeon</p>
+                    <p class="text-[10px] text-on-surface-variant leading-relaxed">MBBS, MS, MCh (Plastic Surgery). Fellow at the Association of Plastic Surgeons of India (APSI).</p>
+                </div>
+            </div>
+
+            <!-- Doctor 2 (Clone) -->
+            <div class="min-w-[340px] md:min-w-[380px] glass-card rounded-[40px] overflow-hidden group">
+                <div class="h-[400px] relative overflow-hidden">
+                    <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="assets/doctor_2.png" alt="Dr. Ananya Iyer Lead Dermatologist">
+                    <div class="absolute inset-0 bg-gradient-to-t from-deep-navy/85 via-transparent to-transparent flex flex-col justify-end p-6 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-[11px] italic mb-3 font-medium">"Skin health is the canvas for all cosmetic excellence."</p>
+                        <p class="text-[10px] uppercase font-bold tracking-widest border-t border-white/20 pt-2">Exp: 12+ Years</p>
+                    </div>
+                </div>
+                <div class="p-6 space-y-2">
+                    <h4 class="font-display-lg text-lg text-deep-navy font-bold">Dr. Ananya Iyer</h4>
+                    <p class="text-primary font-label-caps text-[10px] font-bold uppercase tracking-wider">Lead Dermatologist</p>
+                    <p class="text-[10px] text-on-surface-variant leading-relaxed">MD, DNB (Dermatology). Active member of the Indian Association of Dermatologists (IADVL).</p>
+                </div>
+            </div>
+
+            <!-- Doctor 3 (Clone) -->
+            <div class="min-w-[340px] md:min-w-[380px] glass-card rounded-[40px] overflow-hidden group">
+                <div class="h-[400px] relative overflow-hidden">
+                    <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="assets/doctor_3.png" alt="Dr. Kabir Kapoor Anti-Aging Specialist">
+                    <div class="absolute inset-0 bg-gradient-to-t from-deep-navy/85 via-transparent to-transparent flex flex-col justify-end p-6 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-[11px] italic mb-3 font-medium">"Wellness is a proactive journey, not a destination."</p>
+                        <p class="text-[10px] uppercase font-bold tracking-widest border-t border-white/20 pt-2">Exp: 10+ Years</p>
+                    </div>
+                </div>
+                <div class="p-6 space-y-2">
+                    <h4 class="font-display-lg text-lg text-deep-navy font-bold">Dr. Kabir Kapoor</h4>
+                    <p class="text-primary font-label-caps text-[10px] font-bold uppercase tracking-wider">Anti-Aging Specialist</p>
+                    <p class="text-[10px] text-on-surface-variant leading-relaxed">MD (Medicine), Fellowship in Aesthetic & Regenerative Medicine (American Academy AAD).</p>
+                </div>
+            </div>
+
+            <!-- Doctor 4 (Clone) -->
+            <div class="min-w-[340px] md:min-w-[380px] glass-card rounded-[40px] overflow-hidden group">
+                <div class="h-[400px] relative overflow-hidden">
+                    <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="assets/about_doctor.png" alt="Dr. Meera Nair Ayurvedic Wellness Consultant">
+                    <div class="absolute inset-0 bg-deep-navy/85 via-transparent to-transparent flex flex-col justify-end p-6 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-[11px] italic mb-3 font-medium">"Integrating classical Ayurveda with modern clinical diagnostics."</p>
+                        <p class="text-[10px] uppercase font-bold tracking-widest border-t border-white/20 pt-2">Exp: 10+ Years</p>
+                    </div>
+                </div>
+                <div class="p-6 space-y-2">
+                    <h4 class="font-display-lg text-lg text-deep-navy font-bold">Dr. Meera Nair</h4>
+                    <p class="text-primary font-label-caps text-[10px] font-bold uppercase tracking-wider">Ayurvedic Wellness Consultant</p>
+                    <p class="text-[10px] text-on-surface-variant leading-relaxed">MD (Ayurveda), BAMS. Certified Panchakarma Specialist with 10+ years experience in integrated skincare.</p>
+                </div>
+            </div>
+
+            <!-- Doctor 5 (Clone) -->
+            <div class="min-w-[340px] md:min-w-[380px] glass-card rounded-[40px] overflow-hidden group">
+                <div class="h-[400px] relative overflow-hidden">
+                    <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="assets/hero_doctor.jpg" alt="Dr. Rohan Sharma Hair Restoration Expert">
+                    <div class="absolute inset-0 bg-deep-navy/85 via-transparent to-transparent flex flex-col justify-end p-6 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-[11px] italic mb-3 font-medium">"Specialist in micro-follicular transplants and scalp restoration."</p>
+                        <p class="text-[10px] uppercase font-bold tracking-widest border-t border-white/20 pt-2">Exp: 8+ Years</p>
+                    </div>
+                </div>
+                <div class="p-6 space-y-2">
+                    <h4 class="font-display-lg text-lg text-deep-navy font-bold">Dr. Rohan Sharma</h4>
+                    <p class="text-primary font-label-caps text-[10px] font-bold uppercase tracking-wider">Hair Restoration Expert</p>
+                    <p class="text-[10px] text-on-surface-variant leading-relaxed">MBBS, MS, Fellowship in Hair Restoration Surgery (ISHRS). Specializes in FUE and follicular implants.</p>
+                </div>
+            </div>
+
+            <!-- Doctor 6 (Clone) -->
+            <div class="min-w-[340px] md:min-w-[380px] glass-card rounded-[40px] overflow-hidden group">
+                <div class="h-[400px] relative overflow-hidden">
+                    <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="assets/asset_5_d7573c820a.jpg" alt="Dr. Shalini Vyas Laser & Skin Aesthetics Specialist">
+                    <div class="absolute inset-0 bg-deep-navy/85 via-transparent to-transparent flex flex-col justify-end p-6 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-[11px] italic mb-3 font-medium">"Pioneering non-surgical skin resurfacing and collagen-building procedures."</p>
+                        <p class="text-[10px] uppercase font-bold tracking-widest border-t border-white/20 pt-2">Exp: 9+ Years</p>
+                    </div>
+                </div>
+                <div class="p-6 space-y-2">
+                    <h4 class="font-display-lg text-lg text-deep-navy font-bold">Dr. Shalini Vyas</h4>
+                    <p class="text-primary font-label-caps text-[10px] font-bold uppercase tracking-wider">Laser & Skin Aesthetics Specialist</p>
+                    <p class="text-[10px] text-on-surface-variant leading-relaxed">MD (Dermatology), Certified Laser Practitioner (AALMS). Specializes in non-surgical lifting and resurfacing.</p>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>
