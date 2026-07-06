@@ -1,0 +1,1390 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Treatments | ELIXIR - Advanced Healthcare & Cinematic Wellness</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=Manrope:wght@500;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed": "#25005a",
+                        "primary": "#0a6c8f",
+                        "error": "#ba1a1a",
+                        "on-primary": "#ffffff",
+                        "surface-variant": "#e0e3e5",
+                        "on-tertiary": "#ffffff",
+                        "background": "#f7f9fb",
+                        "on-tertiary-container": "#fffbff",
+                        "primary-fixed": "#dae2ff",
+                        "surface-container": "#eceef0",
+                        "on-tertiary-fixed-variant": "#5a00c6",
+                        "on-surface": "#191c1e",
+                        "surface-container-highest": "#e0e3e5",
+                        "surface-container-low": "#f2f4f6",
+                        "on-secondary-container": "#007230",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-container": "#8a4cfc",
+                        "surface-container-high": "#e6e8ea",
+                        "tertiary-fixed-dim": "#d2bbff",
+                        "primary-container": "#0e83ac",
+                        "outline-variant": "#c2c6d8",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-secondary-fixed-variant": "#005320",
+                        "surface-dim": "#d8dadc",
+                        "on-error": "#ffffff",
+                        "secondary-container": "#7cf994",
+                        "outline": "#727787",
+                        "on-error-container": "#93000a",
+                        "glass-surface": "rgba(255, 255, 255, 0.7)",
+                        "on-secondary-fixed": "#002109",
+                        "secondary-fixed": "#7ffc97",
+                        "on-background": "#191c1e",
+                        "tertiary": "#d58512",
+                        "surface": "#f7f9fb",
+                        "secondary": "#006e2d",
+                        "surface-bright": "#f7f9fb",
+                        "secondary-fixed-dim": "#62df7d",
+                        "tertiary-fixed": "#eaddff",
+                        "deep-navy": "#053a4e",
+                        "on-primary-fixed-variant": "#00419e",
+                        "surface-tint": "#0a6c8f",
+                        "inverse-surface": "#2d3133",
+                        "on-primary-fixed": "#001946",
+                        "soft-shadow": "rgba(10, 108, 143, 0.08)",
+                        "glass-border": "rgba(255, 255, 255, 0.4)",
+                        "inverse-primary": "#b1c5ff",
+                        "primary-fixed-dim": "#b1c5ff",
+                        "on-surface-variant": "#424655",
+                        "on-secondary": "#ffffff",
+                        "on-primary-container": "#fefcff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1.5rem",
+                        "3xl": "2rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "32px",
+                        "margin-mobile": "20px",
+                        "stack-sm": "16px",
+                        "margin-tablet": "40px",
+                        "container-max": "1440px",
+                        "stack-lg": "64px",
+                        "stack-md": "32px",
+                        "margin-desktop": "80px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "navigation": ["Manrope"],
+                        "label-caps": ["Manrope"],
+                        "headline-xl": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"]
+                    }
+                }
+            }
+        };
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 8px 32px 0 rgba(15, 111, 255, 0.05);
+        }
+        .primary-glow {
+            background: linear-gradient(135deg, #0055c9 0%, #006bfb 100%);
+            box-shadow: 0 10px 30px -10px rgba(0, 85, 201, 0.5);
+        }
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .reveal-on-scroll.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .active-treatments-tab {
+            background: #0a6c8f !important;
+            color: #ffffff !important;
+            border-color: #0a6c8f !important;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+
+<!-- WebGL Background -->
+<div class="fixed inset-0 w-full h-full -z-10 opacity-40">
+    <canvas id="wellness-canvas" class="w-full h-full"></canvas>
+</div>
+
+<!-- Navigation Header -->
+<header class="fixed top-5 left-1/2 -translate-x-1/2 w-[90%] max-w-container-max rounded-full z-50 backdrop-blur-xl border flex justify-between items-center px-8 py-3 transition-all duration-500" style="background: linear-gradient(90deg, rgba(219, 234, 254, 0.45) 0%, rgba(255, 255, 255, 0.75) 50%, rgba(243, 232, 255, 0.45) 100%); border-color: rgba(255, 255, 255, 0.5); box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.05);" id="top-app-bar">
+  <a href="index.html#hero" class="flex items-center shrink-0">
+    <img src="assets/logo.png" class="h-10 lg:h-12 w-auto object-contain" alt="Elixir Health Care Clinic Logo">
+  </a>
+  <nav class="hidden md:flex items-center gap-8">
+    <a class="font-navigation text-navigation text-on-surface-variant hover:text-primary transition-colors" href="index.html#hero">Home</a>
+    <a class="font-navigation text-navigation text-primary border-b-2 border-primary pb-1" href="treatments.html">Treatments</a>
+    <a class="font-navigation text-navigation text-on-surface-variant hover:text-primary transition-colors" href="index.html#doctors">Our Doctors</a>
+    <a class="font-navigation text-navigation text-on-surface-variant hover:text-primary transition-colors" href="index.html#process">The Process</a>
+    <a class="font-navigation text-navigation text-on-surface-variant hover:text-primary transition-colors" href="index.html#reviews">Reviews</a>
+    <a class="font-navigation text-navigation text-on-surface-variant hover:text-primary transition-colors" href="about.html">About Us</a>
+    <a class="font-navigation text-navigation text-on-surface-variant hover:text-primary transition-colors" href="index.html#contact">Contact</a>
+  </nav>
+  <a href="index.html#booking" class="bg-[#0e172c] text-white font-navigation text-navigation px-6 py-2.5 rounded-full hover:scale-105 transition-all flex items-center gap-1.5 shadow-md hover:bg-[#070c18]">
+    <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">calendar_today</span>
+    BOOK NOW
+  </a>
+</header>
+
+<!-- 🌿 Hero Section -->
+<section class="relative min-h-[50vh] flex items-center pt-36 pb-20 px-gutter" id="treatments-hero">
+    <div class="max-w-container-max mx-auto text-center relative z-10 w-full">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary font-label-caps text-label-caps mb-6 reveal-on-scroll">
+            <span class="material-symbols-outlined text-xs">spa</span>
+            CLINICAL AESTHETICS
+        </div>
+        <h1 class="font-display-lg text-display-lg leading-tight text-deep-navy font-bold mb-6 reveal-on-scroll" style="transition-delay: 0.1s;">
+            Our Specialized <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-tertiary">Treatments</span>
+        </h1>
+        <p class="font-body-md text-on-surface-variant max-w-2xl mx-auto leading-relaxed reveal-on-scroll mb-8" style="transition-delay: 0.2s;">
+            Discover our range of advanced medical procedures, custom aesthetic transformations, and wellness solutions designed to bring out your skin's natural harmony and health.
+        </p>
+    </div>
+</section>
+
+<!-- 🧪 Tabbed Treatments Catalog Section -->
+<section class="py-stack-lg bg-white border-t border-b border-glass-border/30 px-gutter" id="catalog">
+    <div class="max-w-container-max mx-auto">
+        <!-- Section Header -->
+        <div class="text-center mb-12 reveal-on-scroll">
+            <span class="font-label-caps text-[10px] font-bold text-primary tracking-widest uppercase mb-3 inline-block">Bespoke Options</span>
+            <h2 class="font-display-lg text-display-lg text-deep-navy">Treatment Catalog</h2>
+            <p class="text-on-surface-variant max-w-2xl mx-auto mt-4 text-sm font-medium">Filter our treatment portfolio to explore specific procedures, starting prices, and tailored clinical targets.</p>
+        </div>
+
+        <!-- Tab Selector Navigation -->
+        <div class="flex flex-wrap justify-center gap-3 mb-12 max-w-4xl mx-auto reveal-on-scroll">
+            <button onclick="filterTreatments('all')" id="btn-treatments-all" class="treatments-tab-btn px-6 py-2.5 rounded-full border border-glass-border bg-white text-xs font-bold text-deep-navy shadow-sm transition-all active-treatments-tab">
+                All Treatments
+            </button>
+            <button onclick="filterTreatments('skin')" id="btn-treatments-skin" class="treatments-tab-btn px-6 py-2.5 rounded-full border border-glass-border bg-white text-xs font-bold text-deep-navy shadow-sm transition-all">
+                Skin & Facials
+            </button>
+            <button onclick="filterTreatments('injectables')" id="btn-treatments-injectables" class="treatments-tab-btn px-6 py-2.5 rounded-full border border-glass-border bg-white text-xs font-bold text-deep-navy shadow-sm transition-all">
+                Injectables & Anti-Aging
+            </button>
+            <button onclick="filterTreatments('lasers')" id="btn-treatments-lasers" class="treatments-tab-btn px-6 py-2.5 rounded-full border border-glass-border bg-white text-xs font-bold text-deep-navy shadow-sm transition-all">
+                Laser & Advanced
+            </button>
+            <button onclick="filterTreatments('hairbody')" id="btn-treatments-hairbody" class="treatments-tab-btn px-6 py-2.5 rounded-full border border-glass-border bg-white text-xs font-bold text-deep-navy shadow-sm transition-all">
+                Hair & Body
+            </button>
+        </div>
+
+        <!-- Grid -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8" id="treatments-grid">
+            <!-- 1. Acne Treatment -->
+            <div class="treatment-card-item glass-card rounded-3xl p-6 group hover:-translate-y-2 transition-all duration-500 reveal-on-scroll" data-category="skin">
+                <div class="w-full aspect-video rounded-2xl overflow-hidden mb-6">
+                    <img class="w-full h-full object-cover" src="assets/asset_1_7ef38e92f9.jpg" alt="Acne Treatment at Elixir Clinic">
+                </div>
+                <h4 class="font-headline-md text-on-surface mb-2 font-bold text-deep-navy text-base">Acne Treatment</h4>
+                <p class="text-on-surface-variant text-[11px] leading-relaxed mb-6">Rebalance oil production, eliminate stubborn blemishes, and purify pores with custom clinical peels and LED light therapy.</p>
+                <div class="flex justify-between items-center mt-auto">
+                    <span class="text-primary font-bold text-xs">₹4,500 / session</span>
+                    <a href="treatments/acne-treatment.html" class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 2. Hydra Facial -->
+            <div class="treatment-card-item glass-card rounded-3xl p-6 group hover:-translate-y-2 transition-all duration-500 reveal-on-scroll" data-category="skin">
+                <div class="w-full aspect-video rounded-2xl overflow-hidden mb-6">
+                    <img class="w-full h-full object-cover" src="assets/asset_8_d89ddf147b.jpg" alt="Hydra Facial treatment">
+                </div>
+                <h4 class="font-headline-md text-on-surface mb-2 font-bold text-deep-navy text-base">Hydra Facial</h4>
+                <p class="text-on-surface-variant text-[11px] leading-relaxed mb-6">Deeply cleanse, exfoliate, extract impurities, and infuse high-performance hyaluronic hydration in one comfortable session.</p>
+                <div class="flex justify-between items-center mt-auto">
+                    <span class="text-primary font-bold text-xs">₹15,000 / session</span>
+                    <a href="treatments/hydra-facial.html" class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 3. Chemical Peel -->
+            <div class="treatment-card-item glass-card rounded-3xl p-6 group hover:-translate-y-2 transition-all duration-500 reveal-on-scroll" data-category="skin">
+                <div class="w-full aspect-video rounded-2xl overflow-hidden mb-6">
+                    <img class="w-full h-full object-cover" src="assets/asset_1_7ef38e92f9.jpg" alt="Chemical peel treatment">
+                </div>
+                <h4 class="font-headline-md text-on-surface mb-2 font-bold text-deep-navy text-base">Chemical Peel</h4>
+                <p class="text-on-surface-variant text-[11px] leading-relaxed mb-6">Medical-grade peeling formulations targeting pigmentation, fine lines, and congestion to reveal resurfaced clarity.</p>
+                <div class="flex justify-between items-center mt-auto">
+                    <span class="text-primary font-bold text-xs">₹8,500 / session</span>
+                    <a href="treatments/chemical-peel.html" class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 4. Laser Hair Removal -->
+            <div class="treatment-card-item glass-card rounded-3xl p-6 group hover:-translate-y-2 transition-all duration-500 reveal-on-scroll" data-category="lasers">
+                <div class="w-full aspect-video rounded-2xl overflow-hidden mb-6">
+                    <img class="w-full h-full object-cover" src="assets/asset_4_9f80cd8415.jpg" alt="Laser hair reduction treatment">
+                </div>
+                <h4 class="font-headline-md text-on-surface mb-2 font-bold text-deep-navy text-base">Laser Hair Removal</h4>
+                <p class="text-on-surface-variant text-[11px] leading-relaxed mb-6">Achieve permanently smooth skin with advanced, cooled-tip laser reduction technology that is safe and virtually painless.</p>
+                <div class="flex justify-between items-center mt-auto">
+                    <span class="text-primary font-bold text-xs">₹12,500 / session</span>
+                    <a href="treatments/laser-hair-removal.html" class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 5. PRP Therapy -->
+            <div class="treatment-card-item glass-card rounded-3xl p-6 group hover:-translate-y-2 transition-all duration-500 reveal-on-scroll" data-category="injectables">
+                <div class="w-full aspect-video rounded-2xl overflow-hidden mb-6">
+                    <img class="w-full h-full object-cover" src="assets/asset_1_569b4ebd61.jpg" alt="PRP treatment">
+                </div>
+                <h4 class="font-headline-md text-on-surface mb-2 font-bold text-deep-navy text-base">PRP Therapy</h4>
+                <p class="text-on-surface-variant text-[11px] leading-relaxed mb-6">Leverage your body's cellular growth factors to stimulate collagen renewal, refine skin texture, and restore scalp health.</p>
+                <div class="flex justify-between items-center mt-auto">
+                    <span class="text-primary font-bold text-xs">₹18,000 / session</span>
+                    <a href="treatments/prp-therapy.html" class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 6. Microneedling -->
+            <div class="treatment-card-item glass-card rounded-3xl p-6 group hover:-translate-y-2 transition-all duration-500 reveal-on-scroll" data-category="skin">
+                <div class="w-full aspect-video rounded-2xl overflow-hidden mb-6">
+                    <img class="w-full h-full object-cover" src="assets/asset_8_d89ddf147b.jpg" alt="Microneedling treatment">
+                </div>
+                <h4 class="font-headline-md text-on-surface mb-2 font-bold text-deep-navy text-base">Microneedling</h4>
+                <p class="text-on-surface-variant text-[11px] leading-relaxed mb-6">Trigger cellular skin remodeling and fade acne scars, lines, and stretch marks using advanced micro-channeling devices.</p>
+                <div class="flex justify-between items-center mt-auto">
+                    <span class="text-primary font-bold text-xs">₹10,000 / session</span>
+                    <a href="treatments/microneedling.html" class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 7. Anti-Aging Treatment -->
+            <div class="treatment-card-item glass-card rounded-3xl p-6 group hover:-translate-y-2 transition-all duration-500 reveal-on-scroll" data-category="injectables">
+                <div class="w-full aspect-video rounded-2xl overflow-hidden mb-6">
+                    <img class="w-full h-full object-cover" src="assets/asset_12_8ce0ef470a.jpg" alt="Anti-Aging clinical treatment">
+                </div>
+                <h4 class="font-headline-md text-on-surface mb-2 font-bold text-deep-navy text-base">Anti-Aging Treatment</h4>
+                <p class="text-on-surface-variant text-[11px] leading-relaxed mb-6">Customized lifting blueprints combining radiofrequency, ultrasound contours, and medical boosters for total rejuvenation.</p>
+                <div class="flex justify-between items-center mt-auto">
+                    <span class="text-primary font-bold text-xs">Consultation Required</span>
+                    <a href="treatments/anti-aging-treatment.html" class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 8. Botox -->
+            <div class="treatment-card-item glass-card rounded-3xl p-6 group hover:-translate-y-2 transition-all duration-500 reveal-on-scroll" data-category="injectables">
+                <div class="w-full aspect-video rounded-2xl overflow-hidden mb-6">
+                    <img class="w-full h-full object-cover" src="assets/asset_12_8ce0ef470a.jpg" alt="Botox injection">
+                </div>
+                <h4 class="font-headline-md text-on-surface mb-2 font-bold text-deep-navy text-base">Botox</h4>
+                <p class="text-on-surface-variant text-[11px] leading-relaxed mb-6">Temporarily relax facial expression muscles to soften wrinkles, frown lines, forehead creases, and crow's feet.</p>
+                <div class="flex justify-between items-center mt-auto">
+                    <span class="text-primary font-bold text-xs">₹350 / unit</span>
+                    <a href="treatments/botox.html" class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 9. Dermal Fillers -->
+            <div class="treatment-card-item glass-card rounded-3xl p-6 group hover:-translate-y-2 transition-all duration-500 reveal-on-scroll" data-category="injectables">
+                <div class="w-full aspect-video rounded-2xl overflow-hidden mb-6">
+                    <img class="w-full h-full object-cover" src="assets/asset_12_8ce0ef470a.jpg" alt="Dermal fillers injection">
+                </div>
+                <h4 class="font-headline-md text-on-surface mb-2 font-bold text-deep-navy text-base">Dermal Fillers</h4>
+                <p class="text-on-surface-variant text-[11px] leading-relaxed mb-6">Recreate lost facial volume, sculpt jawlines, projects chins, and plump lips instantly with hyaluronic acid fillers.</p>
+                <div class="flex justify-between items-center mt-auto">
+                    <span class="text-primary font-bold text-xs">From ₹28,000 / syringe</span>
+                    <a href="treatments/dermal-fillers.html" class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 10. Skin Brightening -->
+            <div class="treatment-card-item glass-card rounded-3xl p-6 group hover:-translate-y-2 transition-all duration-500 reveal-on-scroll" data-category="skin">
+                <div class="w-full aspect-video rounded-2xl overflow-hidden mb-6">
+                    <img class="w-full h-full object-cover" src="assets/asset_8_d89ddf147b.jpg" alt="Skin brightening peel application">
+                </div>
+                <h4 class="font-headline-md text-on-surface mb-2 font-bold text-deep-navy text-base">Skin Brightening</h4>
+                <p class="text-on-surface-variant text-[11px] leading-relaxed mb-6">Target hyperpigmentation, melasma, and sunspots using advanced clinical peel compounds and Vitamin C infusions.</p>
+                <div class="flex justify-between items-center mt-auto">
+                    <span class="text-primary font-bold text-xs">₹7,500 / session</span>
+                    <a href="treatments/skin-brightening.html" class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 11. Carbon Laser Facial -->
+            <div class="treatment-card-item glass-card rounded-3xl p-6 group hover:-translate-y-2 transition-all duration-500 reveal-on-scroll" data-category="lasers">
+                <div class="w-full aspect-video rounded-2xl overflow-hidden mb-6">
+                    <img class="w-full h-full object-cover" src="assets/asset_4_9f80cd8415.jpg" alt="Carbon laser facial treatment">
+                </div>
+                <h4 class="font-headline-md text-on-surface mb-2 font-bold text-deep-navy text-base">Carbon Laser Facial</h4>
+                <p class="text-on-surface-variant text-[11px] leading-relaxed mb-6">The famous Hollywood Peel. Deeply detoxifies congested pores, controls excess oil, and leaves an instant matte glow.</p>
+                <div class="flex justify-between items-center mt-auto">
+                    <span class="text-primary font-bold text-xs">₹9,500 / session</span>
+                    <a href="treatments/carbon-laser-facial.html" class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 12. Skin Tightening -->
+            <div class="treatment-card-item glass-card rounded-3xl p-6 group hover:-translate-y-2 transition-all duration-500 reveal-on-scroll" data-category="lasers">
+                <div class="w-full aspect-video rounded-2xl overflow-hidden mb-6">
+                    <img class="w-full h-full object-cover" src="assets/asset_4_9f80cd8415.jpg" alt="Skin tightening RF ultrasound">
+                </div>
+                <h4 class="font-headline-md text-on-surface mb-2 font-bold text-deep-navy text-base">Skin Tightening</h4>
+                <p class="text-on-surface-variant text-[11px] leading-relaxed mb-6">Contract sagging skin fibers and stimulate natural cellular collagen synthesis non-surgically using Radiofrequency.</p>
+                <div class="flex justify-between items-center mt-auto">
+                    <span class="text-primary font-bold text-xs">₹12,000 / session</span>
+                    <a href="treatments/skin-tightening.html" class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 13. Hair Loss Treatment -->
+            <div class="treatment-card-item glass-card rounded-3xl p-6 group hover:-translate-y-2 transition-all duration-500 reveal-on-scroll" data-category="hairbody">
+                <div class="w-full aspect-video rounded-2xl overflow-hidden mb-6">
+                    <img class="w-full h-full object-cover" src="assets/asset_21_993d18c968.jpg" alt="Hair loss treatment root nourishment">
+                </div>
+                <h4 class="font-headline-md text-on-surface mb-2 font-bold text-deep-navy text-base">Hair Loss Treatment</h4>
+                <p class="text-on-surface-variant text-[11px] leading-relaxed mb-6">Halt active hair thinning, nourish root follicles, and stimulate natural regrowth with clinical growth factor infusions.</p>
+                <div class="flex justify-between items-center mt-auto">
+                    <span class="text-primary font-bold text-xs">₹12,000 / session</span>
+                    <a href="treatments/hair-loss-treatment.html" class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 14. Hair Transplant -->
+            <div class="treatment-card-item glass-card rounded-3xl p-6 group hover:-translate-y-2 transition-all duration-500 reveal-on-scroll" data-category="hairbody">
+                <div class="w-full aspect-video rounded-2xl overflow-hidden mb-6">
+                    <img class="w-full h-full object-cover" src="assets/asset_21_993d18c968.jpg" alt="FUE hair transplant procedure">
+                </div>
+                <h4 class="font-headline-md text-on-surface mb-2 font-bold text-deep-navy text-base">Hair Transplant</h4>
+                <p class="text-on-surface-variant text-[11px] leading-relaxed mb-6">Permanently restore your hairline and crown density using state-of-the-art FUE follicular unit extraction.</p>
+                <div class="flex justify-between items-center mt-auto">
+                    <span class="text-primary font-bold text-xs">From ₹85,000</span>
+                    <a href="treatments/hair-transplant.html" class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 15. Tattoo Removal -->
+            <div class="treatment-card-item glass-card rounded-3xl p-6 group hover:-translate-y-2 transition-all duration-500 reveal-on-scroll" data-category="lasers">
+                <div class="w-full aspect-video rounded-2xl overflow-hidden mb-6">
+                    <img class="w-full h-full object-cover" src="assets/asset_13_caa8cf6c3c.jpg" alt="Laser tattoo removal application">
+                </div>
+                <h4 class="font-headline-md text-on-surface mb-2 font-bold text-deep-navy text-base">Tattoo Removal</h4>
+                <p class="text-on-surface-variant text-[11px] leading-relaxed mb-6">Safely fade and clear unwanted ink pigments using advanced multi-wavelength Q-Switched laser technology.</p>
+                <div class="flex justify-between items-center mt-auto">
+                    <span class="text-primary font-bold text-xs">From ₹3,500 / session</span>
+                    <a href="treatments/tattoo-removal.html" class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 💖 Vedic Skin & Hair Analyzer Section -->
+<section class="py-stack-lg bg-background px-gutter relative overflow-hidden" id="analysis">
+  <div class="max-w-container-max mx-auto relative z-10">
+    <div class="text-center mb-12">
+      <span class="font-label-caps text-[10px] font-bold text-primary tracking-widest uppercase mb-3 inline-block">Interactive Vedic Analysis</span>
+      <h2 class="font-display-lg text-display-lg text-deep-navy">Vedic Skin & Hair Analyzer</h2>
+      <p class="text-on-surface-variant max-w-2xl mx-auto mt-4 text-sm font-medium">Select your concern below to generate your personalized treatment plan blending ancient Ayurvedic science with modern clinical aesthetics.</p>
+    </div>
+
+    <!-- Concern Selection Grid -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mb-8">
+      <!-- Acne -->
+      <button onclick="selectConcern('acne')" id="btn-concern-acne" class="concern-card group p-6 rounded-3xl border border-glass-border bg-white shadow-sm hover:shadow-md hover:border-primary/40 transition-all duration-300 flex flex-col items-center text-center gap-3">
+        <div class="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+          <span class="material-symbols-outlined text-2xl">spa</span>
+        </div>
+        <div>
+          <h4 class="text-xs font-bold text-deep-navy uppercase tracking-wider">Acne & Breakouts</h4>
+          <p class="text-[9px] text-on-surface-variant mt-1 font-medium">Pitta-Kapha Excess</p>
+        </div>
+      </button>
+
+      <!-- Pigmentation -->
+      <button onclick="selectConcern('pigmentation')" id="btn-concern-pigmentation" class="concern-card group p-6 rounded-3xl border border-glass-border bg-white shadow-sm hover:shadow-md hover:border-primary/40 transition-all duration-300 flex flex-col items-center text-center gap-3">
+        <div class="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+          <span class="material-symbols-outlined text-2xl">grain</span>
+        </div>
+        <div>
+          <h4 class="text-xs font-bold text-deep-navy uppercase tracking-wider">Pigmentation</h4>
+          <p class="text-[9px] text-on-surface-variant mt-1 font-medium">Bhrajaka Pitta Surge</p>
+        </div>
+      </button>
+
+      <!-- Hair Loss -->
+      <button onclick="selectConcern('hairloss')" id="btn-concern-hairloss" class="concern-card group p-6 rounded-3xl border border-glass-border bg-white shadow-sm hover:shadow-md hover:border-primary/40 transition-all duration-300 flex flex-col items-center text-center gap-3">
+        <div class="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+          <span class="material-symbols-outlined text-2xl">face</span>
+        </div>
+        <div>
+          <h4 class="text-xs font-bold text-deep-navy uppercase tracking-wider">Hair Loss</h4>
+          <p class="text-[9px] text-on-surface-variant mt-1 font-medium">Vata-Pitta Imbalance</p>
+        </div>
+      </button>
+
+      <!-- Dry Skin -->
+      <button onclick="selectConcern('dryskin')" id="btn-concern-dryskin" class="concern-card group p-6 rounded-3xl border border-glass-border bg-white shadow-sm hover:shadow-md hover:border-primary/40 transition-all duration-300 flex flex-col items-center text-center gap-3">
+        <div class="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+          <span class="material-symbols-outlined text-2xl">water_drop</span>
+        </div>
+        <div>
+          <h4 class="text-xs font-bold text-deep-navy uppercase tracking-wider">Dry & Dull Skin</h4>
+          <p class="text-[9px] text-on-surface-variant mt-1 font-medium">Vata Aggravation</p>
+        </div>
+      </button>
+    </div>
+
+    <!-- Plan Generation Action -->
+    <div class="text-center mb-16">
+      <button onclick="generatePlan()" class="bg-primary text-on-primary font-navigation text-navigation px-8 py-3.5 rounded-full primary-glow hover:scale-105 transition-transform inline-flex items-center gap-2">
+        <span class="material-symbols-outlined text-sm">settings_suggest</span>
+        Generate Ayurvedic &amp; Clinical Plan
+      </button>
+    </div>
+
+    <!-- Analyzer Output Panel (Hidden initially) -->
+    <div id="plan-output" class="hidden opacity-0 scale-95 transition-all duration-500 max-w-4xl mx-auto glass-card rounded-[40px] p-8 md:p-12 border border-glass-border relative overflow-hidden">
+      <!-- Faint circular background blobs -->
+      <div class="absolute -top-20 -left-20 w-48 h-48 bg-primary-fixed/20 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-20 -right-20 w-48 h-48 bg-tertiary-fixed/20 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="relative z-10 space-y-8">
+        <!-- Output Header -->
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 pb-6 border-b border-primary/10">
+          <div>
+            <span class="text-[8px] font-bold text-primary uppercase tracking-widest block mb-1">Your Diagnostic Plan</span>
+            <h3 id="plan-concern-title" class="font-display-lg text-xl md:text-2xl text-deep-navy font-bold">Plan Title</h3>
+          </div>
+          <span id="plan-dosha-badge" class="px-4 py-1.5 rounded-full bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-wider border border-primary/20">
+            Dosha Profile
+          </span>
+        </div>
+
+        <!-- Content Grid -->
+        <div class="grid md:grid-cols-2 gap-8 pt-6 border-t border-glass-border">
+          <!-- Left: Ayurvedic Way -->
+          <div class="space-y-4">
+            <div class="flex items-center gap-2 text-deep-navy font-bold text-xs uppercase tracking-wider">
+              <span class="text-tertiary">
+                <span class="material-symbols-outlined text-tertiary text-lg">spa</span>
+              </span>
+              THE VEDIC HERBAL APPROACH
+            </div>
+            <div class="p-6 bg-white rounded-2xl border border-glass-border shadow-sm">
+              <h4 id="plan-herbs-title" class="font-bold text-deep-navy text-xs mb-2">Herbs Title</h4>
+              <p id="plan-herbs-desc" class="text-[10px] text-on-surface-variant leading-relaxed">Description of Ayurvedic therapeutics and botanical cleansers.</p>
+            </div>
+          </div>
+
+          <!-- Right: Clinical Way -->
+          <div class="space-y-4">
+            <div class="flex items-center gap-2 text-deep-navy font-bold text-xs uppercase tracking-wider">
+              <span class="text-primary">
+                <span class="material-symbols-outlined text-primary text-lg">medical_services</span>
+              </span>
+              RECOMMENDED ELIXIR TREATMENT
+            </div>
+            <div class="p-6 bg-white rounded-2xl border border-glass-border shadow-sm">
+              <h4 id="plan-clinical-title" class="font-bold text-deep-navy text-xs mb-2">Clinical Title</h4>
+              <p id="plan-clinical-desc" class="text-[10px] text-on-surface-variant leading-relaxed">Description of scientific aesthetics, lasers, or facial peel solutions.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Confirm and Book CTA -->
+        <div class="pt-8 border-t border-primary/10 flex flex-col sm:flex-row justify-between items-center gap-4">
+          <p class="text-[10px] text-on-surface-variant font-medium max-w-md">Our dermatologists will refine this hybrid Ayurvedic-clinical recipe during your in-person diagnostics.</p>
+          <button onclick="applyPlanToBooking()" class="bg-[#0e172c] text-white font-navigation text-xs font-bold px-8 py-3 rounded-full hover:scale-105 transition-transform flex items-center gap-2 shrink-0 shadow-md">
+            <span class="material-symbols-outlined text-sm">event_available</span>
+            APPLY TO BOOKING
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 🌿 The Elixir Ingredient Directory Section -->
+<section class="py-stack-lg bg-slate-50/50 px-gutter border-t border-b border-glass-border/30" id="ingredients">
+  <div class="max-w-container-max mx-auto">
+    <div class="text-center mb-16">
+      <span class="font-label-caps text-[10px] font-bold text-primary tracking-widest uppercase mb-3 inline-block">Science Meets Nature</span>
+      <h2 class="font-display-lg text-display-lg text-deep-navy">The Elixir Ingredient Directory</h2>
+      <p class="text-on-surface-variant max-w-2xl mx-auto mt-4 text-sm font-medium">Explore the high-potency clinical actives and botanical extracts formulated to target your skin concerns.</p>
+    </div>
+
+    <!-- 12 Cards Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <!-- 1. Vitamin C -->
+      <div class="h-72 rounded-[32px] border border-glass-border shadow-sm bg-white overflow-hidden relative group transition-all duration-300 hover:shadow-md">
+        <!-- Front State -->
+        <div class="p-8 h-full flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center">
+              <span class="material-symbols-outlined text-2xl">wb_sunny</span>
+            </div>
+            <div>
+              <h3 class="font-bold text-deep-navy text-base leading-tight">Vitamin C</h3>
+              <p class="text-[10px] text-tertiary font-semibold uppercase tracking-wider mt-1">Kesar (Saffron) Booster</p>
+            </div>
+          </div>
+          <div class="inline-block self-start text-[9px] font-bold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wider">
+            Brightening
+          </div>
+        </div>
+        <!-- Hover Reveal State -->
+        <div class="absolute inset-0 bg-[#063147] text-white p-6 flex flex-col justify-between translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out z-20">
+          <div class="space-y-4">
+            <h4 class="font-bold text-sm text-tertiary border-b border-white/20 pb-1.5">Vitamin C</h4>
+            <div class="space-y-3">
+              <div>
+                <span class="text-[8px] font-bold text-white/55 block uppercase tracking-wider">Best For</span>
+                <p class="text-[11px] font-semibold text-white/90">Dullness & Hyperpigmentation</p>
+              </div>
+              <div>
+                <span class="text-[8px] font-bold text-white/55 block uppercase tracking-wider">Benefits</span>
+                <p class="text-[11px] text-white/80 leading-normal">Boosts collagen, brightens uneven tone, and neutralizes free radicals.</p>
+              </div>
+              <div>
+                <span class="text-[8px] font-bold text-white/55 block uppercase tracking-wider">How It Works</span>
+                <p class="text-[11px] text-white/80 leading-normal">Inhibits pigment-producing enzymes and shields dermal cells.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Retinol -->
+      <div class="h-72 rounded-[32px] border border-glass-border shadow-sm bg-white overflow-hidden relative group transition-all duration-300 hover:shadow-md">
+        <!-- Front State -->
+        <div class="p-8 h-full flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center">
+              <span class="material-symbols-outlined text-2xl">history</span>
+            </div>
+            <div>
+              <h3 class="font-bold text-deep-navy text-base leading-tight">Retinol</h3>
+              <p class="text-[10px] text-tertiary font-semibold uppercase tracking-wider mt-1">Cellular Youth Elixir</p>
+            </div>
+          </div>
+          <div class="inline-block self-start text-[9px] font-bold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wider">
+            Anti-Aging
+          </div>
+        </div>
+        <!-- Hover Reveal State -->
+        <div class="absolute inset-0 bg-[#063147] text-white p-6 flex flex-col justify-between translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out z-20">
+          <div class="space-y-4">
+            <h4 class="font-bold text-sm text-tertiary border-b border-white/20 pb-1.5">Retinol</h4>
+            <div class="space-y-3">
+              <div>
+                <span class="text-[8px] font-bold text-white/55 block uppercase tracking-wider">Best For</span>
+                <p class="text-[11px] font-semibold text-white/90">Fine Lines & Deep Wrinkles</p>
+              </div>
+              <div>
+                <span class="text-[8px] font-bold text-white/55 block uppercase tracking-wider">Benefits</span>
+                <p class="text-[11px] text-white/80 leading-normal">Increases cell turnover, refines texture, and minimizes large pores.</p>
+              </div>
+              <div>
+                <span class="text-[8px] font-bold text-white/55 block uppercase tracking-wider">How It Works</span>
+                <p class="text-[11px] text-white/80 leading-normal">Penetrates deep skin layers to trigger collagen synthesis.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Niacinamide -->
+      <div class="h-72 rounded-[32px] border border-glass-border shadow-sm bg-white overflow-hidden relative group transition-all duration-300 hover:shadow-md">
+        <!-- Front State -->
+        <div class="p-8 h-full flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center">
+              <span class="material-symbols-outlined text-2xl">shield</span>
+            </div>
+            <div>
+              <h3 class="font-bold text-deep-navy text-base leading-tight">Niacinamide</h3>
+              <p class="text-[10px] text-tertiary font-semibold uppercase tracking-wider mt-1">Tulsi Skin Shield</p>
+            </div>
+          </div>
+          <div class="inline-block self-start text-[9px] font-bold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wider">
+            Barrier Repair
+          </div>
+        </div>
+        <!-- Hover Reveal State -->
+        <div class="absolute inset-0 bg-[#063147] text-white p-6 flex flex-col justify-between translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out z-20">
+          <div class="space-y-4">
+            <h4 class="font-bold text-sm text-tertiary border-b border-white/20 pb-1.5">Niacinamide</h4>
+            <div class="space-y-3">
+              <div>
+                <span class="text-[8px] font-bold text-white/55 block uppercase tracking-wider">Best For</span>
+                <p class="text-[11px] font-semibold text-white/90">Pore Control & Redness</p>
+              </div>
+              <div>
+                <span class="text-[8px] font-bold text-white/55 block uppercase tracking-wider">Benefits</span>
+                <p class="text-[11px] text-white/80 leading-normal">Strengthens lipid barrier, reduces redness, and balances sebum.</p>
+              </div>
+              <div>
+                <span class="text-[8px] font-bold text-white/55 block uppercase tracking-wider">How It Works</span>
+                <p class="text-[11px] text-white/80 leading-normal">Inhibits pigment transfers and soothes inflammatory pathways.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Hyaluronic Acid -->
+      <div class="h-72 rounded-[32px] border border-glass-border shadow-sm bg-white overflow-hidden relative group transition-all duration-300 hover:shadow-md">
+        <!-- Front State -->
+        <div class="p-8 h-full flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center">
+              <span class="material-symbols-outlined text-2xl">water_drop</span>
+            </div>
+            <div>
+              <h3 class="font-bold text-deep-navy text-base leading-tight">Hyaluronic Acid</h3>
+              <p class="text-[10px] text-tertiary font-semibold uppercase tracking-wider mt-1">Jal (Moisture) Magnet</p>
+            </div>
+          </div>
+          <div class="inline-block self-start text-[9px] font-bold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wider">
+            Deep Hydration
+          </div>
+        </div>
+        <!-- Hover Reveal State -->
+        <div class="absolute inset-0 bg-[#063147] text-white p-6 flex flex-col justify-between translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out z-20">
+          <div class="space-y-4">
+            <h4 class="font-bold text-sm text-tertiary border-b border-white/20 pb-1.5">Hyaluronic Acid</h4>
+            <div class="space-y-3">
+              <div>
+                <span class="text-[8px] font-bold text-white/55 block uppercase tracking-wider">Best For</span>
+                <p class="text-[11px] font-semibold text-white/90">Dehydrated & Deflated Skin</p>
+              </div>
+              <div>
+                <span class="text-[8px] font-bold text-white/55 block uppercase tracking-wider">Benefits</span>
+                <p class="text-[11px] text-white/80 leading-normal">Plumps cells instantly, binds water, and smooths dry expression lines.</p>
+              </div>
+              <div>
+                <span class="text-[8px] font-bold text-white/55 block uppercase tracking-wider">How It Works</span>
+                <p class="text-[11px] text-white/80 leading-normal">Draws water molecules from the air deep into epidermal layers.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Ceramides -->
+      <div class="h-72 rounded-[32px] border border-glass-border shadow-sm bg-white overflow-hidden relative group transition-all duration-300 hover:shadow-md">
+        <!-- Front State -->
+        <div class="p-8 h-full flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center">
+              <span class="material-symbols-outlined text-2xl">spa</span>
+            </div>
+            <div>
+              <h3 class="font-bold text-deep-navy text-base leading-tight">Ceramides</h3>
+              <p class="text-[10px] text-tertiary font-semibold uppercase tracking-wider mt-1">Skin Nectar Shield</p>
+            </div>
+          </div>
+          <div class="inline-block self-start text-[9px] font-bold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wider">
+            Nourishing
+          </div>
+        </div>
+        <!-- Hover Reveal State -->
+        <div class="absolute inset-0 bg-[#063147] text-white p-6 flex flex-col justify-between translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out z-20">
+          <div class="space-y-4">
+            <h4 class="font-bold text-sm text-tertiary border-b border-white/20 pb-1.5">Ceramides</h4>
+            <div class="space-y-3">
+              <div>
+                <span class="text-[8px] font-bold text-white/55 block uppercase tracking-wider">Best For</span>
+                <p class="text-[11px] font-semibold text-white/90">Dryness & Flaky Skin</p>
+              </div>
+              <div>
+                <span class="text-[8px] font-bold text-white/55 block uppercase tracking-wider">Benefits</span>
+                <p class="text-[11px] text-white/80 leading-normal">Repairs skin barrier, prevents moisture loss, and reduces sensitivity.</p>
+              </div>
+              <div>
+                <span class="text-[8px] font-bold text-white/55 block uppercase tracking-wider">How It Works</span>
+                <p class="text-[11px] text-white/80 leading-normal">Locks intercellular lipids together to seal cellular gaps.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. Salicylic Acid -->
+      <div class="h-72 rounded-[32px] border border-glass-border shadow-sm bg-white overflow-hidden relative group transition-all duration-300 hover:shadow-md">
+        <!-- Front State -->
+        <div class="p-8 h-full flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center">
+              <span class="material-symbols-outlined text-2xl">clean_hands</span>
+            </div>
+            <div>
+              <h3 class="font-bold text-deep-navy text-base leading-tight">Salicylic Acid</h3>
+              <p class="text-[10px] text-tertiary font-semibold uppercase tracking-wider mt-1">Neem Blemish Purifier</p>
+            </div>
+          </div>
+          <div class="inline-block self-start text-[9px] font-bold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wider">
+            Clarifying
+          </div>
+        </div>
+        <!-- Hover Reveal State -->
+        <div class="absolute inset-0 bg-[#063147] text-white p-6 flex flex-col justify-between translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out z-20">
+          <div class="space-y-4">
+            <h4 class="font-bold text-sm text-tertiary border-b border-white/20 pb-1.5">Salicylic Acid</h4>
+            <div class="space-y-3">
+              <div>
+                <span class="text-[8px] font-bold text-white/55 block uppercase tracking-wider">Best For</span>
+                <p class="text-[11px] font-semibold text-white/90">Acne & Blackheads</p>
+              </div>
+              <div>
+                <span class="text-[8px] font-bold text-white/55 block uppercase tracking-wider">Benefits</span>
+                <p class="text-[11px] text-white/80 leading-normal">Exfoliates pore walls, resolves active spots, and controls oiliness.</p>
+              </div>
+              <div>
+                <span class="text-[8px] font-bold text-white/55 block uppercase tracking-wider">How It Works</span>
+                <p class="text-[11px] text-white/80 leading-normal">Oil-soluble acid dissolves intercellular debris inside follicles.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7. Glycolic Acid -->
+      <div class="h-72 rounded-[32px] border border-glass-border shadow-sm bg-white overflow-hidden relative group transition-all duration-300 hover:shadow-md">
+        <!-- Front State -->
+        <div class="p-8 h-full flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center">
+              <span class="material-symbols-outlined text-2xl">science</span>
+            </div>
+            <div>
+              <h3 class="font-bold text-deep-navy text-base leading-tight">Glycolic Acid</h3>
+              <p class="text-[10px] text-tertiary font-semibold uppercase tracking-wider mt-1">Sugarcane Resurfacing Actives</p>
+            </div>
+          </div>
+          <div class="inline-block self-start text-[9px] font-bold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wider">
+            Exfoliating
+          </div>
+        </div>
+        <!-- Hover Reveal State -->
+        <div class="absolute inset-0 bg-[#063147] text-white p-6 flex flex-col justify-between translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out z-20">
+          <div class="space-y-4">
+            <h4 class="font-bold text-sm text-tertiary border-b border-white/20 pb-1.5">Glycolic Acid</h4>
+            <div class="space-y-3">
+              <div>
+                <span class="text-[8px] font-bold text-white/55 block uppercase tracking-wider">Best For</span>
+                <p class="text-[11px] font-semibold text-white/90">Dullness & Fine Lines</p>
+              </div>
+              <div>
+                <span class="text-[8px] font-bold text-white/55 block uppercase tracking-wider">Benefits</span>
+                <p class="text-[11px] text-white/80 leading-normal">Dissolves dead cells, improves light reflection, and smooths wrinkles.</p>
+              </div>
+              <div>
+                <span class="text-[8px] font-bold text-white/55 block uppercase tracking-wider">How It Works</span>
+                <p class="text-[11px] text-white/80 leading-normal">Breaks down cell adhesion bonds in the outermost skin layer.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8. Centella Asiatica (Cica) -->
+      <div class="h-72 rounded-[32px] border border-glass-border shadow-sm bg-white overflow-hidden relative group transition-all duration-300 hover:shadow-md">
+        <!-- Front State -->
+        <div class="p-8 h-full flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center">
+              <span class="material-symbols-outlined text-2xl">spa</span>
+            </div>
+            <div>
+              <h3 class="font-bold text-deep-navy text-base leading-tight">Gotu Kola (Cica)</h3>
+              <p class="text-[10px] text-tertiary font-semibold uppercase tracking-wider mt-1">Sovereign Wound Healer</p>
+            </div>
+          </div>
+          <div class="inline-block self-start text-[9px] font-bold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wider">
+            Soothe & Repair
+          </div>
+        </div>
+        <!-- Hover Reveal State -->
+        <div class="absolute inset-0 bg-[#063147] text-white p-6 flex flex-col justify-between translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out z-20">
+          <div class="space-y-4">
+            <h4 class="font-bold text-sm text-tertiary border-b border-white/20 pb-1.5">Gotu Kola (Cica)</h4>
+            <div class="space-y-3">
+              <div>
+                <span class="text-[8px] font-bold text-white/55 block uppercase tracking-wider">Best For</span>
+                <p class="text-[11px] font-semibold text-white/90">Irritated & Compromised Barriers</p>
+              </div>
+              <div>
+                <span class="text-[8px] font-bold text-white/55 block uppercase tracking-wider">Benefits</span>
+                <p class="text-[11px] text-white/80 leading-normal">Calms burning sensations, accelerates recovery, and supports collagen.</p>
+              </div>
+              <div>
+                <span class="text-[8px] font-bold text-white/55 block uppercase tracking-wider">How It Works</span>
+                <p class="text-[11px] text-white/80 leading-normal">Stimulates intracellular fibronectin synthesis for healing.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 9. Green Tea Extract -->
+      <div class="h-72 rounded-[32px] border border-glass-border shadow-sm bg-white overflow-hidden relative group transition-all duration-300 hover:shadow-md">
+        <!-- Front State -->
+        <div class="p-8 h-full flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center">
+              <span class="material-symbols-outlined text-2xl">eco</span>
+            </div>
+            <div>
+              <h3 class="font-bold text-deep-navy text-base leading-tight">Green Tea Extract</h3>
+              <p class="text-[10px] text-tertiary font-semibold uppercase tracking-wider mt-1">Antioxidant Defense</p>
+            </div>
+          </div>
+          <div class="inline-block self-start text-[9px] font-bold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wider">
+            Detoxifying
+          </div>
+        </div>
+        <!-- Hover Reveal State -->
+        <div class="absolute inset-0 bg-[#063147] text-white p-6 flex flex-col justify-between translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out z-20">
+          <div class="space-y-4">
+            <h4 class="font-bold text-sm text-tertiary border-b border-white/20 pb-1.5">Green Tea Extract</h4>
+            <div class="space-y-3">
+              <div>
+                <span class="text-[8px] font-bold text-white/55 block uppercase tracking-wider">Best For</span>
+                <p class="text-[11px] font-semibold text-white/90">Inflamed & Redness-Prone Skin</p>
+              </div>
+              <div>
+                <span class="text-[8px] font-bold text-white/55 block uppercase tracking-wider">Benefits</span>
+                <p class="text-[11px] text-white/80 leading-normal">Fights cellular oxidation, minimizes signs of UV stress, and calms flare-ups.</p>
+              </div>
+              <div>
+                <span class="text-[8px] font-bold text-white/55 block uppercase tracking-wider">How It Works</span>
+                <p class="text-[11px] text-white/80 leading-normal">Rich in EGCG polyphenols that scavenge active free radicals.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 10. Licorice Root -->
+      <div class="h-72 rounded-[32px] border border-glass-border shadow-sm bg-white overflow-hidden relative group transition-all duration-300 hover:shadow-md">
+        <!-- Front State -->
+        <div class="p-8 h-full flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center">
+              <span class="material-symbols-outlined text-2xl">spa</span>
+            </div>
+            <div>
+              <h3 class="font-bold text-deep-navy text-base leading-tight">Mulethi (Licorice)</h3>
+              <p class="text-[10px] text-tertiary font-semibold uppercase tracking-wider mt-1">Natural Skin Lightener</p>
+            </div>
+          </div>
+          <div class="inline-block self-start text-[9px] font-bold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wider">
+            Brightening
+          </div>
+        </div>
+        <!-- Hover Reveal State -->
+        <div class="absolute inset-0 bg-[#063147] text-white p-6 flex flex-col justify-between translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out z-20">
+          <div class="space-y-4">
+            <h4 class="font-bold text-sm text-tertiary border-b border-white/20 pb-1.5">Mulethi (Licorice)</h4>
+            <div class="space-y-3">
+              <div>
+                <span class="text-[8px] font-bold text-white/55 block uppercase tracking-wider">Best For</span>
+                <p class="text-[11px] font-semibold text-white/90">Uneven Tone & Dark Spots</p>
+              </div>
+              <div>
+                <span class="text-[8px] font-bold text-white/55 block uppercase tracking-wider">Benefits</span>
+                <p class="text-[11px] text-white/80 leading-normal">Gently brightens dark spots, decreases post-inflammatory marks, and calms skin.</p>
+              </div>
+              <div>
+                <span class="text-[8px] font-bold text-white/55 block uppercase tracking-wider">How It Works</span>
+                <p class="text-[11px] text-white/80 leading-normal">Glabridin inhibits pigment synthesis without causing toxicity.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 11. Kojic Acid -->
+      <div class="h-72 rounded-[32px] border border-glass-border shadow-sm bg-white overflow-hidden relative group transition-all duration-300 hover:shadow-md">
+        <!-- Front State -->
+        <div class="p-8 h-full flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center">
+              <span class="material-symbols-outlined text-2xl">science</span>
+            </div>
+            <div>
+              <h3 class="font-bold text-deep-navy text-base leading-tight">Kojic Acid</h3>
+              <p class="text-[10px] text-tertiary font-semibold uppercase tracking-wider mt-1">Fungal Brightening Agent</p>
+            </div>
+          </div>
+          <div class="inline-block self-start text-[9px] font-bold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wider">
+            Brightening
+          </div>
+        </div>
+        <!-- Hover Reveal State -->
+        <div class="absolute inset-0 bg-[#063147] text-white p-6 flex flex-col justify-between translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out z-20">
+          <div class="space-y-4">
+            <h4 class="font-bold text-sm text-tertiary border-b border-white/20 pb-1.5">Kojic Acid</h4>
+            <div class="space-y-3">
+              <div>
+                <span class="text-[8px] font-bold text-white/55 block uppercase tracking-wider">Best For</span>
+                <p class="text-[11px] font-semibold text-white/90">Melasma & Sun Damage</p>
+              </div>
+              <div>
+                <span class="text-[8px] font-bold text-white/55 block uppercase tracking-wider">Benefits</span>
+                <p class="text-[11px] text-white/80 leading-normal">Fades sunspots, brightens stubborn scars, and blocks pigment triggers.</p>
+              </div>
+              <div>
+                <span class="text-[8px] font-bold text-white/55 block uppercase tracking-wider">How It Works</span>
+                <p class="text-[11px] text-white/80 leading-normal">Limits tyrosine activity to prevent excess melanin production.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 12. Zinc PCA -->
+      <div class="h-72 rounded-[32px] border border-glass-border shadow-sm bg-white overflow-hidden relative group transition-all duration-300 hover:shadow-md">
+        <!-- Front State -->
+        <div class="p-8 h-full flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center">
+              <span class="material-symbols-outlined text-2xl">science</span>
+            </div>
+            <div>
+              <h3 class="font-bold text-deep-navy text-base leading-tight">Zinc PCA</h3>
+              <p class="text-[10px] text-tertiary font-semibold uppercase tracking-wider mt-1">Oil Balancing Mineral</p>
+            </div>
+          </div>
+          <div class="inline-block self-start text-[9px] font-bold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wider">
+            Clarifying
+          </div>
+        </div>
+        <!-- Hover Reveal State -->
+        <div class="absolute inset-0 bg-[#063147] text-white p-6 flex flex-col justify-between translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out z-20">
+          <div class="space-y-4">
+            <h4 class="font-bold text-sm text-tertiary border-b border-white/20 pb-1.5">Zinc PCA</h4>
+            <div class="space-y-3">
+              <div>
+                <span class="text-[8px] font-bold text-white/55 block uppercase tracking-wider">Best For</span>
+                <p class="text-[11px] font-semibold text-white/90">Oily Skin & Congestion</p>
+              </div>
+              <div>
+                <span class="text-[8px] font-bold text-white/55 block uppercase tracking-wider">Benefits</span>
+                <p class="text-[11px] text-white/80 leading-normal">Limits excess sebum, reduces breakout frequency, and calms congestion.</p>
+              </div>
+              <div>
+                <span class="text-[8px] font-bold text-white/55 block uppercase tracking-wider">How It Works</span>
+                <p class="text-[11px] text-white/80 leading-normal">Regulates 5-alpha reductase pathways to control oil secretion.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 🌿 Call to Action Section -->
+<section class="py-stack-lg bg-surface px-gutter text-center relative overflow-hidden">
+  <div class="max-w-3xl mx-auto space-y-6 relative z-10">
+    <h2 class="font-display-lg text-display-lg text-deep-navy font-bold">Start Your Personalized Transformation</h2>
+    <p class="text-on-surface-variant max-w-xl mx-auto text-sm leading-relaxed">
+      Book your scientific-diagnostic consultation with our medical dermatologists today. Let us curate a bespoke clinical and Ayurvedic blueprint tailored uniquely to you.
+    </p>
+    <div class="pt-4">
+      <a href="index.html#booking" class="bg-primary text-on-primary font-navigation text-navigation px-8 py-4 rounded-full primary-glow inline-flex items-center gap-2 hover:scale-105 transition-transform">
+        <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">calendar_today</span>
+        BOOK CONSULTATION NOW
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Main Footer -->
+<footer id="contact" class="w-full bg-[#f8fafc] text-on-surface relative border-t border-glass-border/40 py-12 lg:py-16">
+  <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10 w-full space-y-12">
+    <!-- Contact Info Cards Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-0 divide-y md:divide-y-0 lg:divide-x divide-glass-border border border-glass-border rounded-2xl bg-white shadow-sm overflow-hidden mb-6">
+      <div class="p-5 flex gap-4 items-start bg-white">
+        <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
+          <span class="material-symbols-outlined text-lg">location_on</span>
+        </div>
+        <div class="space-y-1">
+          <h5 class="text-[9px] font-bold text-primary uppercase tracking-wider leading-none">Address</h5>
+          <p class="text-[10px] leading-normal text-on-surface-variant font-navigation">123, Wellness Avenue, New Delhi, India</p>
+        </div>
+      </div>
+      <div class="p-5 flex gap-4 items-start bg-white">
+        <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
+          <span class="material-symbols-outlined text-lg">call</span>
+        </div>
+        <div class="space-y-1">
+          <h5 class="text-[9px] font-bold text-primary uppercase tracking-wider leading-none">Call Us</h5>
+          <p class="text-[10px] leading-normal text-on-surface-variant font-bold">+91 98765 43210</p>
+        </div>
+      </div>
+      <div class="p-5 flex gap-4 items-start bg-white">
+        <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
+          <span class="material-symbols-outlined text-lg">mail</span>
+        </div>
+        <div class="space-y-1">
+          <h5 class="text-[9px] font-bold text-primary uppercase tracking-wider leading-none">Email Us</h5>
+          <p class="text-[10px] leading-normal text-on-surface-variant font-bold font-navigation">info@elixirclinic.com</p>
+        </div>
+      </div>
+      <div class="p-5 flex gap-4 items-start bg-white">
+        <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
+          <span class="material-symbols-outlined text-lg">schedule</span>
+        </div>
+        <div class="space-y-1">
+          <h5 class="text-[9px] font-bold text-primary uppercase tracking-wider leading-none">Working Hours</h5>
+          <p class="text-[10px] leading-normal text-on-surface-variant font-bold">Mon - Sat : 10:00 AM - 8:00 PM</p>
+        </div>
+      </div>
+      <div class="p-5 flex gap-4 items-start bg-white">
+        <div class="w-10 h-10 rounded-full bg-red-500/10 flex items-center justify-center text-red-500 shrink-0">
+          <span class="material-symbols-outlined text-lg">campaign</span>
+        </div>
+        <div class="space-y-1">
+          <h5 class="text-[9px] font-bold text-red-500 uppercase tracking-wider leading-none">Emergency</h5>
+          <p class="text-[10px] leading-normal text-red-500 font-bold">24/7 Support: +91 99999 88888</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Footer Detail Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 pt-8 border-t border-glass-border/60">
+      <div class="lg:col-span-3 space-y-4">
+        <a href="index.html#hero" class="flex items-center shrink-0">
+          <img src="assets/logo.png" class="h-11 w-auto object-contain" alt="Elixir Health Care Clinic Logo">
+        </a>
+        <p class="text-xs text-on-surface-variant leading-relaxed font-body-md">
+          Combining advanced aesthetic medicine with timeless Ayurvedic grace. Experience clinical aesthetics designed to evoke your natural radiance.
+        </p>
+      </div>
+      
+      <div class="lg:col-span-2 space-y-4">
+        <h4 class="font-bold text-deep-navy uppercase tracking-wider text-xs border-b border-primary/20 pb-1.5 inline-block">Navigation</h4>
+        <ul class="space-y-2 text-xs font-navigation overflow-hidden">
+          <li><a href="index.html#hero" class="text-on-surface-variant hover:text-tertiary hover:translate-x-1.5 inline-block transition-all duration-300">Home</a></li>
+          <li><a href="treatments.html" class="text-on-surface-variant hover:text-tertiary hover:translate-x-1.5 inline-block transition-all duration-300 font-bold text-primary">Treatments</a></li>
+          <li><a href="index.html#doctors" class="text-on-surface-variant hover:text-tertiary hover:translate-x-1.5 inline-block transition-all duration-300">Our Doctors</a></li>
+          <li><a href="index.html#process" class="text-on-surface-variant hover:text-tertiary hover:translate-x-1.5 inline-block transition-all duration-300">The Process</a></li>
+          <li><a href="index.html#reviews" class="text-on-surface-variant hover:text-tertiary hover:translate-x-1.5 inline-block transition-all duration-300">Reviews</a></li>
+          <li><a href="about.html" class="text-on-surface-variant hover:text-tertiary hover:translate-x-1.5 inline-block transition-all duration-300">About Us</a></li>
+        </ul>
+      </div>
+      
+      <div class="lg:col-span-3 space-y-4">
+        <h4 class="font-bold text-deep-navy uppercase tracking-wider text-xs border-b border-primary/20 pb-1.5 inline-block">Bespoke Treatments</h4>
+        <ul class="space-y-2 text-xs font-navigation overflow-hidden">
+          <li><a href="treatments.html" class="text-on-surface-variant hover:text-tertiary hover:translate-x-1.5 inline-block transition-all duration-300">Laser Hair Reduction</a></li>
+          <li><a href="treatments.html" class="text-on-surface-variant hover:text-tertiary hover:translate-x-1.5 inline-block transition-all duration-300">Hydra Facial</a></li>
+          <li><a href="treatments.html" class="text-on-surface-variant hover:text-tertiary hover:translate-x-1.5 inline-block transition-all duration-300">Botox & Fillers</a></li>
+          <li><a href="treatments.html" class="text-on-surface-variant hover:text-tertiary hover:translate-x-1.5 inline-block transition-all duration-300">Hair Restoration</a></li>
+          <li><a href="treatments.html" class="text-on-surface-variant hover:text-tertiary hover:translate-x-1.5 inline-block transition-all duration-300">Rhinoplasty</a></li>
+          <li><a href="treatments.html" class="text-on-surface-variant hover:text-tertiary hover:translate-x-1.5 inline-block transition-all duration-300">PRP Therapy</a></li>
+        </ul>
+      </div>
+      
+      <div class="lg:col-span-4 space-y-4">
+        <h4 class="font-bold text-deep-navy uppercase tracking-wider text-xs border-b border-primary/20 pb-1.5 inline-block">Our Location</h4>
+        <div class="w-full h-36 rounded-2xl overflow-hidden border border-glass-border shadow-sm relative hover:scale-[1.01] hover:shadow-md transition-all duration-300">
+          <iframe 
+            class="w-full h-full grayscale contrast-[1.10] opacity-90 hover:grayscale-0 transition-all duration-500" 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.5620215431835!2d77.2182223150824!3d28.61393998242416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd37e2a9d809%3A0x2887a0ff877b0d7!2sConnaught+Place%2C+New+Delhi%2C+Delhi+110001!5e0!3m2!1sen!2sin!4v1545678901234" 
+            allowfullscreen="" 
+            loading="lazy">
+          </iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Copyright -->
+    <div class="pt-8 border-t border-glass-border/40 flex flex-col md:flex-row justify-between items-center gap-4 text-center">
+      <p class="text-[9px] font-navigation tracking-wider text-on-surface-variant uppercase">
+        © 2024 Elixir Health Care Clinic. All rights reserved.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script>
+    // -------------------------------------------------------------
+    // WebGL Canvas Background Fluid Animation
+    // -------------------------------------------------------------
+    const canvas = document.getElementById('wellness-canvas');
+    if (canvas) {
+        const gl = canvas.getContext('webgl');
+        if (gl) {
+            let width = canvas.width = window.innerWidth;
+            let height = canvas.height = window.innerHeight;
+
+            const vertexShaderSource = `
+                attribute vec2 position;
+                void main() {
+                    gl_Position = vec4(position, 0.0, 1.0);
+                }
+            `;
+
+            const fragmentShaderSource = `
+                precision highp float;
+                uniform vec2 u_resolution;
+                uniform float u_time;
+                void main() {
+                    vec2 uv = gl_FragCoord.xy / u_resolution.xy;
+                    float wave1 = sin(uv.x * 2.5 + u_time * 0.25) * 0.45;
+                    float wave2 = cos(uv.y * 2.0 - u_time * 0.2) * 0.4;
+                    float intensity = sin((uv.x + wave1) * 3.1415) * cos((uv.y + wave2) * 3.1415);
+                    
+                    // Teal-to-gold aesthetic colors
+                    vec3 col1 = vec3(0.04, 0.42, 0.56); // primary #0a6c8f
+                    vec3 col2 = vec3(0.95, 0.96, 0.98); // background light gray
+                    vec3 col3 = vec3(0.95, 0.85, 0.65); // gold accents
+                    
+                    vec3 finalColor = mix(col2, col1, clamp(intensity * 0.25, 0.0, 1.0));
+                    finalColor = mix(finalColor, col3, clamp(wave1 * wave2 * 0.15, 0.0, 1.0));
+                    
+                    gl_FragColor = vec4(finalColor, 0.55);
+                }
+            `;
+
+            function createShader(gl, type, source) {
+                const shader = gl.createShader(type);
+                gl.shaderSource(shader, source);
+                gl.compileShader(shader);
+                return shader;
+            }
+
+            const vs = createShader(gl, gl.VERTEX_SHADER, vertexShaderSource);
+            const fs = createShader(gl, gl.FRAGMENT_SHADER, fragmentShaderSource);
+            const program = gl.createProgram();
+            gl.attachShader(program, vs);
+            gl.attachShader(program, fs);
+            gl.linkProgram(program);
+            gl.useProgram(program);
+
+            const buffer = gl.createBuffer();
+            gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
+            gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([
+                -1.0, -1.0,  1.0, -1.0, -1.0,  1.0,
+                -1.0,  1.0,  1.0, -1.0,  1.0,  1.0
+            ]), gl.STATIC_DRAW);
+
+            const posLoc = gl.getAttribLocation(program, 'position');
+            gl.enableVertexAttribArray(posLoc);
+            gl.vertexAttribPointer(posLoc, 2, gl.FLOAT, false, 0, 0);
+
+            const resLoc = gl.getUniformLocation(program, 'u_resolution');
+            const timeLoc = gl.getUniformLocation(program, 'u_time');
+
+            function render(time) {
+                gl.uniform2f(resLoc, width, height);
+                gl.uniform1f(timeLoc, time * 0.001);
+                gl.viewport(0, 0, width, height);
+                gl.drawArrays(gl.TRIANGLES, 0, 6);
+                requestAnimationFrame(render);
+            }
+            requestAnimationFrame(render);
+
+            window.addEventListener('resize', () => {
+                width = canvas.width = window.innerWidth;
+                height = canvas.height = window.innerHeight;
+            });
+        }
+    }
+
+    // -------------------------------------------------------------
+    // Scroll Reveal Interaction
+    // -------------------------------------------------------------
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal-on-scroll').forEach(el => {
+        revealObserver.observe(el);
+    });
+
+    // -------------------------------------------------------------
+    // Treatments Catalog Filter Functionality
+    // -------------------------------------------------------------
+    function filterTreatments(category) {
+        document.querySelectorAll('.treatments-tab-btn').forEach(btn => {
+            btn.classList.remove('active-treatments-tab');
+        });
+        document.getElementById('btn-treatments-' + category).classList.add('active-treatments-tab');
+
+        document.querySelectorAll('.treatment-card-item').forEach(card => {
+            if (category === 'all' || card.getAttribute('data-category') === category) {
+                card.style.display = 'block';
+                card.classList.add('active');
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+
+    // -------------------------------------------------------------
+    // Skin & Hair Analyzer State and Handlers
+    // -------------------------------------------------------------
+    let selectedConcern = '';
+    
+    const concernsData = {
+        acne: {
+            title: "Vedic Acne & Clear Skin Plan",
+            dosha: "Dosha Profile: Pitta-Kapha Imbalance (Excess Heat & Sebum)",
+            herbsTitle: "Neem, Haldi (Turmeric) & Shalmali Cleansing",
+            herbsDesc: "Ayurvedic deep detoxifiers known for cooling body heat, clearing bacterial impurities, and purifying the blood.",
+            clinicalTitle: "Bespoke Skin Rejuvenation Peels",
+            clinicalDesc: "Salicylic clinical exfoliations combined with medical hydration to clear clogged follicles and calm active acne.",
+            formValue: "Skin Rejuvenation"
+        },
+        pigmentation: {
+            title: "Vedic Radiant Brightening Plan",
+            dosha: "Dosha Profile: Bhrajaka Pitta Aggravation (Localized Melanin Accumulation)",
+            herbsTitle: "Kesar (Saffron) & Chandan (Sandalwood) Infusion",
+            herbsDesc: "Traditional brightening botanicals to naturally fade hyperpigmentation, soothe dermal layers, and improve glow.",
+            clinicalTitle: "Skin Rejuvenation (Advanced Photorejuvenation)",
+            clinicalDesc: "FDA-approved non-ablative laser therapy targeting deep pigmentation fields to naturally balance skin tone.",
+            formValue: "Skin Rejuvenation"
+        },
+        hairloss: {
+            title: "Vedic Scalp Nourishment & Regrowth Plan",
+            dosha: "Dosha Profile: Vata-Pitta Scalp Imbalance (Root Dehydration)",
+            herbsTitle: "Bhringraj, Amla & Brahmi Oils",
+            herbsDesc: "Ancient hair-revitalizing herbs to feed hair follicles, prevent premature graying, and stimulate root development.",
+            clinicalTitle: "Hair Restoration (PRP & Follicle Therapy)",
+            clinicalDesc: "Autologous Platelet-Rich Plasma micro-infusions combined with scientific follicular growth serums.",
+            formValue: "Hair Restoration"
+        },
+        dryskin: {
+            title: "Vedic Intense Dewy Hydration Plan",
+            dosha: "Dosha Profile: Vata Aggravation (Coldness & Dehydration)",
+            herbsTitle: "Kumari (Aloe Vera) & Almond Oil Nourishment",
+            herbsDesc: "Deeply hydrating Ayurvedic oils and extracts to seal skin barrier moisture, nourish cells, and eliminate fine lines.",
+            clinicalTitle: "Laser Treatments & HydraFacial Infusions",
+            clinicalDesc: "HydraFacial deep suction and hyaluronic acid infusions to lock in intense medical-grade skin hydration.",
+            formValue: "Laser Treatments"
+        }
+    };
+
+    function selectConcern(concernKey) {
+        selectedConcern = concernKey;
+        document.querySelectorAll('.concern-card').forEach(card => {
+            card.classList.remove('border-primary', 'bg-primary/5', 'scale-[1.03]');
+            card.classList.add('border-glass-border', 'bg-white');
+        });
+        const activeCard = document.getElementById(`btn-concern-${concernKey}`);
+        if (activeCard) {
+            activeCard.classList.remove('border-glass-border', 'bg-white');
+            activeCard.classList.add('border-primary', 'bg-primary/5', 'scale-[1.03]');
+        }
+    }
+
+    function generatePlan() {
+        if (!selectedConcern) {
+            alert('Please select a concern first to analyze.');
+            return;
+        }
+        
+        const data = concernsData[selectedConcern];
+        document.getElementById('plan-concern-title').textContent = data.title;
+        document.getElementById('plan-dosha-badge').textContent = data.dosha;
+        document.getElementById('plan-herbs-title').textContent = data.herbsTitle;
+        document.getElementById('plan-herbs-desc').textContent = data.herbsDesc;
+        document.getElementById('plan-clinical-title').textContent = data.clinicalTitle;
+        document.getElementById('plan-clinical-desc').textContent = data.clinicalDesc;
+        
+        const outputPanel = document.getElementById('plan-output');
+        outputPanel.classList.remove('hidden');
+        setTimeout(() => {
+            outputPanel.classList.remove('opacity-0', 'scale-95');
+            outputPanel.classList.add('opacity-100', 'scale-100');
+        }, 50);
+        outputPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    function applyPlanToBooking() {
+        if (!selectedConcern) return;
+        const data = concernsData[selectedConcern];
+        
+        // Save the chosen service to localStorage so index.html can pre-fill it!
+        localStorage.setItem('prefilled_treatment', data.formValue);
+        
+        // Redirect to booking section on index.html
+        window.location.href = 'index.html#booking';
+    }
+
+    // Read filter URL parameter if present (e.g. treatments.html?filter=lasers)
+    window.addEventListener('DOMContentLoaded', () => {
+        const params = new URLSearchParams(window.location.search);
+        const filter = params.get('filter') || 'all';
+        filterTreatments(filter);
+    });
+</script>
+
+</body>
+</html>
