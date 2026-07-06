@@ -195,6 +195,11 @@
                 transform: translateX(calc(-50% - 16px));
             }
         }
+        .active-cred-tab {
+            background: #0a6c8f !important;
+            color: #ffffff !important;
+            border-color: #0a6c8f !important;
+        }
     </style>
 </head>
 <body class="bg-background text-on-background font-body-md overflow-x-hidden">
@@ -204,19 +209,19 @@
 </div>
 <!-- Navigation -->
 <header class="fixed top-5 left-1/2 -translate-x-1/2 w-[90%] max-w-container-max rounded-full z-50 backdrop-blur-xl border flex justify-between items-center px-8 py-3 transition-all duration-500" style="background: linear-gradient(90deg, rgba(219, 234, 254, 0.45) 0%, rgba(255, 255, 255, 0.75) 50%, rgba(243, 232, 255, 0.45) 100%); border-color: rgba(255, 255, 255, 0.5); box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.05);" id="top-app-bar">
-  <a href="#hero" class="flex items-center shrink-0">
+  <a href="index.html#hero" class="flex items-center shrink-0">
     <img src="assets/logo.png" class="h-10 lg:h-12 w-auto object-contain" alt="Elixir Health Care Clinic Logo">
   </a>
   <nav class="hidden md:flex items-center gap-8">
-    <a class="font-navigation text-navigation text-primary border-b-2 border-primary pb-1" href="#hero">Home</a>
-    <a class="font-navigation text-navigation text-on-surface-variant hover:text-primary transition-colors" href="#treatments">Treatments</a>
-    <a class="font-navigation text-navigation text-on-surface-variant hover:text-primary transition-colors" href="#doctors">Our Doctors</a>
-    <a class="font-navigation text-navigation text-on-surface-variant hover:text-primary transition-colors" href="#process">The Process</a>
-    <a class="font-navigation text-navigation text-on-surface-variant hover:text-primary transition-colors" href="#reviews">Reviews</a>
-    <a class="font-navigation text-navigation text-on-surface-variant hover:text-primary transition-colors" href="#about">About Us</a>
-    <a class="font-navigation text-navigation text-on-surface-variant hover:text-primary transition-colors" href="#contact">Contact</a>
+    <a class="font-navigation text-navigation text-primary border-b-2 border-primary pb-1" href="index.html#hero">Home</a>
+    <a class="font-navigation text-navigation text-on-surface-variant hover:text-primary transition-colors" href="index.html#treatments">Treatments</a>
+    <a class="font-navigation text-navigation text-on-surface-variant hover:text-primary transition-colors" href="index.html#doctors">Our Doctors</a>
+    <a class="font-navigation text-navigation text-on-surface-variant hover:text-primary transition-colors" href="index.html#process">The Process</a>
+    <a class="font-navigation text-navigation text-on-surface-variant hover:text-primary transition-colors" href="index.html#reviews">Reviews</a>
+    <a class="font-navigation text-navigation text-on-surface-variant hover:text-primary transition-colors" href="about.html">About Us</a>
+    <a class="font-navigation text-navigation text-on-surface-variant hover:text-primary transition-colors" href="index.html#contact">Contact</a>
   </nav>
-  <a href="#booking" class="bg-[#0e172c] text-white font-navigation text-navigation px-6 py-2.5 rounded-full hover:scale-105 transition-all flex items-center gap-1.5 shadow-md hover:bg-[#070c18]">
+  <a href="index.html#booking" class="bg-[#0e172c] text-white font-navigation text-navigation px-6 py-2.5 rounded-full hover:scale-105 transition-all flex items-center gap-1.5 shadow-md hover:bg-[#070c18]">
     <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">calendar_today</span>
     BOOK NOW
   </a>
@@ -654,6 +659,228 @@
           <p class="text-[11px] text-on-surface-variant leading-relaxed font-body-md">Top-tier clinical tools and robotic systems to perform advanced operations.</p>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- Credentials, Awards & Partners Section -->
+<section class="py-stack-lg bg-surface-container-lowest px-gutter border-b border-glass-border/30" id="credentials">
+  <div class="max-w-container-max mx-auto">
+    <!-- Section Header -->
+    <div class="text-center mb-12 reveal-on-scroll">
+      <span class="font-label-caps text-[10px] font-bold text-primary tracking-widest uppercase mb-3 inline-block font-navigation">Aura of Trust</span>
+      <h2 class="font-display-lg text-display-lg text-deep-navy">Accreditations, Awards & Partners</h2>
+      <p class="text-on-surface-variant max-w-2xl mx-auto mt-4 text-sm font-medium">
+        Elixir Clinic operates under the highest global medical standards, backed by certified authorities, elite associations, and industry-leading technology partners.
+      </p>
+    </div>
+
+    <!-- Tab Selector Navigation -->
+    <div class="flex flex-wrap justify-center gap-3 mb-10 max-w-3xl mx-auto reveal-on-scroll">
+      <button onclick="switchCredTab('certifications')" id="tab-btn-certifications" class="cred-tab-btn px-6 py-2.5 rounded-full border border-glass-border bg-white text-xs font-bold text-deep-navy shadow-sm transition-all flex items-center gap-1.5 active-cred-tab">
+        <span class="material-symbols-outlined text-sm">verified</span>
+        Certifications
+      </button>
+      <button onclick="switchCredTab('awards')" id="tab-btn-awards" class="cred-tab-btn px-6 py-2.5 rounded-full border border-glass-border bg-white text-xs font-bold text-on-surface-variant hover:text-deep-navy shadow-sm transition-all flex items-center gap-1.5">
+        <span class="material-symbols-outlined text-sm">emoji_events</span>
+        Awards & Laurels
+      </button>
+      <button onclick="switchCredTab('memberships')" id="tab-btn-memberships" class="cred-tab-btn px-6 py-2.5 rounded-full border border-glass-border bg-white text-xs font-bold text-on-surface-variant hover:text-deep-navy shadow-sm transition-all flex items-center gap-1.5">
+        <span class="material-symbols-outlined text-sm">groups</span>
+        Memberships
+      </button>
+      <button onclick="switchCredTab('partners')" id="tab-btn-partners" class="cred-tab-btn px-6 py-2.5 rounded-full border border-glass-border bg-white text-xs font-bold text-on-surface-variant hover:text-deep-navy shadow-sm transition-all flex items-center gap-1.5">
+        <span class="material-symbols-outlined text-sm">handshake</span>
+        Partner Brands
+      </button>
+    </div>
+
+    <!-- Tab Content Panes -->
+    <div class="relative min-h-[300px]">
+      
+      <!-- 1. Certifications & Medical Accreditations Pane -->
+      <div id="pane-certifications" class="cred-pane grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 transition-all duration-500 opacity-100 scale-100">
+        <!-- NABH -->
+        <div class="glass-card p-6 rounded-3xl border border-glass-border bg-white hover:-translate-y-1.5 hover:shadow-md transition-all duration-300 flex flex-col justify-between group">
+          <div class="space-y-3.5">
+            <div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center group-hover:scale-110 transition-transform">
+              <span class="material-symbols-outlined text-xl">domain_verification</span>
+            </div>
+            <h4 class="font-bold text-deep-navy text-xs uppercase tracking-wider font-navigation">NABH Accredited</h4>
+            <p class="text-[10px] text-on-surface-variant leading-relaxed">Accredited by the National Accreditation Board for Hospitals & Healthcare Providers, ensuring premier clinical safety standards.</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-glass-border/30 text-[9px] font-bold text-primary tracking-widest uppercase font-navigation">ID: NABH-H-2024-089</div>
+        </div>
+
+        <!-- FDA Approved -->
+        <div class="glass-card p-6 rounded-3xl border border-glass-border bg-white hover:-translate-y-1.5 hover:shadow-md transition-all duration-300 flex flex-col justify-between group">
+          <div class="space-y-3.5">
+            <div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center group-hover:scale-110 transition-transform">
+              <span class="material-symbols-outlined text-xl">health_and_safety</span>
+            </div>
+            <h4 class="font-bold text-deep-navy text-xs uppercase tracking-wider font-navigation">FDA Approved Protocols</h4>
+            <p class="text-[10px] text-on-surface-variant leading-relaxed">All therapeutic lasers, skin diagnostics, and clinical equipment conform to strict US-FDA guidelines.</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-glass-border/30 text-[9px] font-bold text-primary tracking-widest uppercase font-navigation">Certified Safety</div>
+        </div>
+
+        <!-- ISO 9001:2015 -->
+        <div class="glass-card p-6 rounded-3xl border border-glass-border bg-white hover:-translate-y-1.5 hover:shadow-md transition-all duration-300 flex flex-col justify-between group">
+          <div class="space-y-3.5">
+            <div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center group-hover:scale-110 transition-transform">
+              <span class="material-symbols-outlined text-xl">workspace_premium</span>
+            </div>
+            <h4 class="font-bold text-deep-navy text-xs uppercase tracking-wider font-navigation">ISO 9001:2015</h4>
+            <p class="text-[10px] text-on-surface-variant leading-relaxed">International certification representing excellence in healthcare management, hygiene, and patient service systems.</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-glass-border/30 text-[9px] font-bold text-primary tracking-widest uppercase font-navigation">QMS Certified</div>
+        </div>
+
+        <!-- CDSCO -->
+        <div class="glass-card p-6 rounded-3xl border border-glass-border bg-white hover:-translate-y-1.5 hover:shadow-md transition-all duration-300 flex flex-col justify-between group">
+          <div class="space-y-3.5">
+            <div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center group-hover:scale-110 transition-transform">
+              <span class="material-symbols-outlined text-xl">verified</span>
+            </div>
+            <h4 class="font-bold text-deep-navy text-xs uppercase tracking-wider font-navigation">CDSCO Registered</h4>
+            <p class="text-[10px] text-on-surface-variant leading-relaxed">Registered with the Central Drugs Standard Control Organisation for importing and operating world-class clinical supplies.</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-glass-border/30 text-[9px] font-bold text-primary tracking-widest uppercase font-navigation">CDSCO Standard</div>
+        </div>
+      </div>
+
+      <!-- 2. Awards & Laurels Pane -->
+      <div id="pane-awards" class="cred-pane grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 transition-all duration-500 opacity-0 scale-95 hidden">
+        <!-- Award 1 -->
+        <div class="glass-card p-6 rounded-3xl border border-glass-border bg-white hover:-translate-y-1.5 hover:shadow-md transition-all duration-300 flex flex-col justify-between group">
+          <div class="space-y-3.5">
+            <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-600 flex items-center justify-center group-hover:scale-110 transition-transform">
+              <span class="material-symbols-outlined text-xl">military_tech</span>
+            </div>
+            <h4 class="font-bold text-deep-navy text-xs uppercase tracking-wider font-navigation">Best Aesthetic Clinic 2024</h4>
+            <p class="text-[10px] text-on-surface-variant leading-relaxed">Honored at the Times Health Excellence Awards for pioneering integration of clinical precision and luxury care.</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-glass-border/30 text-[9px] font-bold text-amber-600 tracking-widest uppercase font-navigation">Times Healthcare</div>
+        </div>
+
+        <!-- Award 2 -->
+        <div class="glass-card p-6 rounded-3xl border border-glass-border bg-white hover:-translate-y-1.5 hover:shadow-md transition-all duration-300 flex flex-col justify-between group">
+          <div class="space-y-3.5">
+            <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-600 flex items-center justify-center group-hover:scale-110 transition-transform">
+              <span class="material-symbols-outlined text-xl">reward</span>
+            </div>
+            <h4 class="font-bold text-deep-navy text-xs uppercase tracking-wider font-navigation">Clinical Safety Innovation</h4>
+            <p class="text-[10px] text-on-surface-variant leading-relaxed">Recognized at the National Medical Summit for maintaining a perfect sterile suite rating and zero-compromise protocol.</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-glass-border/30 text-[9px] font-bold text-amber-600 tracking-widest uppercase font-navigation">National Summit</div>
+        </div>
+
+        <!-- Award 3 -->
+        <div class="glass-card p-6 rounded-3xl border border-glass-border bg-white hover:-translate-y-1.5 hover:shadow-md transition-all duration-300 flex flex-col justify-between group">
+          <div class="space-y-3.5">
+            <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-600 flex items-center justify-center group-hover:scale-110 transition-transform">
+              <span class="material-symbols-outlined text-xl">workspace_premium</span>
+            </div>
+            <h4 class="font-bold text-deep-navy text-xs uppercase tracking-wider font-navigation">Golden Lotus Trophy</h4>
+            <p class="text-[10px] text-on-surface-variant leading-relaxed">Awarded for outstanding contribution to merging ancient Indian wellness philosophies (Vedic) with Western aesthetics.</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-glass-border/30 text-[9px] font-bold text-amber-600 tracking-widest uppercase font-navigation">Indian Wellness Forum</div>
+        </div>
+      </div>
+
+      <!-- 3. Memberships Pane -->
+      <div id="pane-memberships" class="cred-pane grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 transition-all duration-500 opacity-0 scale-95 hidden">
+        <!-- Membership 1 -->
+        <div class="glass-card p-6 rounded-3xl border border-glass-border bg-white hover:-translate-y-1.5 hover:shadow-md transition-all duration-300 flex flex-col justify-between group">
+          <div class="space-y-3.5">
+            <div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center group-hover:scale-110 transition-transform">
+              <span class="material-symbols-outlined text-xl">groups</span>
+            </div>
+            <h4 class="font-bold text-deep-navy text-xs uppercase tracking-wider font-navigation">IADVL Affiliated</h4>
+            <p class="text-[10px] text-on-surface-variant leading-relaxed">Our dermatologists are active life members of the Indian Association of Dermatologists, Venereologists and Leprologists.</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-glass-border/30 text-[9px] font-bold text-primary tracking-widest uppercase font-navigation">Life Membership</div>
+        </div>
+
+        <!-- Membership 2 -->
+        <div class="glass-card p-6 rounded-3xl border border-glass-border bg-white hover:-translate-y-1.5 hover:shadow-md transition-all duration-300 flex flex-col justify-between group">
+          <div class="space-y-3.5">
+            <div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center group-hover:scale-110 transition-transform">
+              <span class="material-symbols-outlined text-xl">medical_information</span>
+            </div>
+            <h4 class="font-bold text-deep-navy text-xs uppercase tracking-wider font-navigation">APSI Certified Surgeon Board</h4>
+            <p class="text-[10px] text-on-surface-variant leading-relaxed">Our board-certified plastic and reconstructive surgeons hold active status in the Association of Plastic Surgeons of India.</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-glass-border/30 text-[9px] font-bold text-primary tracking-widest uppercase font-navigation">Board Certified</div>
+        </div>
+
+        <!-- Membership 3 -->
+        <div class="glass-card p-6 rounded-3xl border border-glass-border bg-white hover:-translate-y-1.5 hover:shadow-md transition-all duration-300 flex flex-col justify-between group">
+          <div class="space-y-3.5">
+            <div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center group-hover:scale-110 transition-transform">
+              <span class="material-symbols-outlined text-xl">public</span>
+            </div>
+            <h4 class="font-bold text-deep-navy text-xs uppercase tracking-wider font-navigation">American Academy of Dermatology</h4>
+            <p class="text-[10px] text-on-surface-variant leading-relaxed">International members associated with AAD, keeping our clinic at the cutting edge of global dermatological research.</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-glass-border/30 text-[9px] font-bold text-primary tracking-widest uppercase font-navigation">International Associate</div>
+        </div>
+      </div>
+
+      <!-- 4. Partner Brands Pane -->
+      <div id="pane-partners" class="cred-pane transition-all duration-500 opacity-0 scale-95 hidden">
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
+          <!-- Partner 1 -->
+          <div class="glass-card p-6 rounded-2xl border border-glass-border bg-white flex flex-col items-center justify-center text-center gap-2 hover:-translate-y-1 hover:shadow-md transition-all group">
+            <div class="text-primary group-hover:scale-110 transition-transform">
+              <span class="material-symbols-outlined text-3xl">biotech</span>
+            </div>
+            <h5 class="font-bold text-deep-navy text-xs">Cynosure</h5>
+            <p class="text-[8px] text-on-surface-variant uppercase tracking-wider font-semibold">Laser Tech</p>
+          </div>
+          <!-- Partner 2 -->
+          <div class="glass-card p-6 rounded-2xl border border-glass-border bg-white flex flex-col items-center justify-center text-center gap-2 hover:-translate-y-1 hover:shadow-md transition-all group">
+            <div class="text-primary group-hover:scale-110 transition-transform">
+              <span class="material-symbols-outlined text-3xl">precision_manufacturing</span>
+            </div>
+            <h5 class="font-bold text-deep-navy text-xs">Alma Lasers</h5>
+            <p class="text-[8px] text-on-surface-variant uppercase tracking-wider font-semibold font-navigation">Equipment Partner</p>
+          </div>
+          <!-- Partner 3 -->
+          <div class="glass-card p-6 rounded-2xl border border-glass-border bg-white flex flex-col items-center justify-center text-center gap-2 hover:-translate-y-1 hover:shadow-md transition-all group">
+            <div class="text-primary group-hover:scale-110 transition-transform">
+              <span class="material-symbols-outlined text-3xl">water_drop</span>
+            </div>
+            <h5 class="font-bold text-deep-navy text-xs">HydraFacial</h5>
+            <p class="text-[8px] text-on-surface-variant uppercase tracking-wider font-semibold font-navigation">Dermal Infusion</p>
+          </div>
+          <!-- Partner 4 -->
+          <div class="glass-card p-6 rounded-2xl border border-glass-border bg-white flex flex-col items-center justify-center text-center gap-2 hover:-translate-y-1 hover:shadow-md transition-all group">
+            <div class="text-primary group-hover:scale-110 transition-transform">
+              <span class="material-symbols-outlined text-3xl">vaccines</span>
+            </div>
+            <h5 class="font-bold text-deep-navy text-xs">Allergan Aesthetics</h5>
+            <p class="text-[8px] text-on-surface-variant uppercase tracking-wider font-semibold font-navigation">Botox & Juvederm</p>
+          </div>
+          <!-- Partner 5 -->
+          <div class="glass-card p-6 rounded-2xl border border-glass-border bg-white flex flex-col items-center justify-center text-center gap-2 hover:-translate-y-1 hover:shadow-md transition-all group">
+            <div class="text-primary group-hover:scale-110 transition-transform">
+              <span class="material-symbols-outlined text-3xl">spa</span>
+            </div>
+            <h5 class="font-bold text-deep-navy text-xs">SkinCeuticals</h5>
+            <p class="text-[8px] text-on-surface-variant uppercase tracking-wider font-semibold font-navigation">Clinical Skincare</p>
+          </div>
+          <!-- Partner 6 -->
+          <div class="glass-card p-6 rounded-2xl border border-glass-border bg-white flex flex-col items-center justify-center text-center gap-2 hover:-translate-y-1 hover:shadow-md transition-all group">
+            <div class="text-primary group-hover:scale-110 transition-transform">
+              <span class="material-symbols-outlined text-3xl">science</span>
+            </div>
+            <h5 class="font-bold text-deep-navy text-xs">ZO Skin Health</h5>
+            <p class="text-[8px] text-on-surface-variant uppercase tracking-wider font-semibold font-navigation">Therapeutics</p>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -2307,7 +2534,7 @@
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 pt-8 border-t border-glass-border/60">
       <!-- Col 1: Brand Info (col-span-3) -->
       <div class="lg:col-span-3 space-y-4">
-        <a href="#hero" class="flex items-center shrink-0">
+        <a href="index.html#hero" class="flex items-center shrink-0">
           <img src="assets/logo.png" class="h-11 w-auto object-contain" alt="Elixir Health Care Clinic Logo">
         </a>
         <p class="text-xs text-on-surface-variant leading-relaxed font-body-md">
@@ -2328,12 +2555,12 @@
       <div class="lg:col-span-2 space-y-4">
         <h4 class="font-bold text-deep-navy uppercase tracking-wider text-xs border-b border-primary/20 pb-1.5 inline-block">Navigation</h4>
         <ul class="space-y-2 text-xs font-navigation overflow-hidden">
-          <li><a href="#hero" class="text-on-surface-variant hover:text-tertiary hover:translate-x-1.5 inline-block transition-all duration-300">Home</a></li>
-          <li><a href="#treatments" class="text-on-surface-variant hover:text-tertiary hover:translate-x-1.5 inline-block transition-all duration-300">Treatments</a></li>
-          <li><a href="#doctors" class="text-on-surface-variant hover:text-tertiary hover:translate-x-1.5 inline-block transition-all duration-300">Our Doctors</a></li>
-          <li><a href="#process" class="text-on-surface-variant hover:text-tertiary hover:translate-x-1.5 inline-block transition-all duration-300">The Process</a></li>
-          <li><a href="#reviews" class="text-on-surface-variant hover:text-tertiary hover:translate-x-1.5 inline-block transition-all duration-300">Reviews</a></li>
-          <li><a href="#about" class="text-on-surface-variant hover:text-tertiary hover:translate-x-1.5 inline-block transition-all duration-300">About Us</a></li>
+          <li><a href="index.html#hero" class="text-on-surface-variant hover:text-tertiary hover:translate-x-1.5 inline-block transition-all duration-300">Home</a></li>
+          <li><a href="index.html#treatments" class="text-on-surface-variant hover:text-tertiary hover:translate-x-1.5 inline-block transition-all duration-300">Treatments</a></li>
+          <li><a href="index.html#doctors" class="text-on-surface-variant hover:text-tertiary hover:translate-x-1.5 inline-block transition-all duration-300">Our Doctors</a></li>
+          <li><a href="index.html#process" class="text-on-surface-variant hover:text-tertiary hover:translate-x-1.5 inline-block transition-all duration-300">The Process</a></li>
+          <li><a href="index.html#reviews" class="text-on-surface-variant hover:text-tertiary hover:translate-x-1.5 inline-block transition-all duration-300">Reviews</a></li>
+          <li><a href="about.html" class="text-on-surface-variant hover:text-tertiary hover:translate-x-1.5 inline-block transition-all duration-300">About Us</a></li>
         </ul>
       </div>
       
@@ -2852,6 +3079,37 @@
                 const nameInput = document.getElementById('patient-name');
                 if (nameInput) nameInput.focus();
             }, 800);
+        }
+
+        // Credentials Switcher
+        function switchCredTab(tabId) {
+            // Deactivate all tab buttons
+            document.querySelectorAll('.cred-tab-btn').forEach(btn => {
+                btn.classList.remove('active-cred-tab', 'text-deep-navy');
+                btn.classList.add('text-on-surface-variant');
+            });
+            // Activate clicked button
+            const activeBtn = document.getElementById(`tab-btn-${tabId}`);
+            if (activeBtn) {
+                activeBtn.classList.add('active-cred-tab');
+                activeBtn.classList.remove('text-on-surface-variant');
+            }
+
+            // Hide all panes
+            document.querySelectorAll('.cred-pane').forEach(pane => {
+                pane.classList.add('opacity-0', 'scale-95', 'hidden');
+                pane.classList.remove('opacity-100', 'scale-100');
+            });
+
+            // Show selected pane with animation
+            const activePane = document.getElementById(`pane-${tabId}`);
+            if (activePane) {
+                activePane.classList.remove('hidden');
+                setTimeout(() => {
+                    activePane.classList.remove('opacity-0', 'scale-95');
+                    activePane.classList.add('opacity-100', 'scale-100');
+                }, 50);
+            }
         }
     </script>
 </body>
