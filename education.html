@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html class="scroll-smooth" lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>Educational Wellness Library | ELIXIR Clinic</title>
-    <meta name="description" content="Explore Elixir's medical skincare and hair health library. Access clinical guidelines, routines, ingredients directories, and take our interactive skin quiz.">
+    <meta name="description"
+        content="Explore Elixir's medical skincare and hair health library. Access clinical guidelines, routines, ingredients directories, and take our interactive skin quiz.">
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=Manrope:wght@500;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=Manrope:wght@500;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
     <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -47,15 +51,18 @@
             border: 1px solid rgba(255, 255, 255, 0.4);
             box-shadow: 0 8px 32px 0 rgba(15, 111, 255, 0.05);
         }
+
         .reveal-on-scroll {
             opacity: 0;
             transform: translateY(30px);
             transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
         }
+
         .reveal-on-scroll.active {
             opacity: 1;
             transform: translateY(0);
         }
+
         .filter-tab.active {
             background: #0a6c8f;
             color: white;
@@ -63,371 +70,520 @@
         }
     </style>
 </head>
+
 <body class="bg-background text-on-background font-body-md overflow-x-hidden">
 
-<!-- WebGL Background -->
-<div class="fixed inset-0 w-full h-full -z-10 opacity-40">
-    <canvas id="wellness-canvas" class="w-full h-full"></canvas>
-</div>
-
-<!-- Navigation Header -->
-<header class="fixed top-5 left-1/2 -translate-x-1/2 w-[90%] max-w-[1440px] rounded-full z-50 backdrop-blur-xl border flex justify-between items-center px-8 py-3 transition-all duration-500" style="background: linear-gradient(90deg, rgba(219, 234, 254, 0.45) 0%, rgba(255, 255, 255, 0.75) 50%, rgba(243, 232, 255, 0.45) 100%); border-color: rgba(255, 255, 255, 0.5); box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.05);" id="top-app-bar">
-  <a href="index.html#hero" class="flex items-center shrink-0">
-    <img src="assets/logo.png" class="h-10 lg:h-12 w-auto object-contain" alt="Elixir Health Care Clinic Logo">
-  </a>
-  <nav class="hidden md:flex items-center gap-8">
-    <a class="font-navigation text-navigation text-on-surface-variant hover:text-primary transition-colors" href="index.html#hero">Home</a>
-    <a class="font-navigation text-navigation text-on-surface-variant hover:text-primary transition-colors" href="treatments.html">Treatments</a>
-    <a class="font-navigation text-navigation text-on-surface-variant hover:text-primary transition-colors" href="index.html#doctors">Our Doctors</a>
-    <a class="font-navigation text-navigation text-on-surface-variant hover:text-primary transition-colors font-bold text-primary" href="education.html">Education</a>
-    <a class="font-navigation text-navigation text-on-surface-variant hover:text-primary transition-colors" href="about.html">About Us</a>
-    <a class="font-navigation text-navigation text-on-surface-variant hover:text-primary transition-colors" href="index.html#contact">Contact</a>
-  </nav>
-  <div class="flex items-center gap-4">
-    <a href="index.html#booking" class="bg-[#0e172c] text-white font-navigation text-navigation px-4 py-2 md:px-6 md:py-2.5 rounded-full hover:scale-105 transition-all flex items-center gap-1.5 shadow-md">
-      <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">calendar_today</span>
-      <span class="hidden sm:inline">BOOK NOW</span>
-    </a>
-    
-    <!-- Mobile Menu Button -->
-    <button id="open-menu-btn" class="w-10 h-10 rounded-full border border-glass-border flex items-center justify-center bg-white/20 backdrop-blur-md md:hidden hover:bg-white/40 transition-colors">
-      <span class="material-symbols-outlined text-deep-navy text-xl">menu</span>
-    </button>
-  </div>
-</header>
-
-<!-- Mobile Navigation Drawer Overlay -->
-<div id="mobile-menu" class="fixed inset-0 bg-[#0e172c]/95 backdrop-blur-xl z-[9999] transform translate-x-full transition-transform duration-300 flex flex-col justify-between p-8 text-white">
-  <div class="flex justify-between items-center">
-    <img src="assets/logo.png" class="h-10 w-auto object-contain brightness-0 invert" alt="Elixir Health Care Clinic Logo">
-    <button id="close-menu-btn" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-colors">
-      <span class="material-symbols-outlined text-white text-xl">close</span>
-    </button>
-  </div>
-  
-  <nav class="flex flex-col gap-6 text-xl font-navigation mt-12">
-    <a class="hover:text-primary transition-colors mobile-nav-link" href="index.html#hero">Home</a>
-    <a class="hover:text-primary transition-colors mobile-nav-link" href="treatments.html">Treatments</a>
-    <a class="hover:text-primary transition-colors mobile-nav-link" href="index.html#doctors">Our Doctors</a>
-    <a class="hover:text-primary transition-colors mobile-nav-link" href="education.html">Education</a>
-    <a class="hover:text-primary transition-colors mobile-nav-link" href="about.html">About Us</a>
-    <a class="hover:text-primary transition-colors mobile-nav-link" href="index.html#contact">Contact</a>
-  </nav>
-  
-  <div class="space-y-4">
-    <a href="index.html#booking" class="w-full bg-primary text-on-primary font-navigation text-center py-4 rounded-full primary-glow flex items-center justify-center gap-2 mobile-nav-link">
-      <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">calendar_today</span>
-      BOOK APPOINTMENT NOW
-    </a>
-    <p class="text-[10px] text-white/40 text-center uppercase tracking-widest">© 2024 Elixir Clinic</p>
-  </div>
-</div>
-
-<!-- Hero Section -->
-<section class="relative pt-36 pb-12 px-6">
-    <div class="max-w-[1440px] mx-auto text-center relative z-10 w-full">
-        <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary font-label-caps text-[9px] font-bold tracking-widest uppercase mb-4">
-            <span class="material-symbols-outlined text-xs">auto_stories</span>
-            ELIXIR KNOWLEDGE BASE
-        </span>
-        <h1 class="font-display-lg text-4xl lg:text-5xl leading-tight text-deep-navy font-bold mb-6">
-            Educational Wellness Library
-        </h1>
-        <p class="font-body-md text-on-surface-variant max-w-xl mx-auto leading-relaxed text-sm">
-            Read clinically-researched insights, step-by-step skincare routines, and active ingredient guides prepared by our board-certified dermatologists.
-        </p>
-    </div>
-</section>
-
-<!-- Main Library Section -->
-<section class="pb-24 px-6">
-    <div class="max-w-[1440px] mx-auto space-y-12">
-        <!-- Category Filter Tabs -->
-        <div class="flex flex-wrap justify-center gap-3">
-            <button onclick="filterCategory('all')" id="tab-all" class="filter-tab active px-5 py-2 rounded-full border border-glass-border bg-white text-xs font-bold font-navigation tracking-wider transition-all duration-300">
-                ALL RESOURCES
-            </button>
-            <button onclick="filterCategory('routines')" id="tab-routines" class="filter-tab px-5 py-2 rounded-full border border-glass-border bg-white text-xs font-bold font-navigation tracking-wider transition-all duration-300">
-                ROUTINES
-            </button>
-            <button onclick="filterCategory('skin')" id="tab-skin" class="filter-tab px-5 py-2 rounded-full border border-glass-border bg-white text-xs font-bold font-navigation tracking-wider transition-all duration-300">
-                SKIN CARE
-            </button>
-            <button onclick="filterCategory('hair')" id="tab-hair" class="filter-tab px-5 py-2 rounded-full border border-glass-border bg-white text-xs font-bold font-navigation tracking-wider transition-all duration-300">
-                HAIR CARE
-            </button>
-            <button onclick="filterCategory('tools')" id="tab-tools" class="filter-tab px-5 py-2 rounded-full border border-glass-border bg-white text-xs font-bold font-navigation tracking-wider transition-all duration-300">
-                DIAGNOSTIC TOOLS
-            </button>
-        </div>
-
-        <!-- Grid of Guides -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="guides-grid">
-            <!-- 1. Skin Type Quiz -->
-            <div class="guide-card-item glass-card rounded-3xl p-8 group hover:-translate-y-2 transition-all duration-500 reveal-on-scroll flex flex-col justify-between" data-category="tools">
-                <div class="space-y-4">
-                    <span class="text-[9px] font-bold text-tertiary uppercase tracking-widest block">Interactive Quiz</span>
-                    <h3 class="font-headline-md text-deep-navy font-bold text-lg group-hover:text-primary transition-colors">Interactive Skin Type Quiz</h3>
-                    <p class="text-on-surface-variant text-xs leading-relaxed">Answer 5 simple questions about your skin\'s behavior to find your skin type (Dry, Oily, Sensitive, or Combination) and unlock recommended treatments.</p>
-                </div>
-                <a href="guides/skin-type-quiz.html" class="mt-6 flex items-center justify-between text-xs font-bold text-primary group-hover:text-deep-navy transition-colors font-navigation border-t border-glass-border/40 pt-4">
-                    START QUIZ
-                    <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
-                </a>
-            </div>
-
-            <!-- 2. Daily Skincare Routine -->
-            <div class="guide-card-item glass-card rounded-3xl p-8 group hover:-translate-y-2 transition-all duration-500 reveal-on-scroll flex flex-col justify-between" data-category="routines">
-                <div class="space-y-4">
-                    <span class="text-[9px] font-bold text-primary uppercase tracking-widest block">Skincare Routines</span>
-                    <h3 class="font-headline-md text-deep-navy font-bold text-lg group-hover:text-primary transition-colors">The Daily Skincare Routine Blueprint</h3>
-                    <p class="text-on-surface-variant text-xs leading-relaxed">Learn the essential sequence for daily skincare maintenance, covering double cleansing, toning, active serums, and barrier hydration.</p>
-                </div>
-                <a href="guides/daily-skincare-routine.html" class="mt-6 flex items-center justify-between text-xs font-bold text-primary group-hover:text-deep-navy transition-colors font-navigation border-t border-glass-border/40 pt-4">
-                    READ ARTICLE
-                    <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
-                </a>
-            </div>
-
-            <!-- 3. Morning Routine -->
-            <div class="guide-card-item glass-card rounded-3xl p-8 group hover:-translate-y-2 transition-all duration-500 reveal-on-scroll flex flex-col justify-between" data-category="routines">
-                <div class="space-y-4">
-                    <span class="text-[9px] font-bold text-primary uppercase tracking-widest block">Skincare Routines</span>
-                    <h3 class="font-headline-md text-deep-navy font-bold text-lg group-hover:text-primary transition-colors">The Ultimate Morning Skincare Routine</h3>
-                    <p class="text-on-surface-variant text-xs leading-relaxed">Protect your skin from UV rays, environmental pollution, and blue light with a defense-focused morning skincare regimen.</p>
-                </div>
-                <a href="guides/morning-routine.html" class="mt-6 flex items-center justify-between text-xs font-bold text-primary group-hover:text-deep-navy transition-colors font-navigation border-t border-glass-border/40 pt-4">
-                    READ ARTICLE
-                    <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
-                </a>
-            </div>
-
-            <!-- 4. Night Routine -->
-            <div class="guide-card-item glass-card rounded-3xl p-8 group hover:-translate-y-2 transition-all duration-500 reveal-on-scroll flex flex-col justify-between" data-category="routines">
-                <div class="space-y-4">
-                    <span class="text-[9px] font-bold text-primary uppercase tracking-widest block">Skincare Routines</span>
-                    <h3 class="font-headline-md text-deep-navy font-bold text-lg group-hover:text-primary transition-colors">The Restorative Night Skincare Routine</h3>
-                    <p class="text-on-surface-variant text-xs leading-relaxed">Promote cellular regeneration and rebuild skin lipids while you sleep. A guide to applying retinoids, peptides, and barrier creams.</p>
-                </div>
-                <a href="guides/night-routine.html" class="mt-6 flex items-center justify-between text-xs font-bold text-primary group-hover:text-deep-navy transition-colors font-navigation border-t border-glass-border/40 pt-4">
-                    READ ARTICLE
-                    <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
-                </a>
-            </div>
-
-            <!-- 5. Ingredients Guide -->
-            <div class="guide-card-item glass-card rounded-3xl p-8 group hover:-translate-y-2 transition-all duration-500 reveal-on-scroll flex flex-col justify-between" data-category="skin">
-                <div class="space-y-4">
-                    <span class="text-[9px] font-bold text-primary uppercase tracking-widest block">Active Ingredients</span>
-                    <h3 class="font-headline-md text-deep-navy font-bold text-lg group-hover:text-primary transition-colors">The Skincare Ingredients Guide</h3>
-                    <p class="text-on-surface-variant text-xs leading-relaxed">Navigate the science behind active ingredients like Retinol, Hyaluronic Acid, Niacinamide, and traditional healing botanicals.</p>
-                </div>
-                <a href="guides/ingredients-guide.html" class="mt-6 flex items-center justify-between text-xs font-bold text-primary group-hover:text-deep-navy transition-colors font-navigation border-t border-glass-border/40 pt-4">
-                    READ ARTICLE
-                    <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
-                </a>
-            </div>
-
-            <!-- 6. Sunscreen Guide -->
-            <div class="guide-card-item glass-card rounded-3xl p-8 group hover:-translate-y-2 transition-all duration-500 reveal-on-scroll flex flex-col justify-between" data-category="skin">
-                <div class="space-y-4">
-                    <span class="text-[9px] font-bold text-primary uppercase tracking-widest block">Skin Protection</span>
-                    <h3 class="font-headline-md text-deep-navy font-bold text-lg group-hover:text-primary transition-colors">The Definitive Sunscreen Guide</h3>
-                    <p class="text-on-surface-variant text-xs leading-relaxed">Understand the difference between UVA and UVB rays, mineral vs chemical filters, SPF ratings, and proper application protocols.</p>
-                </div>
-                <a href="guides/sunscreen-guide.html" class="mt-6 flex items-center justify-between text-xs font-bold text-primary group-hover:text-deep-navy transition-colors font-navigation border-t border-glass-border/40 pt-4">
-                    READ ARTICLE
-                    <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
-                </a>
-            </div>
-
-            <!-- 7. Acne Guide -->
-            <div class="guide-card-item glass-card rounded-3xl p-8 group hover:-translate-y-2 transition-all duration-500 reveal-on-scroll flex flex-col justify-between" data-category="skin">
-                <div class="space-y-4">
-                    <span class="text-[9px] font-bold text-primary uppercase tracking-widest block">Dermatology Guides</span>
-                    <h3 class="font-headline-md text-deep-navy font-bold text-lg group-hover:text-primary transition-colors">Understanding Acne: Causes & Care</h3>
-                    <p class="text-on-surface-variant text-xs leading-relaxed">Explore the biological triggers of acne development—from sebum production to bacterial congestion—and clinical clearing systems.</p>
-                </div>
-                <a href="guides/acne-guide.html" class="mt-6 flex items-center justify-between text-xs font-bold text-primary group-hover:text-deep-navy transition-colors font-navigation border-t border-glass-border/40 pt-4">
-                    READ ARTICLE
-                    <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
-                </a>
-            </div>
-
-            <!-- 8. Anti-Aging Guide -->
-            <div class="guide-card-item glass-card rounded-3xl p-8 group hover:-translate-y-2 transition-all duration-500 reveal-on-scroll flex flex-col justify-between" data-category="skin">
-                <div class="space-y-4">
-                    <span class="text-[9px] font-bold text-primary uppercase tracking-widest block">Dermatology Guides</span>
-                    <h3 class="font-headline-md text-deep-navy font-bold text-lg group-hover:text-primary transition-colors">Preserving Youth: The Science of Anti-Aging</h3>
-                    <p class="text-on-surface-variant text-xs leading-relaxed">Understand collagen depletion, cellular free radicals, and how non-surgical clinical lifting technologies rebuild structural firmness.</p>
-                </div>
-                <a href="guides/anti-aging-guide.html" class="mt-6 flex items-center justify-between text-xs font-bold text-primary group-hover:text-deep-navy transition-colors font-navigation border-t border-glass-border/40 pt-4">
-                    READ ARTICLE
-                    <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
-                </a>
-            </div>
-
-            <!-- 9. Hair Care Guide -->
-            <div class="guide-card-item glass-card rounded-3xl p-8 group hover:-translate-y-2 transition-all duration-500 reveal-on-scroll flex flex-col justify-between" data-category="hair">
-                <div class="space-y-4">
-                    <span class="text-[9px] font-bold text-primary uppercase tracking-widest block">Hair & Scalp</span>
-                    <h3 class="font-headline-md text-deep-navy font-bold text-lg group-hover:text-primary transition-colors">The Science of Healthy Hair & Scalp</h3>
-                    <p class="text-on-surface-variant text-xs leading-relaxed">Maintain follicular nutrition and root health. Learn about scalp hygiene, botanical oil massage, and clinical regrowth systems.</p>
-                </div>
-                <a href="guides/hair-care-guide.html" class="mt-6 flex items-center justify-between text-xs font-bold text-primary group-hover:text-deep-navy transition-colors font-navigation border-t border-glass-border/40 pt-4">
-                    READ ARTICLE
-                    <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Main Footer -->
-<footer id="contact" class="w-full bg-[#f8fafc] text-on-surface relative border-t border-glass-border/40 py-12 lg:py-16">
-  <div class="max-w-[1440px] mx-auto px-6 relative z-10 w-full space-y-12">
-    <!-- Contact Info Cards Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-0 divide-y md:divide-y-0 lg:divide-x divide-glass-border border border-glass-border rounded-2xl bg-white shadow-sm overflow-hidden mb-6">
-      <div class="p-5 flex gap-4 items-start bg-white">
-        <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
-          <span class="material-symbols-outlined text-lg">location_on</span>
-        </div>
-        <div class="space-y-1">
-          <h5 class="text-[9px] font-bold text-primary uppercase tracking-wider leading-none">Address</h5>
-          <p class="text-[10px] leading-normal text-on-surface-variant font-navigation">123, Wellness Avenue, New Delhi, India</p>
-        </div>
-      </div>
-      <div class="p-5 flex gap-4 items-start bg-white">
-        <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
-          <span class="material-symbols-outlined text-lg">call</span>
-        </div>
-        <div class="space-y-1">
-          <h5 class="text-[9px] font-bold text-primary uppercase tracking-wider leading-none">Call Us</h5>
-          <p class="text-[10px] leading-normal text-on-surface-variant font-bold">+91 98765 43210</p>
-        </div>
-      </div>
-      <div class="p-5 flex gap-4 items-start bg-white">
-        <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
-          <span class="material-symbols-outlined text-lg">mail</span>
-        </div>
-        <div class="space-y-1">
-          <h5 class="text-[9px] font-bold text-primary uppercase tracking-wider leading-none">Email Us</h5>
-          <p class="text-[10px] leading-normal text-on-surface-variant font-bold font-navigation">info@elixirclinic.com</p>
-        </div>
-      </div>
-      <div class="p-5 flex gap-4 items-start bg-white">
-        <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
-          <span class="material-symbols-outlined text-lg">schedule</span>
-        </div>
-        <div class="space-y-1">
-          <h5 class="text-[9px] font-bold text-primary uppercase tracking-wider leading-none">Working Hours</h5>
-          <p class="text-[10px] leading-normal text-on-surface-variant font-bold">Mon - Sat : 10:00 AM - 8:00 PM</p>
-        </div>
-      </div>
-      <div class="p-5 flex gap-4 items-start bg-white">
-        <div class="w-10 h-10 rounded-full bg-red-500/10 flex items-center justify-center text-red-500 shrink-0">
-          <span class="material-symbols-outlined text-lg">campaign</span>
-        </div>
-        <div class="space-y-1">
-          <h5 class="text-[9px] font-bold text-red-500 uppercase tracking-wider leading-none">Emergency</h5>
-          <p class="text-[10px] leading-normal text-red-500 font-bold">24/7 Support: +91 99999 88888</p>
-        </div>
-      </div>
+    <!-- WebGL Background -->
+    <div class="fixed inset-0 w-full h-full -z-10 opacity-40">
+        <canvas id="wellness-canvas" class="w-full h-full"></canvas>
     </div>
 
-    <!-- Main Footer Detail Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 pt-8 border-t border-glass-border/60">
-      <div class="lg:col-span-3 space-y-4">
+    <!-- Navigation Header -->
+    <header
+        class="fixed top-5 left-1/2 -translate-x-1/2 w-[90%] max-w-[1440px] rounded-full z-50 backdrop-blur-xl border flex justify-between items-center px-8 py-3 transition-all duration-500"
+        style="background: linear-gradient(90deg, rgba(219, 234, 254, 0.45) 0%, rgba(255, 255, 255, 0.75) 50%, rgba(243, 232, 255, 0.45) 100%); border-color: rgba(255, 255, 255, 0.5); box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.05);"
+        id="top-app-bar">
         <a href="index.html#hero" class="flex items-center shrink-0">
-          <img src="assets/logo.png" class="h-11 w-auto object-contain" alt="Elixir Health Care Clinic Logo">
+            <img src="assets/logo.png" class="h-10 lg:h-12 w-auto object-contain" alt="Elixir Health Care Clinic Logo">
         </a>
-        <p class="text-xs text-on-surface-variant leading-relaxed font-body-md">
-          Combining advanced aesthetic medicine with timeless Ayurvedic grace. Experience clinical aesthetics designed to evoke your natural radiance.
-        </p>
-      </div>
-      
-      <div class="lg:col-span-2 space-y-4">
-        <h4 class="font-bold text-deep-navy uppercase tracking-wider text-xs border-b border-primary/20 pb-1.5 inline-block">Navigation</h4>
-        <ul class="space-y-2 text-xs font-navigation overflow-hidden">
-          <li><a href="index.html#hero" class="text-on-surface-variant hover:text-tertiary hover:translate-x-1.5 inline-block transition-all duration-300">Home</a></li>
-          <li><a href="treatments.html" class="text-on-surface-variant hover:text-tertiary hover:translate-x-1.5 inline-block transition-all duration-300">Treatments</a></li>
-          <li><a href="index.html#doctors" class="text-on-surface-variant hover:text-tertiary hover:translate-x-1.5 inline-block transition-all duration-300">Our Doctors</a></li>
-          <li><a href="education.html" class="text-on-surface-variant hover:text-tertiary hover:translate-x-1.5 inline-block transition-all duration-300 font-bold text-primary">Education</a></li>
-          <li><a href="about.html" class="text-on-surface-variant hover:text-tertiary hover:translate-x-1.5 inline-block transition-all duration-300">About Us</a></li>
-        </ul>
-      </div>
-      
-      <div class="lg:col-span-3 space-y-4">
-        <h4 class="font-bold text-deep-navy uppercase tracking-wider text-xs border-b border-primary/20 pb-1.5 inline-block">Bespoke Treatments</h4>
-        <ul class="space-y-2 text-xs font-navigation overflow-hidden">
-          <li><a href="treatments.html" class="text-on-surface-variant hover:text-tertiary hover:translate-x-1.5 inline-block transition-all duration-300">Laser Hair Reduction</a></li>
-          <li><a href="treatments.html" class="text-on-surface-variant hover:text-tertiary hover:translate-x-1.5 inline-block transition-all duration-300">Hydra Facial</a></li>
-          <li><a href="treatments.html" class="text-on-surface-variant hover:text-tertiary hover:translate-x-1.5 inline-block transition-all duration-300">Botox & Fillers</a></li>
-          <li><a href="treatments.html" class="text-on-surface-variant hover:text-tertiary hover:translate-x-1.5 inline-block transition-all duration-300">Hair Restoration</a></li>
-          <li><a href="treatments.html" class="text-on-surface-variant hover:text-tertiary hover:translate-x-1.5 inline-block transition-all duration-300">Rhinoplasty</a></li>
-          <li><a href="treatments.html" class="text-on-surface-variant hover:text-tertiary hover:translate-x-1.5 inline-block transition-all duration-300">PRP Therapy</a></li>
-        </ul>
-      </div>
-      
-      <div class="lg:col-span-4 space-y-4">
-        <h4 class="font-bold text-deep-navy uppercase tracking-wider text-xs border-b border-primary/20 pb-1.5 inline-block">Our Location</h4>
-        <div class="w-full h-36 rounded-2xl overflow-hidden border border-glass-border shadow-sm relative hover:scale-[1.01] hover:shadow-md transition-all duration-300">
-          <iframe 
-            class="w-full h-full grayscale contrast-[1.10] opacity-90 hover:grayscale-0 transition-all duration-500" 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.5620215431835!2d77.2182223150824!3d28.61393998242416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd37e2a9d809%3A0x2887a0ff877b0d7!2sConnaught+Place%2C+New+Delhi%2C+Delhi+110001!5e0!3m2!1sen!2sin!4v1545678901234" 
-            allowfullscreen="" 
-            loading="lazy">
-          </iframe>
+        <nav class="hidden md:flex items-center gap-8">
+            <a class="font-navigation text-navigation text-on-surface-variant hover:text-primary transition-colors"
+                href="index.html#hero">Home</a>
+            <a class="font-navigation text-navigation text-on-surface-variant hover:text-primary transition-colors"
+                href="treatments.html">Treatments</a>
+            <a class="font-navigation text-navigation text-on-surface-variant hover:text-primary transition-colors"
+                href="index.html#doctors">Our Doctors</a>
+            <a class="font-navigation text-navigation text-on-surface-variant hover:text-primary transition-colors font-bold text-primary"
+                href="education.html">Education</a>
+            <a class="font-navigation text-navigation text-on-surface-variant hover:text-primary transition-colors"
+                href="about.html">About Us</a>
+            <a class="font-navigation text-navigation text-on-surface-variant hover:text-primary transition-colors"
+                href="index.html#contact">Contact</a>
+        </nav>
+        <div class="flex items-center gap-4">
+            <a href="index.html#booking"
+                class="bg-[#0e172c] text-white font-navigation text-navigation px-4 py-2 md:px-6 md:py-2.5 rounded-full hover:scale-105 transition-all flex items-center gap-1.5 shadow-md">
+                <span class="material-symbols-outlined text-sm"
+                    style="font-variation-settings: 'FILL' 1;">calendar_today</span>
+                <span class="hidden sm:inline">BOOK NOW</span>
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <button id="open-menu-btn"
+                class="w-10 h-10 rounded-full border border-glass-border flex items-center justify-center bg-white/20 backdrop-blur-md md:hidden hover:bg-white/40 transition-colors">
+                <span class="material-symbols-outlined text-deep-navy text-xl">menu</span>
+            </button>
         </div>
-      </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer Overlay -->
+    <div id="mobile-menu"
+        class="fixed inset-0 bg-black/40 backdrop-blur-sm z-[9999] opacity-0 pointer-events-none transition-opacity duration-300">
+        <div id="mobile-sidebar"
+            class="absolute right-0 top-0 h-full w-[280px] bg-[#0e172c] shadow-2xl p-8 flex flex-col justify-between transform translate-x-full transition-transform duration-300">
+            <div class="flex justify-between items-center">
+                <img src="assets/logo.png" class="h-8 w-auto object-contain brightness-0 invert"
+                    alt="Elixir Health Care Clinic Logo">
+                <button id="close-menu-btn"
+                    class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-colors">
+                    <span class="material-symbols-outlined text-white text-base">close</span>
+                </button>
+            </div>
+
+            <nav class="flex flex-col gap-5 text-base font-navigation mt-8">
+                <a class="hover:text-primary transition-colors mobile-nav-link text-white"
+                    href="index.html#hero">Home</a>
+                <a class="hover:text-primary transition-colors mobile-nav-link text-white"
+                    href="treatments.html">Treatments</a>
+                <a class="hover:text-primary transition-colors mobile-nav-link text-white" href="index.html#doctors">Our
+                    Doctors</a>
+                <a class="hover:text-primary transition-colors mobile-nav-link text-white"
+                    href="education.html">Education</a>
+                <a class="hover:text-primary transition-colors mobile-nav-link text-white" href="about.html">About
+                    Us</a>
+                <a class="hover:text-primary transition-colors mobile-nav-link text-white"
+                    href="index.html#contact">Contact</a>
+            </nav>
+
+            <div class="space-y-4">
+                <a href="index.html#booking"
+                    class="w-full bg-primary text-on-primary font-navigation text-center py-3 rounded-full primary-glow flex items-center justify-center gap-2 mobile-nav-link text-xs">
+                    <span class="material-symbols-outlined text-xs"
+                        style="font-variation-settings: 'FILL' 1;">calendar_today</span>
+                    BOOK APPOINTMENT
+                </a>
+                <p class="text-[9px] text-white/30 text-center uppercase tracking-widest">© 2024 Elixir Clinic</p>
+            </div>
+        </div>
     </div>
 
-    <!-- Bottom Copyright -->
-    <div class="pt-8 border-t border-glass-border/40 flex flex-col md:flex-row justify-between items-center gap-4 text-center">
-      <p class="text-[9px] font-navigation tracking-wider text-on-surface-variant uppercase">
-        © 2024 Elixir Health Care Clinic. All rights reserved.
-      </p>
-    </div>
-  </div>
-</footer>
+    <!-- Hero Section -->
+    <section class="relative pt-36 pb-12 px-6">
+        <div class="max-w-[1440px] mx-auto text-center relative z-10 w-full">
+            <span
+                class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary font-label-caps text-[9px] font-bold tracking-widest uppercase mb-4">
+                <span class="material-symbols-outlined text-xs">auto_stories</span>
+                ELIXIR KNOWLEDGE BASE
+            </span>
+            <h1 class="font-display-lg text-4xl lg:text-5xl leading-tight text-deep-navy font-bold mb-6">
+                Educational Wellness Library
+            </h1>
+            <p class="font-body-md text-on-surface-variant max-w-xl mx-auto leading-relaxed text-sm">
+                Read clinically-researched insights, step-by-step skincare routines, and active ingredient guides
+                prepared by our board-certified dermatologists.
+            </p>
+        </div>
+    </section>
 
-<script>
-    // Category Filtering
-    function filterCategory(category) {
-        // Update active tab class
-        document.querySelectorAll('.filter-tab').forEach(tab => {
-            tab.classList.remove('active');
-        });
-        document.getElementById(`tab-${category}`).classList.add('active');
+    <!-- Main Library Section -->
+    <section class="pb-24 px-6">
+        <div class="max-w-[1440px] mx-auto space-y-12">
+            <!-- Category Filter Tabs -->
+            <div class="flex flex-wrap justify-center gap-3">
+                <button onclick="filterCategory('all')" id="tab-all"
+                    class="filter-tab active px-5 py-2 rounded-full border border-glass-border bg-white text-xs font-bold font-navigation tracking-wider transition-all duration-300">
+                    ALL RESOURCES
+                </button>
+                <button onclick="filterCategory('routines')" id="tab-routines"
+                    class="filter-tab px-5 py-2 rounded-full border border-glass-border bg-white text-xs font-bold font-navigation tracking-wider transition-all duration-300">
+                    ROUTINES
+                </button>
+                <button onclick="filterCategory('skin')" id="tab-skin"
+                    class="filter-tab px-5 py-2 rounded-full border border-glass-border bg-white text-xs font-bold font-navigation tracking-wider transition-all duration-300">
+                    SKIN CARE
+                </button>
+                <button onclick="filterCategory('hair')" id="tab-hair"
+                    class="filter-tab px-5 py-2 rounded-full border border-glass-border bg-white text-xs font-bold font-navigation tracking-wider transition-all duration-300">
+                    HAIR CARE
+                </button>
+                <button onclick="filterCategory('tools')" id="tab-tools"
+                    class="filter-tab px-5 py-2 rounded-full border border-glass-border bg-white text-xs font-bold font-navigation tracking-wider transition-all duration-300">
+                    DIAGNOSTIC TOOLS
+                </button>
+            </div>
 
-        // Show/hide cards
-        document.querySelectorAll('.guide-card-item').forEach(card => {
-            if (category === 'all' || card.getAttribute('data-category') === category) {
-                card.classList.remove('hidden');
-            } else {
-                card.classList.add('hidden');
-            }
-        });
-    }
+            <!-- Grid of Guides -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="guides-grid">
+                <!-- 1. Skin Type Quiz -->
+                <div class="guide-card-item glass-card rounded-3xl p-8 group hover:-translate-y-2 transition-all duration-500 reveal-on-scroll flex flex-col justify-between"
+                    data-category="tools">
+                    <div class="space-y-4">
+                        <span class="text-[9px] font-bold text-tertiary uppercase tracking-widest block">Interactive
+                            Quiz</span>
+                        <h3
+                            class="font-headline-md text-deep-navy font-bold text-lg group-hover:text-primary transition-colors">
+                            Interactive Skin Type Quiz</h3>
+                        <p class="text-on-surface-variant text-xs leading-relaxed">Answer 5 simple questions about your
+                            skin\'s behavior to find your skin type (Dry, Oily, Sensitive, or Combination) and unlock
+                            recommended treatments.</p>
+                    </div>
+                    <a href="guides/skin-type-quiz.html"
+                        class="mt-6 flex items-center justify-between text-xs font-bold text-primary group-hover:text-deep-navy transition-colors font-navigation border-t border-glass-border/40 pt-4">
+                        START QUIZ
+                        <span
+                            class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                    </a>
+                </div>
 
-    // -------------------------------------------------------------
-    // WebGL Canvas Background Fluid Animation
-    // -------------------------------------------------------------
-    const canvas = document.getElementById('wellness-canvas');
-    if (canvas) {
-        const gl = canvas.getContext('webgl');
-        if (gl) {
-            let width = canvas.width = window.innerWidth;
-            let height = canvas.height = window.innerHeight;
+                <!-- 2. Daily Skincare Routine -->
+                <div class="guide-card-item glass-card rounded-3xl p-8 group hover:-translate-y-2 transition-all duration-500 reveal-on-scroll flex flex-col justify-between"
+                    data-category="routines">
+                    <div class="space-y-4">
+                        <span class="text-[9px] font-bold text-primary uppercase tracking-widest block">Skincare
+                            Routines</span>
+                        <h3
+                            class="font-headline-md text-deep-navy font-bold text-lg group-hover:text-primary transition-colors">
+                            The Daily Skincare Routine Blueprint</h3>
+                        <p class="text-on-surface-variant text-xs leading-relaxed">Learn the essential sequence for
+                            daily skincare maintenance, covering double cleansing, toning, active serums, and barrier
+                            hydration.</p>
+                    </div>
+                    <a href="guides/daily-skincare-routine.html"
+                        class="mt-6 flex items-center justify-between text-xs font-bold text-primary group-hover:text-deep-navy transition-colors font-navigation border-t border-glass-border/40 pt-4">
+                        READ ARTICLE
+                        <span
+                            class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                    </a>
+                </div>
 
-            const vertexShaderSource = `
+                <!-- 3. Morning Routine -->
+                <div class="guide-card-item glass-card rounded-3xl p-8 group hover:-translate-y-2 transition-all duration-500 reveal-on-scroll flex flex-col justify-between"
+                    data-category="routines">
+                    <div class="space-y-4">
+                        <span class="text-[9px] font-bold text-primary uppercase tracking-widest block">Skincare
+                            Routines</span>
+                        <h3
+                            class="font-headline-md text-deep-navy font-bold text-lg group-hover:text-primary transition-colors">
+                            The Ultimate Morning Skincare Routine</h3>
+                        <p class="text-on-surface-variant text-xs leading-relaxed">Protect your skin from UV rays,
+                            environmental pollution, and blue light with a defense-focused morning skincare regimen.</p>
+                    </div>
+                    <a href="guides/morning-routine.html"
+                        class="mt-6 flex items-center justify-between text-xs font-bold text-primary group-hover:text-deep-navy transition-colors font-navigation border-t border-glass-border/40 pt-4">
+                        READ ARTICLE
+                        <span
+                            class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                    </a>
+                </div>
+
+                <!-- 4. Night Routine -->
+                <div class="guide-card-item glass-card rounded-3xl p-8 group hover:-translate-y-2 transition-all duration-500 reveal-on-scroll flex flex-col justify-between"
+                    data-category="routines">
+                    <div class="space-y-4">
+                        <span class="text-[9px] font-bold text-primary uppercase tracking-widest block">Skincare
+                            Routines</span>
+                        <h3
+                            class="font-headline-md text-deep-navy font-bold text-lg group-hover:text-primary transition-colors">
+                            The Restorative Night Skincare Routine</h3>
+                        <p class="text-on-surface-variant text-xs leading-relaxed">Promote cellular regeneration and
+                            rebuild skin lipids while you sleep. A guide to applying retinoids, peptides, and barrier
+                            creams.</p>
+                    </div>
+                    <a href="guides/night-routine.html"
+                        class="mt-6 flex items-center justify-between text-xs font-bold text-primary group-hover:text-deep-navy transition-colors font-navigation border-t border-glass-border/40 pt-4">
+                        READ ARTICLE
+                        <span
+                            class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                    </a>
+                </div>
+
+                <!-- 5. Ingredients Guide -->
+                <div class="guide-card-item glass-card rounded-3xl p-8 group hover:-translate-y-2 transition-all duration-500 reveal-on-scroll flex flex-col justify-between"
+                    data-category="skin">
+                    <div class="space-y-4">
+                        <span class="text-[9px] font-bold text-primary uppercase tracking-widest block">Active
+                            Ingredients</span>
+                        <h3
+                            class="font-headline-md text-deep-navy font-bold text-lg group-hover:text-primary transition-colors">
+                            The Skincare Ingredients Guide</h3>
+                        <p class="text-on-surface-variant text-xs leading-relaxed">Navigate the science behind active
+                            ingredients like Retinol, Hyaluronic Acid, Niacinamide, and traditional healing botanicals.
+                        </p>
+                    </div>
+                    <a href="guides/ingredients-guide.html"
+                        class="mt-6 flex items-center justify-between text-xs font-bold text-primary group-hover:text-deep-navy transition-colors font-navigation border-t border-glass-border/40 pt-4">
+                        READ ARTICLE
+                        <span
+                            class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                    </a>
+                </div>
+
+                <!-- 6. Sunscreen Guide -->
+                <div class="guide-card-item glass-card rounded-3xl p-8 group hover:-translate-y-2 transition-all duration-500 reveal-on-scroll flex flex-col justify-between"
+                    data-category="skin">
+                    <div class="space-y-4">
+                        <span class="text-[9px] font-bold text-primary uppercase tracking-widest block">Skin
+                            Protection</span>
+                        <h3
+                            class="font-headline-md text-deep-navy font-bold text-lg group-hover:text-primary transition-colors">
+                            The Definitive Sunscreen Guide</h3>
+                        <p class="text-on-surface-variant text-xs leading-relaxed">Understand the difference between UVA
+                            and UVB rays, mineral vs chemical filters, SPF ratings, and proper application protocols.
+                        </p>
+                    </div>
+                    <a href="guides/sunscreen-guide.html"
+                        class="mt-6 flex items-center justify-between text-xs font-bold text-primary group-hover:text-deep-navy transition-colors font-navigation border-t border-glass-border/40 pt-4">
+                        READ ARTICLE
+                        <span
+                            class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                    </a>
+                </div>
+
+                <!-- 7. Acne Guide -->
+                <div class="guide-card-item glass-card rounded-3xl p-8 group hover:-translate-y-2 transition-all duration-500 reveal-on-scroll flex flex-col justify-between"
+                    data-category="skin">
+                    <div class="space-y-4">
+                        <span class="text-[9px] font-bold text-primary uppercase tracking-widest block">Dermatology
+                            Guides</span>
+                        <h3
+                            class="font-headline-md text-deep-navy font-bold text-lg group-hover:text-primary transition-colors">
+                            Understanding Acne: Causes & Care</h3>
+                        <p class="text-on-surface-variant text-xs leading-relaxed">Explore the biological triggers of
+                            acne development—from sebum production to bacterial congestion—and clinical clearing
+                            systems.</p>
+                    </div>
+                    <a href="guides/acne-guide.html"
+                        class="mt-6 flex items-center justify-between text-xs font-bold text-primary group-hover:text-deep-navy transition-colors font-navigation border-t border-glass-border/40 pt-4">
+                        READ ARTICLE
+                        <span
+                            class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                    </a>
+                </div>
+
+                <!-- 8. Anti-Aging Guide -->
+                <div class="guide-card-item glass-card rounded-3xl p-8 group hover:-translate-y-2 transition-all duration-500 reveal-on-scroll flex flex-col justify-between"
+                    data-category="skin">
+                    <div class="space-y-4">
+                        <span class="text-[9px] font-bold text-primary uppercase tracking-widest block">Dermatology
+                            Guides</span>
+                        <h3
+                            class="font-headline-md text-deep-navy font-bold text-lg group-hover:text-primary transition-colors">
+                            Preserving Youth: The Science of Anti-Aging</h3>
+                        <p class="text-on-surface-variant text-xs leading-relaxed">Understand collagen depletion,
+                            cellular free radicals, and how non-surgical clinical lifting technologies rebuild
+                            structural firmness.</p>
+                    </div>
+                    <a href="guides/anti-aging-guide.html"
+                        class="mt-6 flex items-center justify-between text-xs font-bold text-primary group-hover:text-deep-navy transition-colors font-navigation border-t border-glass-border/40 pt-4">
+                        READ ARTICLE
+                        <span
+                            class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                    </a>
+                </div>
+
+                <!-- 9. Hair Care Guide -->
+                <div class="guide-card-item glass-card rounded-3xl p-8 group hover:-translate-y-2 transition-all duration-500 reveal-on-scroll flex flex-col justify-between"
+                    data-category="hair">
+                    <div class="space-y-4">
+                        <span class="text-[9px] font-bold text-primary uppercase tracking-widest block">Hair &
+                            Scalp</span>
+                        <h3
+                            class="font-headline-md text-deep-navy font-bold text-lg group-hover:text-primary transition-colors">
+                            The Science of Healthy Hair & Scalp</h3>
+                        <p class="text-on-surface-variant text-xs leading-relaxed">Maintain follicular nutrition and
+                            root health. Learn about scalp hygiene, botanical oil massage, and clinical regrowth
+                            systems.</p>
+                    </div>
+                    <a href="guides/hair-care-guide.html"
+                        class="mt-6 flex items-center justify-between text-xs font-bold text-primary group-hover:text-deep-navy transition-colors font-navigation border-t border-glass-border/40 pt-4">
+                        READ ARTICLE
+                        <span
+                            class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Footer -->
+    <footer id="contact"
+        class="w-full bg-[#f8fafc] text-on-surface relative border-t border-glass-border/40 py-12 lg:py-16">
+        <div class="max-w-[1440px] mx-auto px-6 relative z-10 w-full space-y-12">
+            <!-- Contact Info Cards Grid -->
+            <div
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-0 divide-y md:divide-y-0 lg:divide-x divide-glass-border border border-glass-border rounded-2xl bg-white shadow-sm overflow-hidden mb-6">
+                <div class="p-5 flex gap-4 items-start bg-white">
+                    <div
+                        class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                        <span class="material-symbols-outlined text-lg">location_on</span>
+                    </div>
+                    <div class="space-y-1">
+                        <h5 class="text-[9px] font-bold text-primary uppercase tracking-wider leading-none">Address</h5>
+                        <p class="text-[10px] leading-normal text-on-surface-variant font-navigation">123, Wellness
+                            Avenue, New Delhi, India</p>
+                    </div>
+                </div>
+                <div class="p-5 flex gap-4 items-start bg-white">
+                    <div
+                        class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                        <span class="material-symbols-outlined text-lg">call</span>
+                    </div>
+                    <div class="space-y-1">
+                        <h5 class="text-[9px] font-bold text-primary uppercase tracking-wider leading-none">Call Us</h5>
+                        <p class="text-[10px] leading-normal text-on-surface-variant font-bold">+91 98765 43210</p>
+                    </div>
+                </div>
+                <div class="p-5 flex gap-4 items-start bg-white">
+                    <div
+                        class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                        <span class="material-symbols-outlined text-lg">mail</span>
+                    </div>
+                    <div class="space-y-1">
+                        <h5 class="text-[9px] font-bold text-primary uppercase tracking-wider leading-none">Email Us
+                        </h5>
+                        <p class="text-[10px] leading-normal text-on-surface-variant font-bold font-navigation">
+                            info@elixirclinic.com</p>
+                    </div>
+                </div>
+                <div class="p-5 flex gap-4 items-start bg-white">
+                    <div
+                        class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                        <span class="material-symbols-outlined text-lg">schedule</span>
+                    </div>
+                    <div class="space-y-1">
+                        <h5 class="text-[9px] font-bold text-primary uppercase tracking-wider leading-none">Working
+                            Hours</h5>
+                        <p class="text-[10px] leading-normal text-on-surface-variant font-bold">Mon - Sat : 10:00 AM -
+                            8:00 PM</p>
+                    </div>
+                </div>
+                <div class="p-5 flex gap-4 items-start bg-white">
+                    <div
+                        class="w-10 h-10 rounded-full bg-red-500/10 flex items-center justify-center text-red-500 shrink-0">
+                        <span class="material-symbols-outlined text-lg">campaign</span>
+                    </div>
+                    <div class="space-y-1">
+                        <h5 class="text-[9px] font-bold text-red-500 uppercase tracking-wider leading-none">Emergency
+                        </h5>
+                        <p class="text-[10px] leading-normal text-red-500 font-bold">24/7 Support: +91 99999 88888</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Footer Detail Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 pt-8 border-t border-glass-border/60">
+                <div class="lg:col-span-3 space-y-4">
+                    <a href="index.html#hero" class="flex items-center shrink-0">
+                        <img src="assets/logo.png" class="h-11 w-auto object-contain"
+                            alt="Elixir Health Care Clinic Logo">
+                    </a>
+                    <p class="text-xs text-on-surface-variant leading-relaxed font-body-md">
+                        Combining advanced aesthetic medicine with timeless Ayurvedic grace. Experience clinical
+                        aesthetics designed to evoke your natural radiance.
+                    </p>
+                </div>
+
+                <div class="lg:col-span-2 space-y-4">
+                    <h4
+                        class="font-bold text-deep-navy uppercase tracking-wider text-xs border-b border-primary/20 pb-1.5 inline-block">
+                        Navigation</h4>
+                    <ul class="space-y-2 text-xs font-navigation overflow-hidden">
+                        <li><a href="index.html#hero"
+                                class="text-on-surface-variant hover:text-tertiary hover:translate-x-1.5 inline-block transition-all duration-300">Home</a>
+                        </li>
+                        <li><a href="treatments.html"
+                                class="text-on-surface-variant hover:text-tertiary hover:translate-x-1.5 inline-block transition-all duration-300">Treatments</a>
+                        </li>
+                        <li><a href="index.html#doctors"
+                                class="text-on-surface-variant hover:text-tertiary hover:translate-x-1.5 inline-block transition-all duration-300">Our
+                                Doctors</a></li>
+                        <li><a href="education.html"
+                                class="text-on-surface-variant hover:text-tertiary hover:translate-x-1.5 inline-block transition-all duration-300 font-bold text-primary">Education</a>
+                        </li>
+                        <li><a href="about.html"
+                                class="text-on-surface-variant hover:text-tertiary hover:translate-x-1.5 inline-block transition-all duration-300">About
+                                Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="lg:col-span-3 space-y-4">
+                    <h4
+                        class="font-bold text-deep-navy uppercase tracking-wider text-xs border-b border-primary/20 pb-1.5 inline-block">
+                        Bespoke Treatments</h4>
+                    <ul class="space-y-2 text-xs font-navigation overflow-hidden">
+                        <li><a href="treatments.html"
+                                class="text-on-surface-variant hover:text-tertiary hover:translate-x-1.5 inline-block transition-all duration-300">Laser
+                                Hair Reduction</a></li>
+                        <li><a href="treatments.html"
+                                class="text-on-surface-variant hover:text-tertiary hover:translate-x-1.5 inline-block transition-all duration-300">Hydra
+                                Facial</a></li>
+                        <li><a href="treatments.html"
+                                class="text-on-surface-variant hover:text-tertiary hover:translate-x-1.5 inline-block transition-all duration-300">Botox
+                                & Fillers</a></li>
+                        <li><a href="treatments.html"
+                                class="text-on-surface-variant hover:text-tertiary hover:translate-x-1.5 inline-block transition-all duration-300">Hair
+                                Restoration</a></li>
+                        <li><a href="treatments.html"
+                                class="text-on-surface-variant hover:text-tertiary hover:translate-x-1.5 inline-block transition-all duration-300">Rhinoplasty</a>
+                        </li>
+                        <li><a href="treatments.html"
+                                class="text-on-surface-variant hover:text-tertiary hover:translate-x-1.5 inline-block transition-all duration-300">PRP
+                                Therapy</a></li>
+                    </ul>
+                </div>
+
+                <div class="lg:col-span-4 space-y-4">
+                    <h4
+                        class="font-bold text-deep-navy uppercase tracking-wider text-xs border-b border-primary/20 pb-1.5 inline-block">
+                        Our Location</h4>
+                    <div
+                        class="w-full h-36 rounded-2xl overflow-hidden border border-glass-border shadow-sm relative hover:scale-[1.01] hover:shadow-md transition-all duration-300">
+                        <iframe
+                            class="w-full h-full grayscale contrast-[1.10] opacity-90 hover:grayscale-0 transition-all duration-500"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.5620215431835!2d77.2182223150824!3d28.61393998242416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd37e2a9d809%3A0x2887a0ff877b0d7!2sConnaught+Place%2C+New+Delhi%2C+Delhi+110001!5e0!3m2!1sen!2sin!4v1545678901234"
+                            allowfullscreen="" loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Copyright -->
+            <div
+                class="pt-8 border-t border-glass-border/40 flex flex-col md:flex-row justify-between items-center gap-4 text-center">
+                <p class="text-[9px] font-navigation tracking-wider text-on-surface-variant uppercase">
+                    © 2024 Elixir Health Care Clinic. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Category Filtering
+        function filterCategory(category) {
+            // Update active tab class
+            document.querySelectorAll('.filter-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.getElementById(`tab-${category}`).classList.add('active');
+
+            // Show/hide cards
+            document.querySelectorAll('.guide-card-item').forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        }
+
+        // -------------------------------------------------------------
+        // WebGL Canvas Background Fluid Animation
+        // -------------------------------------------------------------
+        const canvas = document.getElementById('wellness-canvas');
+        if (canvas) {
+            const gl = canvas.getContext('webgl');
+            if (gl) {
+                let width = canvas.width = window.innerWidth;
+                let height = canvas.height = window.innerHeight;
+
+                const vertexShaderSource = `
                 attribute vec2 position;
                 void main() {
                     gl_Position = vec4(position, 0.0, 1.0);
                 }
             `;
 
-            const fragmentShaderSource = `
+                const fragmentShaderSource = `
                 precision highp float;
                 uniform vec2 u_resolution;
                 uniform float u_time;
@@ -449,90 +605,91 @@
                 }
             `;
 
-            function createShader(gl, type, source) {
-                const shader = gl.createShader(type);
-                gl.shaderSource(shader, source);
-                gl.compileShader(shader);
-                return shader;
-            }
+                function createShader(gl, type, source) {
+                    const shader = gl.createShader(type);
+                    gl.shaderSource(shader, source);
+                    gl.compileShader(shader);
+                    return shader;
+                }
 
-            const vs = createShader(gl, gl.VERTEX_SHADER, vertexShaderSource);
-            const fs = createShader(gl, gl.FRAGMENT_SHADER, fragmentShaderSource);
-            const program = gl.createProgram();
-            gl.attachShader(program, vs);
-            gl.attachShader(program, fs);
-            gl.linkProgram(program);
-            gl.useProgram(program);
+                const vs = createShader(gl, gl.VERTEX_SHADER, vertexShaderSource);
+                const fs = createShader(gl, gl.FRAGMENT_SHADER, fragmentShaderSource);
+                const program = gl.createProgram();
+                gl.attachShader(program, vs);
+                gl.attachShader(program, fs);
+                gl.linkProgram(program);
+                gl.useProgram(program);
 
-            const buffer = gl.createBuffer();
-            gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
-            gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([
-                -1.0, -1.0,  1.0, -1.0, -1.0,  1.0,
-                -1.0,  1.0,  1.0, -1.0,  1.0,  1.0
-            ]), gl.STATIC_DRAW);
+                const buffer = gl.createBuffer();
+                gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
+                gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([
+                    -1.0, -1.0, 1.0, -1.0, -1.0, 1.0,
+                    -1.0, 1.0, 1.0, -1.0, 1.0, 1.0
+                ]), gl.STATIC_DRAW);
 
-            const posLoc = gl.getAttribLocation(program, 'position');
-            gl.enableVertexAttribArray(posLoc);
-            gl.vertexAttribPointer(posLoc, 2, gl.FLOAT, false, 0, 0);
+                const posLoc = gl.getAttribLocation(program, 'position');
+                gl.enableVertexAttribArray(posLoc);
+                gl.vertexAttribPointer(posLoc, 2, gl.FLOAT, false, 0, 0);
 
-            const resLoc = gl.getUniformLocation(program, 'u_resolution');
-            const timeLoc = gl.getUniformLocation(program, 'u_time');
+                const resLoc = gl.getUniformLocation(program, 'u_resolution');
+                const timeLoc = gl.getUniformLocation(program, 'u_time');
 
-            function render(time) {
-                gl.uniform2f(resLoc, width, height);
-                gl.uniform1f(timeLoc, time * 0.001);
-                gl.viewport(0, 0, width, height);
-                gl.drawArrays(gl.TRIANGLES, 0, 6);
+                function render(time) {
+                    gl.uniform2f(resLoc, width, height);
+                    gl.uniform1f(timeLoc, time * 0.001);
+                    gl.viewport(0, 0, width, height);
+                    gl.drawArrays(gl.TRIANGLES, 0, 6);
+                    requestAnimationFrame(render);
+                }
                 requestAnimationFrame(render);
-            }
-            requestAnimationFrame(render);
 
-            window.addEventListener('resize', () => {
-                width = canvas.width = window.innerWidth;
-                height = canvas.height = window.innerHeight;
-            });
+                window.addEventListener('resize', () => {
+                    width = canvas.width = window.innerWidth;
+                    height = canvas.height = window.innerHeight;
+                });
+            }
         }
-    }
 
-    // Scroll Reveal Intersection
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-    };
+        // Scroll Reveal Intersection
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
 
-    const revealObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-                observer.unobserve(entry.target);
-            }
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal-on-scroll').forEach(el => {
+            revealObserver.observe(el);
         });
-    }, observerOptions);
 
-    document.querySelectorAll('.reveal-on-scroll').forEach(el => {
-        revealObserver.observe(el);
-    });
+        // Mobile Navigation Drawer Toggle
+        const openMenuBtn = document.getElementById('open-menu-btn');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
 
-    // Mobile Navigation Drawer Toggle
-    const openMenuBtn = document.getElementById('open-menu-btn');
-    const closeMenuBtn = document.getElementById('close-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
-
-    if (openMenuBtn && closeMenuBtn && mobileMenu) {
-        openMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.remove('translate-x-full');
-        });
-        closeMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.add('translate-x-full');
-        });
-        mobileNavLinks.forEach(link => {
-            link.addEventListener('click', () => {
+        if (openMenuBtn && closeMenuBtn && mobileMenu) {
+            openMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.remove('translate-x-full');
+            });
+            closeMenuBtn.addEventListener('click', () => {
                 mobileMenu.classList.add('translate-x-full');
             });
-        });
-    }
-</script>
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('translate-x-full');
+                });
+            });
+        }
+    </script>
 </body>
+
 </html>
