@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Chemical Peel | ELIXIR - Advanced Healthcare & Cinematic Wellness</title>
-    <meta name="description" content="Reveal smooth, radiant skin with professional Chemical Peels at Elixir Clinic. Tailored glycolic, lactic, and salicylic acid formulas for clinical resurfacing.">
+    <title>The Science of Healthy Hair & Scalp Care | ELIXIR - Educational Wellness Library</title>
+    <meta name="description" content="Keep your hair strong and thick. Learn about scalp hygiene, oil massage, DHT sensitivity, and medical restoration options.">
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=Manrope:wght@500;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
     <script id="tailwind-config">
@@ -124,6 +124,11 @@
 </head>
 <body class="bg-background text-on-background font-body-md overflow-x-hidden">
 
+<!-- Reading Progress Bar -->
+<div class="fixed top-0 left-0 w-full h-1 bg-slate-100 z-50">
+    <div id="reading-progress" class="h-full bg-primary transition-all duration-75 w-0"></div>
+</div>
+
 <!-- WebGL Background -->
 <div class="fixed inset-0 w-full h-full -z-10 opacity-40">
     <canvas id="wellness-canvas" class="w-full h-full"></canvas>
@@ -148,231 +153,51 @@
   </a>
 </header>
 
-<!-- 🌿 Hero Section -->
-<section class="relative min-h-[50vh] flex items-center pt-36 pb-20 px-gutter" id="treatment-hero">
-    <div class="max-w-container-max mx-auto text-center relative z-10 w-full">
+<!-- 🌿 Article Hero -->
+<section class="relative pt-36 pb-12 px-gutter">
+    <div class="max-w-3xl mx-auto text-center relative z-10 w-full">
         <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary font-label-caps text-label-caps mb-6 reveal-on-scroll">
-            <span class="material-symbols-outlined text-xs">verified_user</span>
-            SKIN CARE & FACIALS
+            <span class="material-symbols-outlined text-xs">book</span>
+            HAIR & BODY
         </div>
-        <h1 class="font-display-lg text-display-lg leading-tight text-deep-navy font-bold mb-6 reveal-on-scroll" style="transition-delay: 0.1s;">
-            Chemical Peel
+        <h1 class="font-display-lg text-3xl md:text-4xl lg:text-5xl leading-tight text-deep-navy font-bold mb-6 reveal-on-scroll" style="transition-delay: 0.1s;">
+            The Science of Healthy Hair & Scalp Care
         </h1>
-        <p class="font-body-md text-on-surface-variant max-w-2xl mx-auto leading-relaxed reveal-on-scroll mb-8" style="transition-delay: 0.2s;">
-            Resurface your skin texture, fade hyperpigmentation, and smooth scars with medical acid peeling.
-        </p>
-        <div class="reveal-on-scroll" style="transition-delay: 0.3s;">
-            <a href="../index.html#booking" onclick="localStorage.setItem('prefilled_treatment', 'Skin Rejuvenation');" class="bg-primary text-on-primary font-navigation text-navigation px-8 py-3.5 rounded-full primary-glow inline-flex items-center gap-2 hover:scale-105 transition-transform">
-                Book Treatment Now
-                <span class="material-symbols-outlined text-sm">arrow_forward</span>
-            </a>
-        </div>
-    </div>
-</section>
-
-<!-- 🌿 Overview & Before/After Section -->
-<section class="py-stack-lg bg-white border-t border-b border-glass-border/30 px-gutter" id="overview">
-    <div class="max-w-container-max mx-auto grid md:grid-cols-2 gap-16 items-center">
-        <!-- Text -->
-        <div class="space-y-6 reveal-on-scroll">
-            <span class="font-label-caps text-[10px] font-bold text-primary tracking-widest uppercase">Treatment Overview</span>
-            <h2 class="font-display-lg text-display-lg text-deep-navy">Science and Radiance Combined</h2>
-            <div class="text-on-surface-variant text-sm leading-relaxed space-y-4">
-                <p>Chemical Peels use medical-grade exfoliating solutions to dissolve the chemical bonds holding dead, damaged cells to the skin's surface. By encouraging the outer layer of skin to peel away, this treatment reveals a fresh, smooth, and evenly pigmented layer underneath.</p><p>At Elixir Clinic, our dermatologists customize peel formulations—ranging from gentle glycolic and lactic acids to deeper TCA and salicylic formulas—to address your specific concerns like sun damage, pigmentation, acne scars, and fine lines.</p>
+        <!-- Metadata -->
+        <div class="flex items-center justify-center gap-6 text-xs text-on-surface-variant font-navigation mb-8 reveal-on-scroll" style="transition-delay: 0.2s;">
+            <div class="flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-sm text-primary">schedule</span>
+                5 Mins Read
             </div>
-            <!-- Pricing and Duration Info Badge -->
-            <div class="p-6 glass-card rounded-2xl border border-glass-border bg-slate-50/50 flex flex-wrap gap-6 mt-6">
-                <div>
-                    <span class="text-[8px] font-bold text-on-surface-variant uppercase tracking-widest block mb-1">Starting Price</span>
-                    <span class="text-primary font-bold text-lg">₹8,500 / session</span>
-                </div>
-                <div class="w-px bg-glass-border"></div>
-                <div>
-                    <span class="text-[8px] font-bold text-on-surface-variant uppercase tracking-widest block mb-1">Duration</span>
-                    <span class="text-deep-navy font-bold text-lg">30 Mins</span>
-                </div>
-                <div class="w-px bg-glass-border"></div>
-                <div>
-                    <span class="text-[8px] font-bold text-on-surface-variant uppercase tracking-widest block mb-1">Recommended Sessions</span>
-                    <span class="text-deep-navy font-bold text-lg">3-5 Sessions</span>
-                </div>
+            <div class="w-1.5 h-1.5 rounded-full bg-glass-border"></div>
+            <div class="flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-sm text-primary">calendar_today</span>
+                July 07, 2026
             </div>
-        </div>
-        <!-- Before & After Mock Slider -->
-        <div class="reveal-on-scroll relative group" style="transition-delay: 0.2s;">
-            <div class="aspect-[4/3] rounded-[42px] overflow-hidden shadow-2xl relative">
-                <!-- After Image -->
-                <div class="absolute inset-0 bg-[#053a4e] flex flex-col justify-center items-center text-center p-8 text-white">
-                    <span class="material-symbols-outlined text-tertiary text-5xl mb-4">sparkles</span>
-                    <h4 class="font-display-lg text-base font-bold mb-2">Radiant After-State</h4>
-                    <p class="text-[11px] text-white/70 max-w-xs leading-relaxed">Demonstrating restored collagen, cleared texture, and optimal hydration balance after the recommended sessions.</p>
-                </div>
-            </div>
-            <div class="absolute -top-6 -right-6 p-6 glass-card rounded-2xl max-w-[180px] shadow-lg">
-                <span class="material-symbols-outlined text-primary text-3xl mb-2">check_circle</span>
-                <p class="text-[9px] font-bold text-deep-navy uppercase tracking-wider">Clinically Proven Outcomes</p>
+            <div class="w-1.5 h-1.5 rounded-full bg-glass-border"></div>
+            <div class="flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-sm text-primary">person</span>
+                By Elixir Dermatology
             </div>
         </div>
     </div>
 </section>
 
-<!-- 🌿 Core Benefits Section -->
-<section class="py-stack-lg bg-surface px-gutter" id="benefits">
-    <div class="max-w-container-max mx-auto">
-        <div class="text-center mb-16 reveal-on-scroll">
-            <span class="font-label-caps text-[10px] font-bold text-primary tracking-widest uppercase mb-3 inline-block">Advantages</span>
-            <h2 class="font-display-lg text-display-lg text-deep-navy">Core Benefits</h2>
-            <p class="text-on-surface-variant max-w-xl mx-auto mt-3 text-xs font-medium">Why our dermatologists recommend this treatment for healthy skin.</p>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- Benefit 1 -->
-            <div class="glass-card p-8 rounded-3xl bg-white border border-glass-border flex gap-4 items-start group hover:-translate-y-1 transition-all duration-300 reveal-on-scroll">
-                <div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
-                    <span class="material-symbols-outlined text-lg">grain</span>
-                </div>
-                <div class="space-y-1.5">
-                    <h4 class="font-bold text-deep-navy text-xs uppercase tracking-wider font-navigation">Even Skin Tone</h4>
-                    <p class="text-[10px] text-on-surface-variant leading-relaxed">Fades dark spots, melasma, sun damage, and post-inflammatory pigmentation.</p>
-                </div>
-            </div>
-            <!-- Benefit 2 -->
-            <div class="glass-card p-8 rounded-3xl bg-white border border-glass-border flex gap-4 items-start group hover:-translate-y-1 transition-all duration-300 reveal-on-scroll" style="transition-delay: 0.1s;">
-                <div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
-                    <span class="material-symbols-outlined text-lg">auto_fix_high</span>
-                </div>
-                <div class="space-y-1.5">
-                    <h4 class="font-bold text-deep-navy text-xs uppercase tracking-wider font-navigation">Texture Resurfacing</h4>
-                    <p class="text-[10px] text-on-surface-variant leading-relaxed">Smooths rough skin patches, dry build-up, and shallow acne scars.</p>
-                </div>
-            </div>
-            <!-- Benefit 3 -->
-            <div class="glass-card p-8 rounded-3xl bg-white border border-glass-border flex gap-4 items-start group hover:-translate-y-1 transition-all duration-300 reveal-on-scroll" style="transition-delay: 0.2s;">
-                <div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
-                    <span class="material-symbols-outlined text-lg">favorite</span>
-                </div>
-                <div class="space-y-1.5">
-                    <h4 class="font-bold text-deep-navy text-xs uppercase tracking-wider font-navigation">Boost Collagen</h4>
-                    <p class="text-[10px] text-on-surface-variant leading-relaxed">Triggers the natural healing response in deeper layers to stimulate collagen synthesis.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- 🌿 Procedure Steps Section -->
-<section class="py-stack-lg bg-white border-t border-b border-glass-border/30 px-gutter" id="procedure">
-    <div class="max-w-container-max mx-auto">
-        <div class="text-center mb-16 reveal-on-scroll">
-            <span class="font-label-caps text-[10px] font-bold text-primary tracking-widest uppercase mb-3 inline-block">The Journey</span>
-            <h2 class="font-display-lg text-display-lg text-deep-navy">Procedure Protocol</h2>
-            <p class="text-on-surface-variant max-w-xl mx-auto mt-3 text-xs font-medium">What to expect during your diagnostic treatment session at Elixir Clinic.</p>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
-            <!-- Step 01 -->
-            <div class="glass-card p-8 rounded-3xl bg-white border border-glass-border relative hover:-translate-y-1 transition-all duration-300 reveal-on-scroll">
-                <span class="absolute top-6 right-8 font-display-lg text-4xl font-extrabold text-primary/10 leading-none">01</span>
-                <div class="space-y-4">
-                    <div class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-xs">
-                        01
-                    </div>
-                    <div class="space-y-1.5">
-                        <h4 class="font-bold text-deep-navy text-xs uppercase tracking-wider font-navigation">Skin Degreasing</h4>
-                        <p class="text-[10px] text-on-surface-variant leading-relaxed">The skin is prepped and thoroughly degreased to ensure even absorption of the peeling agents.</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Step 02 -->
-            <div class="glass-card p-8 rounded-3xl bg-white border border-glass-border relative hover:-translate-y-1 transition-all duration-300 reveal-on-scroll" style="transition-delay: 0.1s;">
-                <span class="absolute top-6 right-8 font-display-lg text-4xl font-extrabold text-primary/10 leading-none">02</span>
-                <div class="space-y-4">
-                    <div class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-xs">
-                        02
-                    </div>
-                    <div class="space-y-1.5">
-                        <h4 class="font-bold text-deep-navy text-xs uppercase tracking-wider font-navigation">Peel Application</h4>
-                        <p class="text-[10px] text-on-surface-variant leading-relaxed">The customized chemical solution is applied and carefully monitored by our medical team.</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Step 03 -->
-            <div class="glass-card p-8 rounded-3xl bg-white border border-glass-border relative hover:-translate-y-1 transition-all duration-300 reveal-on-scroll" style="transition-delay: 0.2s;">
-                <span class="absolute top-6 right-8 font-display-lg text-4xl font-extrabold text-primary/10 leading-none">03</span>
-                <div class="space-y-4">
-                    <div class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-xs">
-                        03
-                    </div>
-                    <div class="space-y-1.5">
-                        <h4 class="font-bold text-deep-navy text-xs uppercase tracking-wider font-navigation">Neutralization & Soothe</h4>
-                        <p class="text-[10px] text-on-surface-variant leading-relaxed">The peel is deactivated, followed by a cooling compress, barrier repair cream, and physical sunscreen.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- 🌿 Recovery & Aftercare Section -->
-<section class="py-stack-lg bg-surface px-gutter" id="recovery">
-    <div class="max-w-container-max mx-auto grid md:grid-cols-2 gap-16 items-center">
-        <!-- Graphic/Icon representation -->
-        <div class="reveal-on-scroll">
-            <div class="glass-card p-8 rounded-[40px] border border-glass-border bg-white flex flex-col justify-center items-center text-center gap-4">
-                <div class="w-16 h-16 rounded-full bg-primary/10 text-primary flex items-center justify-center">
-                    <span class="material-symbols-outlined text-3xl">healing</span>
-                </div>
-                <h3 class="font-display-lg text-lg text-deep-navy font-bold">Optimal Healing Support</h3>
-                <p class="text-xs text-on-surface-variant leading-relaxed max-w-md">Our post-care team is available 24/7. We schedule routine follow-up reviews to track your cellular skin recovery progress and adjust home care formulas.</p>
-            </div>
-        </div>
-        <!-- Aftercare tips -->
-        <div class="space-y-6 reveal-on-scroll" style="transition-delay: 0.1s;">
-            <span class="font-label-caps text-[10px] font-bold text-primary tracking-widest uppercase">Aftercare Guidelines</span>
-            <h2 class="font-display-lg text-display-lg text-deep-navy">Recovery & Aftercare</h2>
-            <div class="text-on-surface-variant text-sm leading-relaxed space-y-4">
-                <p>Depending on the depth of the peel, recovery ranges from 2 to 7 days. You may experience mild flaking or peeling resembling a light sunburn. Do not peel or scratch loose skin. Avoid heat, heavy workouts, and direct sun exposure for 48 hours, and apply physical mineral SPF daily.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- 🌿 FAQs Section -->
-<section class="py-stack-lg bg-white px-gutter" id="faq">
-    <div class="max-w-3xl mx-auto">
-        <div class="text-center mb-16 reveal-on-scroll">
-            <span class="font-label-caps text-[10px] font-bold text-primary tracking-widest uppercase mb-3 inline-block">Questions & Answers</span>
-            <h2 class="font-display-lg text-display-lg text-deep-navy">Frequently Asked Questions</h2>
-        </div>
-        <div class="space-y-4 reveal-on-scroll">
-            <!-- FAQ Item 1 -->
-            <div class="glass-card rounded-2xl border border-glass-border bg-white/60 overflow-hidden">
-                <button onclick="toggleFaq(0)" class="w-full px-6 py-4 text-left flex justify-between items-center gap-4 hover:bg-slate-50/50 transition-colors">
-                    <h4 class="font-bold text-deep-navy text-xs uppercase tracking-wider font-navigation">Will my skin literally peel off?</h4>
-                    <span id="faq-icon-0" class="material-symbols-outlined text-primary text-sm transition-transform duration-300">expand_more</span>
-                </button>
-                <div id="faq-content-0" class="hidden opacity-0 -translate-y-2 transition-all duration-300 px-6 pb-5 border-t border-glass-border/30 pt-4">
-                    <p class="text-[11px] text-on-surface-variant leading-relaxed font-body-md">For light and medium peels, you will experience mild flaking or shedding. Deep peels produce more noticeable peeling. We customize the depth based on your lifestyle and comfort.</p>
-                </div>
-            </div>
-            <!-- FAQ Item 2 -->
-            <div class="glass-card rounded-2xl border border-glass-border bg-white/60 overflow-hidden">
-                <button onclick="toggleFaq(1)" class="w-full px-6 py-4 text-left flex justify-between items-center gap-4 hover:bg-slate-50/50 transition-colors">
-                    <h4 class="font-bold text-deep-navy text-xs uppercase tracking-wider font-navigation">Does a chemical peel burn?</h4>
-                    <span id="faq-icon-1" class="material-symbols-outlined text-primary text-sm transition-transform duration-300">expand_more</span>
-                </button>
-                <div id="faq-content-1" class="hidden opacity-0 -translate-y-2 transition-all duration-300 px-6 pb-5 border-t border-glass-border/30 pt-4">
-                    <p class="text-[11px] text-on-surface-variant leading-relaxed font-body-md">You will feel a warm, tingling, or stinging sensation during the application, which subsides as soon as the neutralizer is applied.</p>
-                </div>
-            </div>
-            <!-- FAQ Item 3 -->
-            <div class="glass-card rounded-2xl border border-glass-border bg-white/60 overflow-hidden">
-                <button onclick="toggleFaq(2)" class="w-full px-6 py-4 text-left flex justify-between items-center gap-4 hover:bg-slate-50/50 transition-colors">
-                    <h4 class="font-bold text-deep-navy text-xs uppercase tracking-wider font-navigation">Can chemical peels treat body areas?</h4>
-                    <span id="faq-icon-2" class="material-symbols-outlined text-primary text-sm transition-transform duration-300">expand_more</span>
-                </button>
-                <div id="faq-content-2" class="hidden opacity-0 -translate-y-2 transition-all duration-300 px-6 pb-5 border-t border-glass-border/30 pt-4">
-                    <p class="text-[11px] text-on-surface-variant leading-relaxed font-body-md">Yes! We frequently perform peels on the back, neck, chest, and hands to clear acne, sun spots, and dry textures.</p>
-                </div>
-            </div>
+<!-- 🌿 Article Content Section -->
+<section class="pb-stack-lg px-gutter">
+    <div class="max-w-3xl mx-auto glass-card rounded-[40px] p-8 md:p-12 border border-glass-border shadow-lg relative bg-white/70 backdrop-blur-2xl">
+        <div class="prose max-w-none text-on-surface-variant text-sm md:text-base leading-relaxed space-y-6">
+            <h2>Introduction</h2>
+            <p>Healthy hair begins with a healthy scalp. Like the soil to a plant, your hair follicles rely on scalp circulation, hygiene, and nutrition to grow thick hair shafts. This guide outlines the essential protocols to combat hair loss and maintain scalp vitality.</p>
+            
+            <h2>Scalp Hygiene and Washing</h2>
+            <p>Washing your hair too frequently can dry out the scalp, while infrequent washing allows sebum and sweat to accumulate, causing dandruff and follicle inflammation. We recommend washing 2-3 times a week using sulfate-free shampoos that clean the roots without stripping essential moisture.</p>
+            
+            <h2>The Role of Scalp Massages</h2>
+            <p>Massaging the scalp stimulates local blood circulation, delivering oxygen and nutrients directly to the hair roots. Massaging with botanical oils containing Bhringraj, Brahmi, and Amla strengthens follicles, reduces scalp dryness, and cools body heat.</p>
+            
+            <h2>Medical Solutions for Thinning</h2>
+            <p>If you are experiencing pattern hair loss (genetic DHT sensitivity), topical hair products may not be enough. Clinical treatments like PRP (Platelet-Rich Plasma) therapy micro-infuse concentrated growth factors directly to dormant roots, stopping hair fall and encouraging active regrowth.</p>
         </div>
     </div>
 </section>
@@ -380,12 +205,16 @@
 <!-- 🌿 Call to Action Section -->
 <section class="py-stack-lg bg-surface px-gutter text-center relative overflow-hidden">
   <div class="max-w-3xl mx-auto space-y-6 relative z-10">
-    <h2 class="font-display-lg text-display-lg text-deep-navy font-bold">Experience Bespoke Skin Care</h2>
+    <h2 class="font-display-lg text-display-lg text-deep-navy font-bold">Discover Your Skin's Radiance</h2>
     <p class="text-on-surface-variant max-w-xl mx-auto text-sm leading-relaxed">
-      Book your consultation and let our board-certified dermatologists design a custom clinical plan targeted to your concerns.
+      Want a personalized evaluation of your skin or hair concern? Our expert doctors combine Ayurvedic diagnostics and medical aesthetics for tailor-made routines.
     </p>
-    <div class="pt-4">
-      <a href="../index.html#booking" onclick="localStorage.setItem('prefilled_treatment', 'Skin Rejuvenation');" class="bg-primary text-on-primary font-navigation text-navigation px-8 py-4 rounded-full primary-glow inline-flex items-center gap-2 hover:scale-105 transition-transform">
+    <div class="pt-4 flex justify-center gap-4 flex-wrap">
+      <a href="../guides/skin-type-quiz.html" class="bg-white border border-primary text-primary font-navigation text-navigation px-8 py-4 rounded-full hover:bg-primary/5 transition-all inline-flex items-center gap-2">
+        <span class="material-symbols-outlined text-sm">psychology</span>
+        TAKE SKIN TYPE QUIZ
+      </a>
+      <a href="../index.html#booking" class="bg-primary text-on-primary font-navigation text-navigation px-8 py-4 rounded-full primary-glow inline-flex items-center gap-2 hover:scale-105 transition-transform">
         <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">calendar_today</span>
         BOOK CONSULTATION NOW
       </a>
@@ -462,8 +291,8 @@
           <li><a href="../index.html#hero" class="text-on-surface-variant hover:text-primary hover:translate-x-1.5 inline-block transition-all duration-300">Home</a></li>
           <li><a href="../treatments.html" class="text-on-surface-variant hover:text-primary hover:translate-x-1.5 inline-block transition-all duration-300">Treatments</a></li>
           <li><a href="../index.html#doctors" class="text-on-surface-variant hover:text-primary hover:translate-x-1.5 inline-block transition-all duration-300">Our Doctors</a></li>
-          <li><a href="../education.html" class="text-on-surface-variant hover:text-primary hover:translate-x-1.5 inline-block transition-all duration-300 font-bold text-primary font-bold text-primary">Education</a></li>
-          <li><a href="../about.html" class="text-on-surface-variant hover:text-primary hover:translate-x-1.5 inline-block transition-all duration-300 font-bold text-primary">About Us</a></li>
+          <li><a href="../education.html" class="text-on-surface-variant hover:text-primary hover:translate-x-1.5 inline-block transition-all duration-300 font-bold text-primary">Education</a></li>
+          <li><a href="../about.html" class="text-on-surface-variant hover:text-primary hover:translate-x-1.5 inline-block transition-all duration-300">About Us</a></li>
         </ul>
       </div>
       
@@ -606,28 +435,16 @@
         revealObserver.observe(el);
     });
 
-    // Toggle FAQ accordion panels
-    function toggleFaq(index) {
-        const content = document.getElementById(`faq-content-${index}`);
-        const icon = document.getElementById(`faq-icon-${index}`);
-        if (content && icon) {
-            if (content.classList.contains('hidden')) {
-                content.classList.remove('hidden');
-                setTimeout(() => {
-                    content.classList.remove('opacity-0', '-translate-y-2');
-                    content.classList.add('opacity-100', 'translate-y-0');
-                }, 10);
-                icon.style.transform = 'rotate(180deg)';
-            } else {
-                content.classList.remove('opacity-100', 'translate-y-0');
-                content.classList.add('opacity-0', '-translate-y-2');
-                setTimeout(() => {
-                    content.classList.add('hidden');
-                }, 300);
-                icon.style.transform = 'rotate(0deg)';
-            }
+    // Reading progress calculation
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = (scrollTop / docHeight) * 100;
+        const progressEl = document.getElementById('reading-progress');
+        if (progressEl) {
+            progressEl.style.width = `${progress}%`;
         }
-    }
+    });
 </script>
 </body>
 </html>
