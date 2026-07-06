@@ -349,12 +349,17 @@
     <div class="relative w-full aspect-square md:aspect-auto md:h-[600px] z-10">
       
       <!-- Doctor Portrait Background Frame -->
-      <div class="w-full h-[85%] md:h-[90%] rounded-[40px] overflow-hidden shadow-2xl relative">
-        <img class="w-full h-full object-cover scale-100" data-alt="Confident female plastic surgeon in Elixir Clinic" src="assets/asset_5_d7573c820a.jpg">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+      <div class="w-full h-[85%] md:h-[90%] rounded-[40px] overflow-hidden shadow-2xl relative" id="hero-slideshow-container">
+        <img class="hero-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-100 z-10" src="assets/hero_exterior.jpg" alt="Elixir Clinic Exterior Building">
+        <img class="hero-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0 z-0" src="assets/hero_lobby_1.jpg" alt="Elixir Clinic Lobby Reception Area">
+        <img class="hero-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0 z-0" src="assets/hero_lobby_2.jpg" alt="Elixir Clinic Waiting Lounge">
+        <img class="hero-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0 z-0" src="assets/hero_counter.jpg" alt="Elixir Clinic Reception Desk">
+        <img class="hero-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0 z-0" src="assets/hero_doctor.jpg" alt="Elixir Clinic Chief Doctor">
+        
+        <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent z-20"></div>
         
         <!-- Glowing Clinic Neon Logo Overlay in the background of the image -->
-        <div class="absolute top-8 left-8 bg-black/35 backdrop-blur-md px-4 py-2 rounded-2xl border border-white/10 flex items-center justify-center">
+        <div class="absolute top-8 left-8 bg-black/35 backdrop-blur-md px-4 py-2 rounded-2xl border border-white/10 flex items-center justify-center z-20">
           <img src="assets/logo.png" class="h-6 w-auto object-contain brightness-0 invert" alt="Elixir Clinic Logo">
         </div>
       </div>
@@ -2368,6 +2373,21 @@ Explore Full Treatment Menu
                     activePane.classList.add('opacity-100', 'scale-100');
                 }, 50);
             }
+        }
+
+        // Hero Slideshow Loop
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.hero-slide');
+        if (slides.length > 0) {
+            setInterval(() => {
+                slides[currentSlide].classList.remove('opacity-100', 'z-10');
+                slides[currentSlide].classList.add('opacity-0', 'z-0');
+                
+                currentSlide = (currentSlide + 1) % slides.length;
+                
+                slides[currentSlide].classList.remove('opacity-0', 'z-0');
+                slides[currentSlide].classList.add('opacity-100', 'z-10');
+            }, 4000);
         }
     </script>
 </body>
