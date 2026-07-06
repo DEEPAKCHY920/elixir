@@ -1022,60 +1022,189 @@ Explore Full Treatment Menu
 </div>
 </section>
 
-<!-- Doctors Carousel (Horizontal Scroll) -->
+<!-- Doctors Section (Infinite Marquee) -->
 <section class="py-stack-lg overflow-hidden bg-background" id="doctors">
-<div class="max-w-container-max mx-auto px-gutter mb-12 flex justify-between items-end">
-<h2 class="font-display-lg text-display-lg text-deep-navy reveal-on-scroll active">Meet Our Visionaries</h2>
-<div class="flex gap-4">
-<button id="doctor-carousel-prev" class="w-12 h-12 rounded-full border border-outline flex items-center justify-center hover:bg-primary hover:text-white transition-colors"><span class="material-symbols-outlined">chevron_left</span></button>
-<button id="doctor-carousel-next" class="w-12 h-12 rounded-full border border-outline flex items-center justify-center hover:bg-primary hover:text-white transition-colors"><span class="material-symbols-outlined">chevron_right</span></button>
-</div>
-</div>
-<div class="flex gap-8 px-gutter horizontal-scroll-mask overflow-x-auto pb-12 snap-x" id="doctor-carousel-container">
-<!-- Doctor 1 -->
-<div class="min-w-[380px] snap-center glass-card rounded-[40px] overflow-hidden group perspective-1000 reveal-on-scroll active">
-<div class="h-[450px] relative transition-transform duration-500 group-hover:rotate-y-12">
-<img class="w-full h-full object-cover" data-alt="A portrait of Dr. Devendra Sen, a senior aesthetic surgeon. He has a kind, professional look, grey hair, and a modern blue surgical scrub. The background is a blurred high-end medical clinic with glass partitions." src="assets/doctor_1.png">
-<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-8 text-white">
-<p class="font-body-md mb-2">"True beauty is an alignment of health and confidence."</p>
-<div class="flex gap-2">
-<span class="w-8 h-8 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center"><span class="material-symbols-outlined text-sm">alternate_email</span></span>
-<span class="w-8 h-8 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center"><span class="material-symbols-outlined text-sm">share</span></span>
-</div>
-</div>
-</div>
-<div class="p-8">
-<h4 class="font-headline-md text-on-surface">Dr. Devendra Sen</h4>
-<p class="text-primary font-label-caps text-label-caps">SENIOR AESTHETIC SURGEON</p>
-</div>
-</div>
-<!-- Doctor 2 -->
-<div class="min-w-[380px] snap-center glass-card rounded-[40px] overflow-hidden group perspective-1000 reveal-on-scroll active" style="transition-delay: 0.1s;">
-<div class="h-[450px] relative transition-transform duration-500 group-hover:rotate-y-12">
-<img class="w-full h-full object-cover" data-alt="A portrait of Dr. Ananya Iyer, a lead dermatologist. She has dark hair tied back, a professional yet friendly expression, and is wearing a sleek medical blazer. The clinic background is bright and modern." src="assets/doctor_2.png">
-<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-8 text-white">
-<p class="font-body-md mb-2">"Skin health is the canvas for all cosmetic excellence."</p>
-</div>
-</div>
-<div class="p-8">
-<h4 class="font-headline-md text-on-surface">Dr. Ananya Iyer</h4>
-<p class="text-primary font-label-caps text-label-caps">LEAD DERMATOLOGIST</p>
-</div>
-</div>
-<!-- Doctor 3 -->
-<div class="min-w-[380px] snap-center glass-card rounded-[40px] overflow-hidden group perspective-1000 reveal-on-scroll active" style="transition-delay: 0.2s;">
-<div class="h-[450px] relative transition-transform duration-500 group-hover:rotate-y-12">
-<img class="w-full h-full object-cover" data-alt="A portrait of Dr. Kabir Kapoor, specialist in wellness and anti-aging. He looks energetic and expert-led, wearing a professional clinic uniform in a high-tech office environment." src="assets/doctor_3.png">
-<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-8 text-white">
-<p class="font-body-md mb-2">"Wellness is a proactive journey, not a destination."</p>
-</div>
-</div>
-<div class="p-8">
-<h4 class="font-headline-md text-on-surface">Dr. Kabir Kapoor</h4>
-<p class="text-primary font-label-caps text-label-caps">ANTI-AGING SPECIALIST</p>
-</div>
-</div>
-</div>
+  <div class="max-w-container-max mx-auto px-gutter mb-12 text-center">
+    <h2 class="font-display-lg text-display-lg text-deep-navy reveal-on-scroll active">Meet Our Visionaries</h2>
+    <p class="text-on-surface-variant max-w-xl mx-auto mt-2 text-sm">Our board of highly experienced aesthetic surgeons and dermatologists combining science and holistic healing.</p>
+  </div>
+
+  <div class="marquee-container w-full">
+    <div class="marquee-track flex gap-8">
+      
+      <!-- List of Doctors (Original) -->
+      <!-- Doctor 1 -->
+      <div class="min-w-[340px] md:min-w-[380px] glass-card rounded-[40px] overflow-hidden group perspective-1000">
+        <div class="h-[420px] md:h-[450px] relative transition-transform duration-500 group-hover:rotate-y-12">
+          <img class="w-full h-full object-cover" src="assets/doctor_1.png" alt="Dr. Devendra Sen">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-8 text-white">
+            <p class="font-body-md mb-2 text-xs md:text-sm">"True beauty is an alignment of health and confidence."</p>
+          </div>
+        </div>
+        <div class="p-6 md:p-8">
+          <h4 class="font-headline-md text-on-surface text-base md:text-lg">Dr. Devendra Sen</h4>
+          <p class="text-primary font-label-caps text-[10px] md:text-xs">SENIOR AESTHETIC SURGEON</p>
+        </div>
+      </div>
+
+      <!-- Doctor 2 -->
+      <div class="min-w-[340px] md:min-w-[380px] glass-card rounded-[40px] overflow-hidden group perspective-1000">
+        <div class="h-[420px] md:h-[450px] relative transition-transform duration-500 group-hover:rotate-y-12">
+          <img class="w-full h-full object-cover" src="assets/doctor_2.png" alt="Dr. Ananya Iyer">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-8 text-white">
+            <p class="font-body-md mb-2 text-xs md:text-sm">"Skin health is the canvas for all cosmetic excellence."</p>
+          </div>
+        </div>
+        <div class="p-6 md:p-8">
+          <h4 class="font-headline-md text-on-surface text-base md:text-lg">Dr. Ananya Iyer</h4>
+          <p class="text-primary font-label-caps text-[10px] md:text-xs">LEAD DERMATOLOGIST</p>
+        </div>
+      </div>
+
+      <!-- Doctor 3 -->
+      <div class="min-w-[340px] md:min-w-[380px] glass-card rounded-[40px] overflow-hidden group perspective-1000">
+        <div class="h-[420px] md:h-[450px] relative transition-transform duration-500 group-hover:rotate-y-12">
+          <img class="w-full h-full object-cover" src="assets/doctor_3.png" alt="Dr. Kabir Kapoor">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-8 text-white">
+            <p class="font-body-md mb-2 text-xs md:text-sm">"Wellness is a proactive journey, not a destination."</p>
+          </div>
+        </div>
+        <div class="p-6 md:p-8">
+          <h4 class="font-headline-md text-on-surface text-base md:text-lg">Dr. Kabir Kapoor</h4>
+          <p class="text-primary font-label-caps text-[10px] md:text-xs">ANTI-AGING SPECIALIST</p>
+        </div>
+      </div>
+
+      <!-- Doctor 4 -->
+      <div class="min-w-[340px] md:min-w-[380px] glass-card rounded-[40px] overflow-hidden group perspective-1000">
+        <div class="h-[420px] md:h-[450px] relative transition-transform duration-500 group-hover:rotate-y-12">
+          <img class="w-full h-full object-cover" src="assets/about_doctor.png" alt="Dr. Meera Nair">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-8 text-white">
+            <p class="font-body-md mb-2 text-xs md:text-sm">"Integrating classical Ayurveda with modern clinical diagnostics."</p>
+          </div>
+        </div>
+        <div class="p-6 md:p-8">
+          <h4 class="font-headline-md text-on-surface text-base md:text-lg">Dr. Meera Nair</h4>
+          <p class="text-primary font-label-caps text-[10px] md:text-xs">AYURVEDIC WELLNESS CONSULTANT</p>
+        </div>
+      </div>
+
+      <!-- Doctor 5 -->
+      <div class="min-w-[340px] md:min-w-[380px] glass-card rounded-[40px] overflow-hidden group perspective-1000">
+        <div class="h-[420px] md:h-[450px] relative transition-transform duration-500 group-hover:rotate-y-12">
+          <img class="w-full h-full object-cover" src="assets/hero_doctor.jpg" alt="Dr. Rohan Sharma">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-8 text-white">
+            <p class="font-body-md mb-2 text-xs md:text-sm">"Specialist in micro-follicular transplants and scalp restoration."</p>
+          </div>
+        </div>
+        <div class="p-6 md:p-8">
+          <h4 class="font-headline-md text-on-surface text-base md:text-lg">Dr. Rohan Sharma</h4>
+          <p class="text-primary font-label-caps text-[10px] md:text-xs">HAIR RESTORATION EXPERT</p>
+        </div>
+      </div>
+
+      <!-- Doctor 6 -->
+      <div class="min-w-[340px] md:min-w-[380px] glass-card rounded-[40px] overflow-hidden group perspective-1000">
+        <div class="h-[420px] md:h-[450px] relative transition-transform duration-500 group-hover:rotate-y-12">
+          <img class="w-full h-full object-cover" src="assets/asset_5_d7573c820a.jpg" alt="Dr. Shalini Vyas">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-8 text-white">
+            <p class="font-body-md mb-2 text-xs md:text-sm">"Pioneering non-surgical skin resurfacing and collagen-building procedures."</p>
+          </div>
+        </div>
+        <div class="p-6 md:p-8">
+          <h4 class="font-headline-md text-on-surface text-base md:text-lg">Dr. Shalini Vyas</h4>
+          <p class="text-primary font-label-caps text-[10px] md:text-xs">LASER & SKIN AESTHETICS SPECIALIST</p>
+        </div>
+      </div>
+
+
+      <!-- Cloned List of Doctors (to achieve infinite scrolling) -->
+      <!-- Doctor 1 (Clone) -->
+      <div class="min-w-[340px] md:min-w-[380px] glass-card rounded-[40px] overflow-hidden group perspective-1000">
+        <div class="h-[420px] md:h-[450px] relative transition-transform duration-500 group-hover:rotate-y-12">
+          <img class="w-full h-full object-cover" src="assets/doctor_1.png" alt="Dr. Devendra Sen">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-8 text-white">
+            <p class="font-body-md mb-2 text-xs md:text-sm">"True beauty is an alignment of health and confidence."</p>
+          </div>
+        </div>
+        <div class="p-6 md:p-8">
+          <h4 class="font-headline-md text-on-surface text-base md:text-lg">Dr. Devendra Sen</h4>
+          <p class="text-primary font-label-caps text-[10px] md:text-xs">SENIOR AESTHETIC SURGEON</p>
+        </div>
+      </div>
+
+      <!-- Doctor 2 (Clone) -->
+      <div class="min-w-[340px] md:min-w-[380px] glass-card rounded-[40px] overflow-hidden group perspective-1000">
+        <div class="h-[420px] md:h-[450px] relative transition-transform duration-500 group-hover:rotate-y-12">
+          <img class="w-full h-full object-cover" src="assets/doctor_2.png" alt="Dr. Ananya Iyer">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-8 text-white">
+            <p class="font-body-md mb-2 text-xs md:text-sm">"Skin health is the canvas for all cosmetic excellence."</p>
+          </div>
+        </div>
+        <div class="p-6 md:p-8">
+          <h4 class="font-headline-md text-on-surface text-base md:text-lg">Dr. Ananya Iyer</h4>
+          <p class="text-primary font-label-caps text-[10px] md:text-xs">LEAD DERMATOLOGIST</p>
+        </div>
+      </div>
+
+      <!-- Doctor 3 (Clone) -->
+      <div class="min-w-[340px] md:min-w-[380px] glass-card rounded-[40px] overflow-hidden group perspective-1000">
+        <div class="h-[420px] md:h-[450px] relative transition-transform duration-500 group-hover:rotate-y-12">
+          <img class="w-full h-full object-cover" src="assets/doctor_3.png" alt="Dr. Kabir Kapoor">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-8 text-white">
+            <p class="font-body-md mb-2 text-xs md:text-sm">"Wellness is a proactive journey, not a destination."</p>
+          </div>
+        </div>
+        <div class="p-6 md:p-8">
+          <h4 class="font-headline-md text-on-surface text-base md:text-lg">Dr. Kabir Kapoor</h4>
+          <p class="text-primary font-label-caps text-[10px] md:text-xs">ANTI-AGING SPECIALIST</p>
+        </div>
+      </div>
+
+      <!-- Doctor 4 (Clone) -->
+      <div class="min-w-[340px] md:min-w-[380px] glass-card rounded-[40px] overflow-hidden group perspective-1000">
+        <div class="h-[420px] md:h-[450px] relative transition-transform duration-500 group-hover:rotate-y-12">
+          <img class="w-full h-full object-cover" src="assets/about_doctor.png" alt="Dr. Meera Nair">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-8 text-white">
+            <p class="font-body-md mb-2 text-xs md:text-sm">"Integrating classical Ayurveda with modern clinical diagnostics."</p>
+          </div>
+        </div>
+        <div class="p-6 md:p-8">
+          <h4 class="font-headline-md text-on-surface text-base md:text-lg">Dr. Meera Nair</h4>
+          <p class="text-primary font-label-caps text-[10px] md:text-xs">AYURVEDIC WELLNESS CONSULTANT</p>
+        </div>
+      </div>
+
+      <!-- Doctor 5 (Clone) -->
+      <div class="min-w-[340px] md:min-w-[380px] glass-card rounded-[40px] overflow-hidden group perspective-1000">
+        <div class="h-[420px] md:h-[450px] relative transition-transform duration-500 group-hover:rotate-y-12">
+          <img class="w-full h-full object-cover" src="assets/hero_doctor.jpg" alt="Dr. Rohan Sharma">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-8 text-white">
+            <p class="font-body-md mb-2 text-xs md:text-sm">"Specialist in micro-follicular transplants and scalp restoration."</p>
+          </div>
+        </div>
+        <div class="p-6 md:p-8">
+          <h4 class="font-headline-md text-on-surface text-base md:text-lg">Dr. Rohan Sharma</h4>
+          <p class="text-primary font-label-caps text-[10px] md:text-xs">HAIR RESTORATION EXPERT</p>
+        </div>
+      </div>
+
+      <!-- Doctor 6 (Clone) -->
+      <div class="min-w-[340px] md:min-w-[380px] glass-card rounded-[40px] overflow-hidden group perspective-1000">
+        <div class="h-[420px] md:h-[450px] relative transition-transform duration-500 group-hover:rotate-y-12">
+          <img class="w-full h-full object-cover" src="assets/asset_5_d7573c820a.jpg" alt="Dr. Shalini Vyas">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-8 text-white">
+            <p class="font-body-md mb-2 text-xs md:text-sm">"Pioneering non-surgical skin resurfacing and collagen-building procedures."</p>
+          </div>
+        </div>
+        <div class="p-6 md:p-8">
+          <h4 class="font-headline-md text-on-surface text-base md:text-lg">Dr. Shalini Vyas</h4>
+          <p class="text-primary font-label-caps text-[10px] md:text-xs">LASER & SKIN AESTHETICS SPECIALIST</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </section>
 <!-- Before & After Slider -->
 <section id="gallery" class="py-stack-lg px-gutter bg-surface-container-highest/20">
@@ -2121,18 +2250,6 @@ Explore Full Treatment Menu
             animate();
         }
 
-        // Doctor Carousel Horizontal Scroll
-        const docContainer = document.getElementById('doctor-carousel-container');
-        const prevDocBtn = document.getElementById('doctor-carousel-prev');
-        const nextDocBtn = document.getElementById('doctor-carousel-next');
-        if (docContainer && prevDocBtn && nextDocBtn) {
-            prevDocBtn.addEventListener('click', () => {
-                docContainer.scrollBy({ left: -420, behavior: 'smooth' });
-            });
-            nextDocBtn.addEventListener('click', () => {
-                docContainer.scrollBy({ left: 420, behavior: 'smooth' });
-            });
-        }
 
         // Dynamic Calendar Generation
         const calendarMonthYear = document.getElementById('calendar-month-year');
