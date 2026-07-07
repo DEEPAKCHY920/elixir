@@ -1,128 +1,77 @@
 <!DOCTYPE html>
 <html class="scroll-smooth" lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Hydra Facial | ELIXIR - Advanced Healthcare & Cinematic Wellness</title>
-    <meta name="description" content="Experience the ultimate skin glow with our Hydra Facial at Elixir Clinic. Instantly cleanse, exfoliate, extract, and hydrate with high-performance serum infusions.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Doctors | ELIXIR Health Care Clinic</title>
+    
+    <!-- Meta Tags for SEO -->
+    <meta name="description" content="Meet our specialist doctors at Elixir Clinic. Highly qualified and experienced professionals in dermatology, cosmetology, plastic surgery, and hair restoration.">
+    <meta name="keywords" content="skincare doctors delhi, dermatologist connection new delhi, best plastic surgeon CP">
+    
+    <!-- Stylesheets & Fonts -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=Manrope:wght@500;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
-    <script id="tailwind-config">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Inter:wght@400;500;600&family=Manrope:wght@500;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind Configuration -->
+    <script>
         tailwind.config = {
-            darkMode: "class",
             theme: {
                 extend: {
-                    "colors": {
-                        "error-container": "#ffdad6",
-                        "on-tertiary-fixed": "#25005a",
-                        "primary": "#0a6c8f",
-                        "error": "#ba1a1a",
-                        "on-primary": "#ffffff",
-                        "surface-variant": "#e0e3e5",
-                        "on-tertiary": "#ffffff",
-                        "background": "#f7f9fb",
-                        "on-tertiary-container": "#fffbff",
-                        "primary-fixed": "#dae2ff",
-                        "surface-container": "#eceef0",
-                        "on-tertiary-fixed-variant": "#5a00c6",
-                        "on-surface": "#191c1e",
-                        "surface-container-highest": "#e0e3e5",
-                        "surface-container-low": "#f2f4f6",
-                        "on-secondary-container": "#007230",
-                        "surface-container-lowest": "#ffffff",
-                        "tertiary-container": "#8a4cfc",
-                        "surface-container-high": "#e6e8ea",
-                        "tertiary-fixed-dim": "#d2bbff",
-                        "primary-container": "#0e83ac",
-                        "outline-variant": "#c2c6d8",
-                        "inverse-on-surface": "#eff1f3",
-                        "on-secondary-fixed-variant": "#005320",
-                        "surface-dim": "#d8dadc",
-                        "on-error": "#ffffff",
-                        "secondary-container": "#7cf994",
-                        "outline": "#727787",
-                        "on-error-container": "#93000a",
-                        "glass-surface": "rgba(255, 255, 255, 0.7)",
-                        "on-secondary-fixed": "#002109",
-                        "secondary-fixed": "#7ffc97",
-                        "on-background": "#191c1e",
-                        "tertiary": "#d58512",
-                        "surface": "#f7f9fb",
-                        "secondary": "#006e2d",
-                        "surface-bright": "#f7f9fb",
-                        "secondary-fixed-dim": "#62df7d",
-                        "tertiary-fixed": "#eaddff",
-                        "deep-navy": "#053a4e",
-                        "on-primary-fixed-variant": "#00419e",
-                        "surface-tint": "#0a6c8f",
-                        "inverse-surface": "#2d3133",
-                        "on-primary-fixed": "#001946",
-                        "soft-shadow": "rgba(10, 108, 143, 0.08)",
-                        "glass-border": "rgba(255, 255, 255, 0.4)",
-                        "inverse-primary": "#b1c5ff",
-                        "primary-fixed-dim": "#b1c5ff",
-                        "on-surface-variant": "#424655",
-                        "on-secondary": "#ffffff",
-                        "on-primary-container": "#fefcff"
+                    colors: {
+                        primary: '#0a6c8f',
+                        secondary: '#f4f2ee',
+                        tertiary: '#9c8453',
+                        'deep-navy': '#031c30',
+                        'on-primary': '#ffffff',
+                        'on-secondary': '#0f172a',
+                        'on-surface': '#0f172a',
+                        'on-surface-variant': '#475569',
+                        outline: '#cbd5e1',
+                        'glass-bg': 'rgba(255, 255, 255, 0.7)',
+                        'glass-border': 'rgba(255, 255, 255, 0.5)',
+                        surface: '#f8fafc',
+                        background: '#ffffff',
                     },
-                    "borderRadius": {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "2xl": "1.5rem",
-                        "3xl": "2rem",
-                        "full": "9999px"
+                    boxShadow: {
+                        'soft-shadow': '0 4px 20px -2px rgba(15, 23, 42, 0.08)',
+                        'inner-shadow': 'inset 0 2px 8px 0 rgba(15, 23, 42, 0.05)',
                     },
-                    "spacing": {
-                        "gutter": "32px",
-                        "margin-mobile": "20px",
-                        "stack-sm": "16px",
-                        "margin-tablet": "40px",
-                        "container-max": "1440px",
-                        "stack-lg": "64px",
-                        "stack-md": "32px",
-                        "margin-desktop": "80px",
-                        "unit": "8px"
+                    spacing: {
+                        'gutter': '1.5rem',
+                        'margin-mobile': '1rem',
+                        'margin-desktop': '5%',
+                        'stack-sm': '1.5rem',
+                        'stack-md': '3rem',
+                        'stack-lg': '6rem',
                     },
-                    "fontFamily": {
-                        "body-md": ["Inter"],
-                        "body-lg": ["Inter"],
-                        "navigation": ["Manrope"],
-                        "label-caps": ["Manrope"],
-                        "headline-xl": ["Plus Jakarta Sans"],
-                        "display-lg": ["Plus Jakarta Sans"],
-                        "headline-md": ["Plus Jakarta Sans"]
+                    maxWidth: {
+                        'container-max': '1280px',
+                    },
+                    fontFamily: {
+                        'body-md': ['Inter'],
+                        'body-lg': ['Inter'],
+                        'navigation': ['Manrope'],
+                        'label-caps': ['Manrope'],
+                        'headline-xl': ['Plus Jakarta Sans'],
+                        'display-lg': ['Plus Jakarta Sans'],
+                        'headline-md': ['Plus Jakarta Sans']
                     }
                 }
             }
-        };
+        }
     </script>
+
     <style>
+        .font-serif-premium {
+            font-family: 'Playfair Display', Georgia, serif;
+        }
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.65);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.4);
-            box-shadow: 0 8px 32px 0 rgba(15, 111, 255, 0.05);
-        }
-        .primary-glow {
-            background: linear-gradient(135deg, #0055c9 0%, #006bfb 100%);
-            box-shadow: 0 10px 30px -10px rgba(0, 85, 201, 0.5);
-        }
-        .reveal-on-scroll {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-        }
-        .reveal-on-scroll.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
     </style>
 </head>
-<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+<body class="bg-background text-on-surface antialiased">
 <!-- Website Loader Overlay -->
 <div id="page-loader" class="fixed inset-0 bg-[#f8fafc] z-[99999] flex flex-col justify-center items-center gap-6 transition-all duration-700 ease-in-out">
   <div class="relative flex flex-col items-center">
@@ -232,13 +181,8 @@
 </script>
 
 
-<!-- WebGL Background -->
-<div class="fixed inset-0 w-full h-full -z-10 opacity-40">
-    <canvas id="wellness-canvas" class="w-full h-full"></canvas>
-</div>
-
-<!-- Navigation Header -->
-<header class="fixed top-5 left-1/2 -translate-x-1/2 w-[95%] lg:w-[90%] max-w-[1440px] rounded-full z-50 bg-white/95 backdrop-blur-md border border-slate-200/60 flex justify-between items-center px-6 py-2.5 shadow-lg transition-all duration-500" id="top-app-bar" style="height: 64px;">
+  <!-- Header Section (Doctors Active) -->
+  <header class="fixed top-5 left-1/2 -translate-x-1/2 w-[95%] lg:w-[90%] max-w-[1440px] rounded-full z-50 bg-white/95 backdrop-blur-md border border-slate-200/60 flex justify-between items-center px-6 py-2.5 shadow-lg transition-all duration-500" id="top-app-bar" style="height: 64px;">
   <!-- Logo -->
   <a href="index.html" class="flex items-center shrink-0">
     <img src="assets/logo.png" class="h-10 lg:h-12 w-auto object-contain" alt="Elixir Health Care Clinic Logo">
@@ -253,20 +197,20 @@
         <span class="material-symbols-outlined text-base">home</span>
         <span>Home</span>
       </a>
-      <div class="h-4 w-px bg-slate-200/80 hidden" id="divider-home"></div>
+      <div class="h-4 w-px bg-slate-200/80 block" id="divider-home"></div>
       <!-- Treatments -->
-      <a id="nav-link-treatments" class="flex items-center gap-1.5 px-4 py-1.5 text-xs font-bold font-navigation transition-all duration-300 relative bg-white text-[#0a6c8f] shadow-sm border border-slate-200/40 rounded-xl" href="treatments.html">
+      <a id="nav-link-treatments" class="flex items-center gap-1.5 px-4 py-1.5 text-xs font-bold font-navigation transition-all duration-300 relative text-slate-600 hover:text-[#0a6c8f] rounded-xl" href="treatments.html">
         <span class="material-symbols-outlined text-base">stethoscope</span>
         <span>Treatments</span>
-      <div class="absolute bottom-1 left-1/2 -translate-x-1/2 w-8 h-0.5 bg-[#0a6c8f] rounded-full active-underline"></div>
       </a>
       <div class="h-4 w-px bg-slate-200/80 hidden" id="divider-treatments"></div>
       <!-- Our Doctors -->
-      <a id="nav-link-doctors" class="flex items-center gap-1.5 px-4 py-1.5 text-xs font-bold font-navigation transition-all duration-300 relative text-slate-600 hover:text-[#0a6c8f] rounded-xl" href="doctors.html">
+      <a id="nav-link-doctors" class="flex items-center gap-1.5 px-4 py-1.5 text-xs font-bold font-navigation transition-all duration-300 relative bg-white text-[#0a6c8f] shadow-sm border border-slate-200/40 rounded-xl" href="doctors.html">
         <span class="material-symbols-outlined text-base">medical_information</span>
         <span>Our Doctors</span>
+      <div class="absolute bottom-1 left-1/2 -translate-x-1/2 w-8 h-0.5 bg-[#0a6c8f] rounded-full active-underline"></div>
       </a>
-      <div class="h-4 w-px bg-slate-200/80 block" id="divider-doctors"></div>
+      <div class="h-4 w-px bg-slate-200/80 hidden" id="divider-doctors"></div>
       <!-- Education -->
       <a id="nav-link-education" class="flex items-center gap-1.5 px-4 py-1.5 text-xs font-bold font-navigation transition-all duration-300 relative text-slate-600 hover:text-[#0a6c8f] rounded-xl" href="education.html">
         <span class="material-symbols-outlined text-base">school</span>
@@ -305,8 +249,8 @@
   </a>
 </header>
 
-<!-- Mobile Navigation Drawer Overlay -->
-<!-- Mobile Navigation Drawer Overlay -->
+  <!-- Mobile Navigation Sidebar Drawer -->
+  <!-- Mobile Navigation Drawer Overlay -->
 <div id="mobile-menu" class="fixed inset-0 bg-black/40 backdrop-blur-sm z-[9999] opacity-0 pointer-events-none transition-opacity duration-300">
   <div id="mobile-sidebar" class="absolute right-0 top-0 h-full w-[320px] max-w-[85%] bg-white shadow-2xl p-6 flex flex-col justify-between transform translate-x-full transition-transform duration-300 rounded-l-[32px]">
     
@@ -333,7 +277,7 @@
       <div class="h-px bg-slate-100/80 mx-4"></div>
       
       <!-- Treatments -->
-      <a class="bg-[#0a6c8f]/10 text-[#0a6c8f] rounded-2xl px-4 py-3 flex items-center justify-between font-extrabold shadow-inner mobile-nav-link" href="treatments.html">
+      <a class="text-slate-650 hover:text-[#0a6c8f] px-4 py-3 flex items-center justify-between font-bold transition-all duration-300 mobile-nav-link" href="treatments.html">
         <div class="flex items-center gap-3">
           <span class="material-symbols-outlined text-lg">stethoscope</span>
           <span>Treatments</span>
@@ -343,7 +287,7 @@
       <div class="h-px bg-slate-100/80 mx-4"></div>
       
       <!-- Our Doctors -->
-      <a class="text-slate-650 hover:text-[#0a6c8f] px-4 py-3 flex items-center justify-between font-bold transition-all duration-300 mobile-nav-link" href="doctors.html">
+      <a class="bg-[#0a6c8f]/10 text-[#0a6c8f] rounded-2xl px-4 py-3 flex items-center justify-between font-extrabold shadow-inner mobile-nav-link" href="doctors.html">
         <div class="flex items-center gap-3">
           <span class="material-symbols-outlined text-lg">medical_information</span>
           <span>Our Doctors</span>
@@ -420,253 +364,491 @@
   </div>
 </div>
 
-<!-- 🌿 Hero Section -->
-<section class="relative min-h-[50vh] flex items-center pt-36 pb-20 px-gutter" id="treatment-hero">
-    <div class="max-w-container-max mx-auto text-center relative z-10 w-full">
-        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary font-label-caps text-label-caps mb-6 reveal-on-scroll">
-            <span class="material-symbols-outlined text-xs">verified_user</span>
-            SKIN CARE & FACIALS
-        </div>
-        <h1 class="font-display-lg text-display-lg leading-tight text-deep-navy font-bold mb-6 reveal-on-scroll" style="transition-delay: 0.1s;">
-            Hydra Facial
+  <!-- Main Content Area -->
+  <main class="pt-28 pb-0">
+    <!-- Hero Header section -->
+    <section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12 lg:py-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <!-- Left side text & badges -->
+      <div class="space-y-6">
+        <span class="text-xs font-bold tracking-wider text-[#0a6c8f] uppercase block">— Our Doctors</span>
+        <h1 class="font-serif-premium text-4xl lg:text-5xl font-bold text-deep-navy leading-tight">
+          Expert Care.<br>Trusted Professionals.
         </h1>
-        <p class="font-body-md text-on-surface-variant max-w-2xl mx-auto leading-relaxed reveal-on-scroll mb-8" style="transition-delay: 0.2s;">
-            Drench your skin in medical-grade hydration, deep pore suction, and botanical serum infusions.
+        <p class="text-slate-650 font-medium text-sm leading-relaxed max-w-lg">
+          Our team of highly qualified and experienced doctors is dedicated to providing personalized care with compassion and excellence.
         </p>
-        <div class="reveal-on-scroll" style="transition-delay: 0.3s;">
-            <a href="../index.html#booking" onclick="localStorage.setItem('prefilled_treatment', 'Skin Rejuvenation');" class="bg-primary text-on-primary font-navigation text-navigation px-8 py-3.5 rounded-full primary-glow inline-flex items-center gap-2 hover:scale-105 transition-transform">
-                Book Treatment Now
-                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+        
+        <!-- Quick Stats badges grid (4 badges) -->
+        <div class="grid grid-cols-2 gap-4 pt-2">
+          <!-- Badge 1: Experienced Specialists -->
+          <div class="flex items-center gap-3 bg-white border border-slate-200/50 rounded-2xl p-3 shadow-sm">
+            <div class="w-9 h-9 rounded-full bg-[#0a6c8f]/10 text-[#0a6c8f] flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-base">workspace_premium</span>
+            </div>
+            <div>
+              <h6 class="text-xs font-extrabold text-deep-navy leading-none">Experienced Specialists</h6>
+              <p class="text-[9.5px] text-slate-500 font-semibold leading-none mt-1.5">Years of expertise you can trust</p>
+            </div>
+          </div>
+          <!-- Badge 2: Patient-Centered -->
+          <div class="flex items-center gap-3 bg-white border border-slate-200/50 rounded-2xl p-3 shadow-sm">
+            <div class="w-9 h-9 rounded-full bg-[#0a6c8f]/10 text-[#0a6c8f] flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-base">favorite</span>
+            </div>
+            <div>
+              <h6 class="text-xs font-extrabold text-deep-navy leading-none">Patient-Centered</h6>
+              <p class="text-[9.5px] text-slate-500 font-semibold leading-none mt-1.5">Personalized care for everyone</p>
+            </div>
+          </div>
+          <!-- Badge 3: Advanced Tech -->
+          <div class="flex items-center gap-3 bg-white border border-slate-200/50 rounded-2xl p-3 shadow-sm">
+            <div class="w-9 h-9 rounded-full bg-[#0a6c8f]/10 text-[#0a6c8f] flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-base">biotech</span>
+            </div>
+            <div>
+              <h6 class="text-xs font-extrabold text-deep-navy leading-none">Advanced Technology</h6>
+              <p class="text-[9.5px] text-slate-500 font-semibold leading-none mt-1.5">Modern equipment for diagnosis</p>
+            </div>
+          </div>
+          <!-- Badge 4: Safe & Trusted -->
+          <div class="flex items-center gap-3 bg-white border border-slate-200/50 rounded-2xl p-3 shadow-sm">
+            <div class="w-9 h-9 rounded-full bg-[#0a6c8f]/10 text-[#0a6c8f] flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-base">shield</span>
+            </div>
+            <div>
+              <h6 class="text-xs font-extrabold text-deep-navy leading-none">Safe & Trusted</h6>
+              <p class="text-[9.5px] text-slate-500 font-semibold leading-none mt-1.5">Your health is our top priority</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right side photo / slideshow -->
+      <div class="rounded-[32px] overflow-hidden shadow-xl border border-slate-200/50 aspect-[4/3] relative" id="hero-slideshow-container">
+        <img class="hero-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-100 z-10" src="assets/hero_lobby_1.jpg" alt="Elixir Clinic Lobby Reception Area">
+        <img class="hero-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0 z-0" src="assets/hero_exterior.jpg" alt="Elixir Clinic Exterior Building">
+        <img class="hero-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0 z-0" src="assets/hero_lobby_2.jpg" alt="Elixir Clinic Waiting Lounge">
+        <img class="hero-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0 z-0" src="assets/hero_counter.jpg" alt="Elixir Clinic Reception Desk">
+        <img class="hero-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0 z-0" src="assets/hero_doctor.jpg" alt="Elixir Clinic Chief Doctor">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent z-20 pointer-events-none"></div>
+      </div>
+    </section>
+
+    <!-- Meet Our Specialists Section -->
+    <section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12 lg:py-16">
+      <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 border-b border-slate-200/60 pb-6 mb-8">
+        <div>
+          <h2 class="text-3xl font-extrabold text-deep-navy">Meet Our Specialists</h2>
+          <p class="text-xs text-slate-500 font-semibold mt-1">Filter by specialty to find the right care for you.</p>
+        </div>
+        
+        <!-- Filters (All, Dermatology, Cosmetology, Plastic Surgery, Hair Restoration) -->
+        <div class="flex flex-wrap gap-2">
+          <button onclick="filterSpecialists('all')" id="btn-filter-all" class="filter-btn bg-[#0a6c8f] text-white text-xs font-extrabold px-5 py-2.5 rounded-full shadow-sm transition-all duration-300">All Specialists</button>
+          <button onclick="filterSpecialists('Dermatology')" id="btn-filter-dermatology" class="filter-btn bg-white hover:bg-slate-50 text-slate-600 border border-slate-200 text-xs font-extrabold px-5 py-2.5 rounded-full transition-all duration-300">Dermatology</button>
+          <button onclick="filterSpecialists('Cosmetology')" id="btn-filter-cosmetology" class="filter-btn bg-white hover:bg-slate-50 text-slate-600 border border-slate-200 text-xs font-extrabold px-5 py-2.5 rounded-full transition-all duration-300">Cosmetology</button>
+          <button onclick="filterSpecialists('Plastic Surgery')" id="btn-filter-plastic" class="filter-btn bg-white hover:bg-slate-50 text-slate-600 border border-slate-200 text-xs font-extrabold px-5 py-2.5 rounded-full transition-all duration-300">Plastic Surgery</button>
+          <button onclick="filterSpecialists('Hair Restoration')" id="btn-filter-hair" class="filter-btn bg-white hover:bg-slate-50 text-slate-600 border border-slate-200 text-xs font-extrabold px-5 py-2.5 rounded-full transition-all duration-300">Hair Restoration</button>
+        </div>
+      </div>
+
+      <!-- Doctor cards grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4" id="doctors-grid">
+        <!-- Doctor 1: Dr. Ananya Sharma -->
+        <div class="doctor-card bg-white border border-slate-200/50 rounded-3xl overflow-hidden shadow-sm hover:shadow-md hover:scale-[1.01] transition-all duration-300 flex flex-col justify-between" data-specialty="Dermatology">
+          <div>
+            <div class="aspect-[4/5] w-full bg-slate-100 relative overflow-hidden">
+              <span class="absolute top-4 left-4 bg-[#0a6c8f]/10 text-[#0a6c8f] text-[9px] font-extrabold px-2.5 py-1 rounded-full uppercase tracking-wider z-20">Dermatology</span>
+              <img class="w-full h-full object-cover" src="assets/doctor_2.png" alt="Dr. Ananya Sharma">
+            </div>
+            <div class="p-4 space-y-3">
+              <div class="text-center">
+                <h4 class="text-sm font-extrabold text-deep-navy">Dr. Ananya Sharma</h4>
+                <p class="text-[10px] text-[#0a6c8f] font-bold mt-0.5">Dermatologist</p>
+              </div>
+              <div class="space-y-2 pt-2 border-t border-slate-100">
+                <div class="flex items-start gap-2">
+                  <span class="material-symbols-outlined text-[#0a6c8f] text-sm mt-0.5">stars</span>
+                  <span class="text-[10px] font-bold text-slate-600">10+ Years Experience</span>
+                </div>
+                <div class="flex items-start gap-2">
+                  <span class="material-symbols-outlined text-[#0a6c8f] text-sm mt-0.5">location_on</span>
+                  <div class="text-[10px] text-slate-600">
+                    <span class="font-extrabold text-deep-navy block">Specializes In:</span>
+                    Acne, Skin Rejuvenation, Anti-Aging Treatments
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="px-4 pb-4 pt-1">
+            <a href="index.html#booking" class="w-full py-2 bg-[#0a6c8f] hover:bg-[#085571] text-white text-[10px] font-extrabold rounded-xl flex items-center justify-center gap-1 transition-all duration-300 shadow-sm">
+              <span>View Profile</span>
+              <span class="material-symbols-outlined text-[10px]">arrow_forward</span>
             </a>
+          </div>
         </div>
-    </div>
-</section>
 
-<!-- 🌿 Overview & Before/After Section -->
-<section class="py-stack-lg bg-white border-t border-b border-glass-border/30 px-gutter" id="overview">
-    <div class="max-w-container-max mx-auto grid md:grid-cols-2 gap-16 items-center">
-        <!-- Text -->
-        <div class="space-y-6 reveal-on-scroll">
-            <span class="font-label-caps text-[10px] font-bold text-primary tracking-widest uppercase">Treatment Overview</span>
-            <h2 class="font-display-lg text-display-lg text-deep-navy">Science and Radiance Combined</h2>
-            <div class="text-on-surface-variant text-sm leading-relaxed space-y-4">
-                <p>The Hydra Facial is a revolutionary, non-invasive skin resurfacing treatment that delivers immediate, visible results with absolutely no downtime. Utilizing patented vortex-fusion technology, the device cleanses, exfoliates, and extracts impurities from deep within pores while simultaneously infusing the skin with essential nutrients like antioxidants, peptides, and hyaluronic acid.</p><p>This treatment is ideal for all skin types, addressing concerns like fine lines, large pores, hyperpigmentation, and dull skin to restore a plump, dewy glow.</p>
+        <!-- Doctor 2: Dr. Vivek Malhotra -->
+        <div class="doctor-card bg-white border border-slate-200/50 rounded-3xl overflow-hidden shadow-sm hover:shadow-md hover:scale-[1.01] transition-all duration-300 flex flex-col justify-between" data-specialty="Plastic Surgery">
+          <div>
+            <div class="aspect-[4/5] w-full bg-slate-100 relative overflow-hidden">
+              <span class="absolute top-4 left-4 bg-[#0a6c8f]/10 text-[#0a6c8f] text-[9px] font-extrabold px-2.5 py-1 rounded-full uppercase tracking-wider z-20">Plastic Surgery</span>
+              <img class="w-full h-full object-cover" src="assets/doctor_3.png" alt="Dr. Vivek Malhotra">
             </div>
-            <!-- Pricing and Duration Info Badge -->
-            <div class="p-6 glass-card rounded-2xl border border-glass-border bg-slate-50/50 flex flex-wrap gap-6 mt-6">
-                <div>
-                    <span class="text-[8px] font-bold text-on-surface-variant uppercase tracking-widest block mb-1">Starting Price</span>
-                    <span class="text-primary font-bold text-lg">₹15,000 / session</span>
+            <div class="p-4 space-y-3">
+              <div class="text-center">
+                <h4 class="text-sm font-extrabold text-deep-navy">Dr. Vivek Malhotra</h4>
+                <p class="text-[10px] text-[#0a6c8f] font-bold mt-0.5">Plastic & Aesthetic Surgeon</p>
+              </div>
+              <div class="space-y-2 pt-2 border-t border-slate-100">
+                <div class="flex items-start gap-2">
+                  <span class="material-symbols-outlined text-[#0a6c8f] text-sm mt-0.5">stars</span>
+                  <span class="text-[10px] font-bold text-slate-600">15+ Years Experience</span>
                 </div>
-                <div class="w-px bg-glass-border"></div>
-                <div>
-                    <span class="text-[8px] font-bold text-on-surface-variant uppercase tracking-widest block mb-1">Duration</span>
-                    <span class="text-deep-navy font-bold text-lg">60 Mins</span>
+                <div class="flex items-start gap-2">
+                  <span class="material-symbols-outlined text-[#0a6c8f] text-sm mt-0.5">location_on</span>
+                  <div class="text-[10px] text-slate-600">
+                    <span class="font-extrabold text-deep-navy block">Specializes In:</span>
+                    Rhinoplasty, Facelift, Body Contouring
+                  </div>
                 </div>
-                <div class="w-px bg-glass-border"></div>
-                <div>
-                    <span class="text-[8px] font-bold text-on-surface-variant uppercase tracking-widest block mb-1">Recommended Sessions</span>
-                    <span class="text-deep-navy font-bold text-lg">1 Session / Month</span>
-                </div>
+              </div>
             </div>
+          </div>
+          <div class="px-4 pb-4 pt-1">
+            <a href="index.html#booking" class="w-full py-2 bg-[#0a6c8f] hover:bg-[#085571] text-white text-[10px] font-extrabold rounded-xl flex items-center justify-center gap-1 transition-all duration-300 shadow-sm">
+              <span>View Profile</span>
+              <span class="material-symbols-outlined text-[10px]">arrow_forward</span>
+            </a>
+          </div>
         </div>
-        <!-- Before & After Mock Slider -->
-        <div class="reveal-on-scroll relative group" style="transition-delay: 0.2s;">
-            <div class="aspect-[4/3] rounded-[42px] overflow-hidden shadow-2xl relative">
-                <!-- After Image -->
-                <div class="absolute inset-0 bg-[#053a4e] flex flex-col justify-center items-center text-center p-8 text-white">
-                    <span class="material-symbols-outlined text-tertiary text-5xl mb-4">auto_awesome</span>
-                    <h4 class="font-display-lg text-base font-bold mb-2">Radiant After-State</h4>
-                    <p class="text-[11px] text-white/70 max-w-xs leading-relaxed">Demonstrating restored collagen, cleared texture, and optimal hydration balance after the recommended sessions.</p>
-                </div>
-            </div>
-            <div class="absolute -top-6 -right-6 p-6 glass-card rounded-2xl max-w-[180px] shadow-lg">
-                <span class="material-symbols-outlined text-primary text-3xl mb-2">check_circle</span>
-                <p class="text-[9px] font-bold text-deep-navy uppercase tracking-wider">Clinically Proven Outcomes</p>
-            </div>
-        </div>
-    </div>
-</section>
 
-<!-- 🌿 Core Benefits Section -->
-<section class="py-stack-lg bg-surface px-gutter" id="benefits">
-    <div class="max-w-container-max mx-auto">
-        <div class="text-center mb-16 reveal-on-scroll">
-            <span class="font-label-caps text-[10px] font-bold text-primary tracking-widest uppercase mb-3 inline-block">Advantages</span>
-            <h2 class="font-display-lg text-display-lg text-deep-navy">Core Benefits</h2>
-            <p class="text-on-surface-variant max-w-xl mx-auto mt-3 text-xs font-medium">Why our dermatologists recommend this treatment for healthy skin.</p>
+        <!-- Doctor 3: Dr. Riya Mehta -->
+        <div class="doctor-card bg-white border border-slate-200/50 rounded-3xl overflow-hidden shadow-sm hover:shadow-md hover:scale-[1.01] transition-all duration-300 flex flex-col justify-between" data-specialty="Cosmetology">
+          <div>
+            <div class="aspect-[4/5] w-full bg-slate-100 relative overflow-hidden">
+              <span class="absolute top-4 left-4 bg-[#0a6c8f]/10 text-[#0a6c8f] text-[9px] font-extrabold px-2.5 py-1 rounded-full uppercase tracking-wider z-20">Cosmetology</span>
+              <img class="w-full h-full object-cover" src="assets/doctor_2.png" alt="Dr. Riya Mehta">
+            </div>
+            <div class="p-4 space-y-3">
+              <div class="text-center">
+                <h4 class="text-sm font-extrabold text-deep-navy">Dr. Riya Mehta</h4>
+                <p class="text-[10px] text-[#0a6c8f] font-bold mt-0.5">Cosmetologist</p>
+              </div>
+              <div class="space-y-2 pt-2 border-t border-slate-100">
+                <div class="flex items-start gap-2">
+                  <span class="material-symbols-outlined text-[#0a6c8f] text-sm mt-0.5">stars</span>
+                  <span class="text-[10px] font-bold text-slate-600">8+ Years Experience</span>
+                </div>
+                <div class="flex items-start gap-2">
+                  <span class="material-symbols-outlined text-[#0a6c8f] text-sm mt-0.5">location_on</span>
+                  <div class="text-[10px] text-slate-600">
+                    <span class="font-extrabold text-deep-navy block">Specializes In:</span>
+                    Hydra Facial, Chemical Peels, Laser Skin Treatments
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="px-4 pb-4 pt-1">
+            <a href="index.html#booking" class="w-full py-2 bg-[#0a6c8f] hover:bg-[#085571] text-white text-[10px] font-extrabold rounded-xl flex items-center justify-center gap-1 transition-all duration-300 shadow-sm">
+              <span>View Profile</span>
+              <span class="material-symbols-outlined text-[10px]">arrow_forward</span>
+            </a>
+          </div>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- Benefit 1 -->
-            <div class="glass-card p-8 rounded-3xl bg-white border border-glass-border flex gap-4 items-start group hover:-translate-y-1 transition-all duration-300 reveal-on-scroll">
-                <div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
-                    <span class="material-symbols-outlined text-lg">sparkles</span>
-                </div>
-                <div class="space-y-1.5">
-                    <h4 class="font-bold text-deep-navy text-xs uppercase tracking-wider font-navigation">Instant Radiance</h4>
-                    <p class="text-[10px] text-on-surface-variant leading-relaxed">Delivers a visible, red-carpet glow and deep cellular hydration immediately.</p>
-                </div>
-            </div>
-            <!-- Benefit 2 -->
-            <div class="glass-card p-8 rounded-3xl bg-white border border-glass-border flex gap-4 items-start group hover:-translate-y-1 transition-all duration-300 reveal-on-scroll" style="transition-delay: 0.1s;">
-                <div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
-                    <span class="material-symbols-outlined text-lg">clean_hands</span>
-                </div>
-                <div class="space-y-1.5">
-                    <h4 class="font-bold text-deep-navy text-xs uppercase tracking-wider font-navigation">Deep Extraction</h4>
-                    <p class="text-[10px] text-on-surface-variant leading-relaxed">Uses vortex-suction to effortlessly remove blackheads, whiteheads, and sebum.</p>
-                </div>
-            </div>
-            <!-- Benefit 3 -->
-            <div class="glass-card p-8 rounded-3xl bg-white border border-glass-border flex gap-4 items-start group hover:-translate-y-1 transition-all duration-300 reveal-on-scroll" style="transition-delay: 0.2s;">
-                <div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
-                    <span class="material-symbols-outlined text-lg">add_circle</span>
-                </div>
-                <div class="space-y-1.5">
-                    <h4 class="font-bold text-deep-navy text-xs uppercase tracking-wider font-navigation">Fine Line Plumping</h4>
-                    <p class="text-[10px] text-on-surface-variant leading-relaxed">Infuses concentrated hyaluronic acid to minimize fine lines and dehydration creases.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
-<!-- 🌿 Procedure Steps Section -->
-<section class="py-stack-lg bg-white border-t border-b border-glass-border/30 px-gutter" id="procedure">
-    <div class="max-w-container-max mx-auto">
-        <div class="text-center mb-16 reveal-on-scroll">
-            <span class="font-label-caps text-[10px] font-bold text-primary tracking-widest uppercase mb-3 inline-block">The Journey</span>
-            <h2 class="font-display-lg text-display-lg text-deep-navy">Procedure Protocol</h2>
-            <p class="text-on-surface-variant max-w-xl mx-auto mt-3 text-xs font-medium">What to expect during your diagnostic treatment session at Elixir Clinic.</p>
+        <!-- Doctor 4: Dr. Arjun Bansal -->
+        <div class="doctor-card bg-white border border-slate-200/50 rounded-3xl overflow-hidden shadow-sm hover:shadow-md hover:scale-[1.01] transition-all duration-300 flex flex-col justify-between" data-specialty="Hair Restoration">
+          <div>
+            <div class="aspect-[4/5] w-full bg-slate-100 relative overflow-hidden">
+              <span class="absolute top-4 left-4 bg-[#0a6c8f]/10 text-[#0a6c8f] text-[9px] font-extrabold px-2.5 py-1 rounded-full uppercase tracking-wider z-20">Hair Restoration</span>
+              <img class="w-full h-full object-cover" src="assets/doctor_1.png" alt="Dr. Arjun Bansal">
+            </div>
+            <div class="p-4 space-y-3">
+              <div class="text-center">
+                <h4 class="text-sm font-extrabold text-deep-navy">Dr. Arjun Bansal</h4>
+                <p class="text-[10px] text-[#0a6c8f] font-bold mt-0.5">Hair Restoration Specialist</p>
+              </div>
+              <div class="space-y-2 pt-2 border-t border-slate-100">
+                <div class="flex items-start gap-2">
+                  <span class="material-symbols-outlined text-[#0a6c8f] text-sm mt-0.5">stars</span>
+                  <span class="text-[10px] font-bold text-slate-600">9+ Years Experience</span>
+                </div>
+                <div class="flex items-start gap-2">
+                  <span class="material-symbols-outlined text-[#0a6c8f] text-sm mt-0.5">location_on</span>
+                  <div class="text-[10px] text-slate-600">
+                    <span class="font-extrabold text-deep-navy block">Specializes In:</span>
+                    Hair Transplant, PRP Therapy, Hair Regrowth Solutions
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="px-4 pb-4 pt-1">
+            <a href="index.html#booking" class="w-full py-2 bg-[#0a6c8f] hover:bg-[#085571] text-white text-[10px] font-extrabold rounded-xl flex items-center justify-center gap-1 transition-all duration-300 shadow-sm">
+              <span>View Profile</span>
+              <span class="material-symbols-outlined text-[10px]">arrow_forward</span>
+            </a>
+          </div>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
-            <!-- Step 01 -->
-            <div class="glass-card p-8 rounded-3xl bg-white border border-glass-border relative hover:-translate-y-1 transition-all duration-300 reveal-on-scroll">
-                <span class="absolute top-6 right-8 font-display-lg text-4xl font-extrabold text-primary/10 leading-none">01</span>
-                <div class="space-y-4">
-                    <div class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-xs">
-                        01
-                    </div>
-                    <div class="space-y-1.5">
-                        <h4 class="font-bold text-deep-navy text-xs uppercase tracking-wider font-navigation">Cleansing & Peeling</h4>
-                        <p class="text-[10px] text-on-surface-variant leading-relaxed">A gentle exfoliating tip cleanses the skin surface and sweeps away dead cells.</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Step 02 -->
-            <div class="glass-card p-8 rounded-3xl bg-white border border-glass-border relative hover:-translate-y-1 transition-all duration-300 reveal-on-scroll" style="transition-delay: 0.1s;">
-                <span class="absolute top-6 right-8 font-display-lg text-4xl font-extrabold text-primary/10 leading-none">02</span>
-                <div class="space-y-4">
-                    <div class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-xs">
-                        02
-                    </div>
-                    <div class="space-y-1.5">
-                        <h4 class="font-bold text-deep-navy text-xs uppercase tracking-wider font-navigation">Extract & Hydrate</h4>
-                        <p class="text-[10px] text-on-surface-variant leading-relaxed">Vortex-suction removes impurities from pores, while nourishing moisturizers soothe the skin.</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Step 03 -->
-            <div class="glass-card p-8 rounded-3xl bg-white border border-glass-border relative hover:-translate-y-1 transition-all duration-300 reveal-on-scroll" style="transition-delay: 0.2s;">
-                <span class="absolute top-6 right-8 font-display-lg text-4xl font-extrabold text-primary/10 leading-none">03</span>
-                <div class="space-y-4">
-                    <div class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-xs">
-                        03
-                    </div>
-                    <div class="space-y-1.5">
-                        <h4 class="font-bold text-deep-navy text-xs uppercase tracking-wider font-navigation">Fuse & Protect</h4>
-                        <p class="text-[10px] text-on-surface-variant leading-relaxed">The skin is saturated with antioxidant serums and peptides to maximize shine and barrier strength.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
-<!-- 🌿 Recovery & Aftercare Section -->
-<section class="py-stack-lg bg-surface px-gutter" id="recovery">
-    <div class="max-w-container-max mx-auto grid md:grid-cols-2 gap-16 items-center">
-        <!-- Graphic/Icon representation -->
-        <div class="reveal-on-scroll">
-            <div class="glass-card p-8 rounded-[40px] border border-glass-border bg-white flex flex-col justify-center items-center text-center gap-4">
-                <div class="w-16 h-16 rounded-full bg-primary/10 text-primary flex items-center justify-center">
-                    <span class="material-symbols-outlined text-3xl">healing</span>
+        <!-- Doctor 5: Dr. Neha Kapoor -->
+        <div class="doctor-card bg-white border border-slate-200/50 rounded-3xl overflow-hidden shadow-sm hover:shadow-md hover:scale-[1.01] transition-all duration-300 flex flex-col justify-between" data-specialty="Dermatology">
+          <div>
+            <div class="aspect-[4/5] w-full bg-slate-100 relative overflow-hidden">
+              <span class="absolute top-4 left-4 bg-[#0a6c8f]/10 text-[#0a6c8f] text-[9px] font-extrabold px-2.5 py-1 rounded-full uppercase tracking-wider z-20">Dermatology</span>
+              <img class="w-full h-full object-cover" src="assets/doctor_2.png" alt="Dr. Neha Kapoor">
+            </div>
+            <div class="p-4 space-y-3">
+              <div class="text-center">
+                <h4 class="text-sm font-extrabold text-deep-navy">Dr. Neha Kapoor</h4>
+                <p class="text-[10px] text-[#0a6c8f] font-bold mt-0.5">Senior Dermatologist</p>
+              </div>
+              <div class="space-y-2 pt-2 border-t border-slate-100">
+                <div class="flex items-start gap-2">
+                  <span class="material-symbols-outlined text-[#0a6c8f] text-sm mt-0.5">stars</span>
+                  <span class="text-[10px] font-bold text-slate-600">12+ Years Experience</span>
                 </div>
-                <h3 class="font-display-lg text-lg text-deep-navy font-bold">Optimal Healing Support</h3>
-                <p class="text-xs text-on-surface-variant leading-relaxed max-w-md">Our post-care team is available 24/7. We schedule routine follow-up reviews to track your cellular skin recovery progress and adjust home care formulas.</p>
+                <div class="flex items-start gap-2">
+                  <span class="material-symbols-outlined text-[#0a6c8f] text-sm mt-0.5">location_on</span>
+                  <div class="text-[10px] text-slate-600">
+                    <span class="font-extrabold text-deep-navy block">Specializes In:</span>
+                    Pigmentation, Sensitive Skin, Laser Hair Removal
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
+          <div class="px-4 pb-4 pt-1">
+            <a href="index.html#booking" class="w-full py-2 bg-[#0a6c8f] hover:bg-[#085571] text-white text-[10px] font-extrabold rounded-xl flex items-center justify-center gap-1 transition-all duration-300 shadow-sm">
+              <span>View Profile</span>
+              <span class="material-symbols-outlined text-[10px]">arrow_forward</span>
+            </a>
+          </div>
         </div>
-        <!-- Aftercare tips -->
-        <div class="space-y-6 reveal-on-scroll" style="transition-delay: 0.1s;">
-            <span class="font-label-caps text-[10px] font-bold text-primary tracking-widest uppercase">Aftercare Guidelines</span>
-            <h2 class="font-display-lg text-display-lg text-deep-navy">Recovery & Aftercare</h2>
-            <div class="text-on-surface-variant text-sm leading-relaxed space-y-4">
-                <p>There is absolutely no downtime associated with a Hydra Facial. You can immediately return to your normal daily activities. We advise keeping the skin clean, avoiding heavy makeup for the rest of the day, and applying sunscreen to maintain your fresh glow.</p>
-            </div>
-        </div>
-    </div>
-</section>
 
-<!-- 🌿 FAQs Section -->
-<section class="py-stack-lg bg-white px-gutter" id="faq">
-    <div class="max-w-3xl mx-auto">
-        <div class="text-center mb-16 reveal-on-scroll">
-            <span class="font-label-caps text-[10px] font-bold text-primary tracking-widest uppercase mb-3 inline-block">Questions & Answers</span>
-            <h2 class="font-display-lg text-display-lg text-deep-navy">Frequently Asked Questions</h2>
+        <!-- Doctor 6: Dr. Sameer Khanna -->
+        <div class="doctor-card bg-white border border-slate-200/50 rounded-3xl overflow-hidden shadow-sm hover:shadow-md hover:scale-[1.01] transition-all duration-300 flex flex-col justify-between" data-specialty="Cosmetology">
+          <div>
+            <div class="aspect-[4/5] w-full bg-slate-100 relative overflow-hidden">
+              <span class="absolute top-4 left-4 bg-[#0a6c8f]/10 text-[#0a6c8f] text-[9px] font-extrabold px-2.5 py-1 rounded-full uppercase tracking-wider z-20">Cosmetology</span>
+              <img class="w-full h-full object-cover" src="assets/doctor_3.png" alt="Dr. Sameer Khanna">
+            </div>
+            <div class="p-4 space-y-3">
+              <div class="text-center">
+                <h4 class="text-sm font-extrabold text-deep-navy">Dr. Sameer Khanna</h4>
+                <p class="text-[10px] text-[#0a6c8f] font-bold mt-0.5">Laser Specialist</p>
+              </div>
+              <div class="space-y-2 pt-2 border-t border-slate-100">
+                <div class="flex items-start gap-2">
+                  <span class="material-symbols-outlined text-[#0a6c8f] text-sm mt-0.5">stars</span>
+                  <span class="text-[10px] font-bold text-slate-600">11+ Years Experience</span>
+                </div>
+                <div class="flex items-start gap-2">
+                  <span class="material-symbols-outlined text-[#0a6c8f] text-sm mt-0.5">location_on</span>
+                  <div class="text-[10px] text-slate-600">
+                    <span class="font-extrabold text-deep-navy block">Specializes In:</span>
+                    Laser Treatments, Scar Removal, Tattoo Removal
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="px-4 pb-4 pt-1">
+            <a href="index.html#booking" class="w-full py-2 bg-[#0a6c8f] hover:bg-[#085571] text-white text-[10px] font-extrabold rounded-xl flex items-center justify-center gap-1 transition-all duration-300 shadow-sm">
+              <span>View Profile</span>
+              <span class="material-symbols-outlined text-[10px]">arrow_forward</span>
+            </a>
+          </div>
         </div>
-        <div class="space-y-4 reveal-on-scroll">
-            <!-- FAQ Item 1 -->
-            <div class="glass-card rounded-2xl border border-glass-border bg-white/60 overflow-hidden">
-                <button onclick="toggleFaq(0)" class="w-full px-6 py-4 text-left flex justify-between items-center gap-4 hover:bg-slate-50/50 transition-colors">
-                    <h4 class="font-bold text-deep-navy text-xs uppercase tracking-wider font-navigation">Who is a good candidate for Hydra Facial?</h4>
-                    <span id="faq-icon-0" class="material-symbols-outlined text-primary text-sm transition-transform duration-300">expand_more</span>
-                </button>
-                <div id="faq-content-0" class="hidden opacity-0 -translate-y-2 transition-all duration-300 px-6 pb-5 border-t border-glass-border/30 pt-4">
-                    <p class="text-[11px] text-on-surface-variant leading-relaxed font-body-md">Hydra Facial is suitable for all skin types, including sensitive skin. It helps with dryness, oily congestion, and general anti-aging maintenance.</p>
-                </div>
+
+        <!-- Doctor 7: Dr. Pooja Iyer -->
+        <div class="doctor-card bg-white border border-slate-200/50 rounded-3xl overflow-hidden shadow-sm hover:shadow-md hover:scale-[1.01] transition-all duration-300 flex flex-col justify-between" data-specialty="Dermatology">
+          <div>
+            <div class="aspect-[4/5] w-full bg-slate-100 relative overflow-hidden">
+              <span class="absolute top-4 left-4 bg-[#0a6c8f]/10 text-[#0a6c8f] text-[9px] font-extrabold px-2.5 py-1 rounded-full uppercase tracking-wider z-20">Dermatology</span>
+              <img class="w-full h-full object-cover" src="assets/doctor_2.png" alt="Dr. Pooja Iyer">
             </div>
-            <!-- FAQ Item 2 -->
-            <div class="glass-card rounded-2xl border border-glass-border bg-white/60 overflow-hidden">
-                <button onclick="toggleFaq(1)" class="w-full px-6 py-4 text-left flex justify-between items-center gap-4 hover:bg-slate-50/50 transition-colors">
-                    <h4 class="font-bold text-deep-navy text-xs uppercase tracking-wider font-navigation">How often should I get a Hydra Facial?</h4>
-                    <span id="faq-icon-1" class="material-symbols-outlined text-primary text-sm transition-transform duration-300">expand_more</span>
-                </button>
-                <div id="faq-content-1" class="hidden opacity-0 -translate-y-2 transition-all duration-300 px-6 pb-5 border-t border-glass-border/30 pt-4">
-                    <p class="text-[11px] text-on-surface-variant leading-relaxed font-body-md">We recommend one session per month to maintain optimal hydration, clear pores, and keep your skin glowing continuously.</p>
+            <div class="p-4 space-y-3">
+              <div class="text-center">
+                <h4 class="text-sm font-extrabold text-deep-navy">Dr. Pooja Iyer</h4>
+                <p class="text-[10px] text-[#0a6c8f] font-bold mt-0.5">Skin & Aesthetic Physician</p>
+              </div>
+              <div class="space-y-2 pt-2 border-t border-slate-100">
+                <div class="flex items-start gap-2">
+                  <span class="material-symbols-outlined text-[#0a6c8f] text-sm mt-0.5">stars</span>
+                  <span class="text-[10px] font-bold text-slate-600">7+ Years Experience</span>
                 </div>
-            </div>
-            <!-- FAQ Item 3 -->
-            <div class="glass-card rounded-2xl border border-glass-border bg-white/60 overflow-hidden">
-                <button onclick="toggleFaq(2)" class="w-full px-6 py-4 text-left flex justify-between items-center gap-4 hover:bg-slate-50/50 transition-colors">
-                    <h4 class="font-bold text-deep-navy text-xs uppercase tracking-wider font-navigation">Can I combine this with other treatments?</h4>
-                    <span id="faq-icon-2" class="material-symbols-outlined text-primary text-sm transition-transform duration-300">expand_more</span>
-                </button>
-                <div id="faq-content-2" class="hidden opacity-0 -translate-y-2 transition-all duration-300 px-6 pb-5 border-t border-glass-border/30 pt-4">
-                    <p class="text-[11px] text-on-surface-variant leading-relaxed font-body-md">Yes, Hydra Facial is an excellent base treatment and can be safely combined with Botox, fillers, or laser therapies, often during the same clinic visit.</p>
+                <div class="flex items-start gap-2">
+                  <span class="material-symbols-outlined text-[#0a6c8f] text-sm mt-0.5">location_on</span>
+                  <div class="text-[10px] text-slate-600">
+                    <span class="font-extrabold text-deep-navy block">Specializes In:</span>
+                    Skin Brightening, Anti-Aging, Melasma Treatment
+                  </div>
                 </div>
+              </div>
             </div>
+          </div>
+          <div class="px-4 pb-4 pt-1">
+            <a href="index.html#booking" class="w-full py-2 bg-[#0a6c8f] hover:bg-[#085571] text-white text-[10px] font-extrabold rounded-xl flex items-center justify-center gap-1 transition-all duration-300 shadow-sm">
+              <span>View Profile</span>
+              <span class="material-symbols-outlined text-[10px]">arrow_forward</span>
+            </a>
+          </div>
         </div>
-    </div>
-</section>
 
-<!-- 🌿 Call to Action Section -->
-<section class="py-stack-lg bg-surface px-gutter text-center relative overflow-hidden">
-  <div class="max-w-3xl mx-auto space-y-6 relative z-10">
-    <h2 class="font-display-lg text-display-lg text-deep-navy font-bold">Experience Bespoke Skin Care</h2>
-    <p class="text-on-surface-variant max-w-xl mx-auto text-sm leading-relaxed">
-      Book your consultation and let our board-certified dermatologists design a custom clinical plan targeted to your concerns.
-    </p>
-    <div class="pt-4">
-      <a href="../index.html#booking" onclick="localStorage.setItem('prefilled_treatment', 'Skin Rejuvenation');" class="bg-primary text-on-primary font-navigation text-navigation px-8 py-4 rounded-full primary-glow inline-flex items-center gap-2 hover:scale-105 transition-transform">
-        <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">calendar_today</span>
-        BOOK CONSULTATION NOW
-      </a>
-    </div>
-  </div>
-</section>
+        <!-- Doctor 8: Dr. Karan Sood -->
+        <div class="doctor-card bg-white border border-slate-200/50 rounded-3xl overflow-hidden shadow-sm hover:shadow-md hover:scale-[1.01] transition-all duration-300 flex flex-col justify-between" data-specialty="Plastic Surgery">
+          <div>
+            <div class="aspect-[4/5] w-full bg-slate-100 relative overflow-hidden">
+              <span class="absolute top-4 left-4 bg-[#0a6c8f]/10 text-[#0a6c8f] text-[9px] font-extrabold px-2.5 py-1 rounded-full uppercase tracking-wider z-20">Plastic Surgery</span>
+              <img class="w-full h-full object-cover" src="assets/doctor_1.png" alt="Dr. Karan Sood">
+            </div>
+            <div class="p-4 space-y-3">
+              <div class="text-center">
+                <h4 class="text-sm font-extrabold text-deep-navy">Dr. Karan Sood</h4>
+                <p class="text-[10px] text-[#0a6c8f] font-bold mt-0.5">Rhinoplasty Surgeon</p>
+              </div>
+              <div class="space-y-2 pt-2 border-t border-slate-100">
+                <div class="flex items-start gap-2">
+                  <span class="material-symbols-outlined text-[#0a6c8f] text-sm mt-0.5">stars</span>
+                  <span class="text-[10px] font-bold text-slate-600">10+ Years Experience</span>
+                </div>
+                <div class="flex items-start gap-2">
+                  <span class="material-symbols-outlined text-[#0a6c8f] text-sm mt-0.5">location_on</span>
+                  <div class="text-[10px] text-slate-600">
+                    <span class="font-extrabold text-deep-navy block">Specializes In:</span>
+                    Nose Reshaping, Septoplasty, Revision Rhinoplasty
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="px-4 pb-4 pt-1">
+            <a href="index.html#booking" class="w-full py-2 bg-[#0a6c8f] hover:bg-[#085571] text-white text-[10px] font-extrabold rounded-xl flex items-center justify-center gap-1 transition-all duration-300 shadow-sm">
+              <span>View Profile</span>
+              <span class="material-symbols-outlined text-[10px]">arrow_forward</span>
+            </a>
+          </div>
+        </div>
 
-<!-- Main Footer -->
-<footer id="contact" class="w-full bg-[#f8fafc] text-on-surface relative border-t border-glass-border/40 pt-16 pb-0">
+        <!-- Doctor 9: Dr. Meera Nair -->
+        <div class="doctor-card bg-white border border-slate-200/50 rounded-3xl overflow-hidden shadow-sm hover:shadow-md hover:scale-[1.01] transition-all duration-300 flex flex-col justify-between" data-specialty="Cosmetology">
+          <div>
+            <div class="aspect-[4/5] w-full bg-slate-100 relative overflow-hidden">
+              <span class="absolute top-4 left-4 bg-[#0a6c8f]/10 text-[#0a6c8f] text-[9px] font-extrabold px-2.5 py-1 rounded-full uppercase tracking-wider z-20">Cosmetology</span>
+              <img class="w-full h-full object-cover" src="assets/doctor_2.png" alt="Dr. Meera Nair">
+            </div>
+            <div class="p-4 space-y-3">
+              <div class="text-center">
+                <h4 class="text-sm font-extrabold text-deep-navy">Dr. Meera Nair</h4>
+                <p class="text-[10px] text-[#0a6c8f] font-bold mt-0.5">Anti-Aging Specialist</p>
+              </div>
+              <div class="space-y-2 pt-2 border-t border-slate-100">
+                <div class="flex items-start gap-2">
+                  <span class="material-symbols-outlined text-[#0a6c8f] text-sm mt-0.5">stars</span>
+                  <span class="text-[10px] font-bold text-slate-600">9+ Years Experience</span>
+                </div>
+                <div class="flex items-start gap-2">
+                  <span class="material-symbols-outlined text-[#0a6c8f] text-sm mt-0.5">location_on</span>
+                  <div class="text-[10px] text-slate-600">
+                    <span class="font-extrabold text-deep-navy block">Specializes In:</span>
+                    Botox, Fillers, Thread Lift, Skin Tightening
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="px-4 pb-4 pt-1">
+            <a href="index.html#booking" class="w-full py-2 bg-[#0a6c8f] hover:bg-[#085571] text-white text-[10px] font-extrabold rounded-xl flex items-center justify-center gap-1 transition-all duration-300 shadow-sm">
+              <span>View Profile</span>
+              <span class="material-symbols-outlined text-[10px]">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Doctor 10: Dr. Rajat Verma -->
+        <div class="doctor-card bg-white border border-slate-200/50 rounded-3xl overflow-hidden shadow-sm hover:shadow-md hover:scale-[1.01] transition-all duration-300 flex flex-col justify-between" data-specialty="Plastic Surgery">
+          <div>
+            <div class="aspect-[4/5] w-full bg-slate-100 relative overflow-hidden">
+              <span class="absolute top-4 left-4 bg-[#0a6c8f]/10 text-[#0a6c8f] text-[9px] font-extrabold px-2.5 py-1 rounded-full uppercase tracking-wider z-20">Plastic Surgery</span>
+              <img class="w-full h-full object-cover" src="assets/doctor_3.png" alt="Dr. Rajat Verma">
+            </div>
+            <div class="p-4 space-y-3">
+              <div class="text-center">
+                <h4 class="text-sm font-extrabold text-deep-navy">Dr. Rajat Verma</h4>
+                <p class="text-[10px] text-[#0a6c8f] font-bold mt-0.5">Cosmetic Surgeon</p>
+              </div>
+              <div class="space-y-2 pt-2 border-t border-slate-100">
+                <div class="flex items-start gap-2">
+                  <span class="material-symbols-outlined text-[#0a6c8f] text-sm mt-0.5">stars</span>
+                  <span class="text-[10px] font-bold text-slate-600">13+ Years Experience</span>
+                </div>
+                <div class="flex items-start gap-2">
+                  <span class="material-symbols-outlined text-[#0a6c8f] text-sm mt-0.5">location_on</span>
+                  <div class="text-[10px] text-slate-600">
+                    <span class="font-extrabold text-deep-navy block">Specializes In:</span>
+                    Liposuction, Body Contouring, Breast Surgery
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="px-4 pb-4 pt-1">
+            <a href="index.html#booking" class="w-full py-2 bg-[#0a6c8f] hover:bg-[#085571] text-white text-[10px] font-extrabold rounded-xl flex items-center justify-center gap-1 transition-all duration-300 shadow-sm">
+              <span>View Profile</span>
+              <span class="material-symbols-outlined text-[10px]">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- Stats Section -->
+    <section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-8">
+      <div class="bg-[#0a6c8f] text-white rounded-3xl p-6 lg:p-8 grid grid-cols-2 md:grid-cols-4 gap-6 items-center shadow-lg text-center divide-x divide-white/10">
+        <div class="space-y-1 border-none">
+          <div class="flex items-center justify-center gap-2">
+            <span class="material-symbols-outlined text-xl text-slate-200">groups</span>
+            <span class="text-2xl font-extrabold">15+</span>
+          </div>
+          <p class="text-[9px] font-bold tracking-wider text-slate-200 uppercase">Expert Doctors</p>
+          <p class="text-[8px] text-slate-350 font-medium">Across Specialties</p>
+        </div>
+        <div class="space-y-1">
+          <div class="flex items-center justify-center gap-2">
+            <span class="material-symbols-outlined text-xl text-slate-200">sentiment_satisfied</span>
+            <span class="text-2xl font-extrabold">5,000+</span>
+          </div>
+          <p class="text-[9px] font-bold tracking-wider text-slate-200 uppercase">Happy Patients</p>
+          <p class="text-[8px] text-slate-350 font-medium">Trusted Care</p>
+        </div>
+        <div class="space-y-1">
+          <div class="flex items-center justify-center gap-2">
+            <span class="material-symbols-outlined text-xl text-slate-200">workspace_premium</span>
+            <span class="text-2xl font-extrabold">10+</span>
+          </div>
+          <p class="text-[9px] font-bold tracking-wider text-slate-200 uppercase">Years of Excellence</p>
+          <p class="text-[8px] text-slate-355 font-medium">In Healthcare</p>
+        </div>
+        <div class="space-y-1">
+          <div class="flex items-center justify-center gap-2">
+            <span class="material-symbols-outlined text-xl text-slate-200">verified</span>
+            <span class="text-2xl font-extrabold">98%</span>
+          </div>
+          <p class="text-[9px] font-bold tracking-wider text-slate-200 uppercase">Patient Satisfaction</p>
+          <p class="text-[8px] text-slate-350 font-medium">Rate</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Section (V7 Premium Layout) -->
+  <footer id="contact" class="w-full bg-[#f8fafc] text-on-surface relative border-t border-glass-border/40 pt-16 pb-0">
   <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10 w-full">
     <!-- Contact Info Cards Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-0 divide-y md:divide-y-0 lg:divide-x divide-slate-200/50 border border-slate-200/60 rounded-2xl bg-white shadow-sm overflow-hidden mb-12">
@@ -931,132 +1113,41 @@
   </div>
 </footer>
 
-<script>
-    // -------------------------------------------------------------
-    // WebGL Canvas Background Fluid Animation
-    // -------------------------------------------------------------
-    const canvas = document.getElementById('wellness-canvas');
-    if (canvas) {
-        const gl = canvas.getContext('webgl');
-        if (gl) {
-            let width = canvas.width = window.innerWidth;
-            let height = canvas.height = window.innerHeight;
-
-            const vertexShaderSource = `
-                attribute vec2 position;
-                void main() {
-                    gl_Position = vec4(position, 0.0, 1.0);
-                }
-            `;
-
-            const fragmentShaderSource = `
-                precision highp float;
-                uniform vec2 u_resolution;
-                uniform float u_time;
-                void main() {
-                    vec2 uv = gl_FragCoord.xy / u_resolution.xy;
-                    float wave1 = sin(uv.x * 2.5 + u_time * 0.25) * 0.45;
-                    float wave2 = cos(uv.y * 2.0 - u_time * 0.2) * 0.4;
-                    float intensity = sin((uv.x + wave1) * 3.1415) * cos((uv.y + wave2) * 3.1415);
-                    
-                    // Teal-to-gold aesthetic colors
-                    vec3 col1 = vec3(0.04, 0.42, 0.56); // primary #0a6c8f
-                    vec3 col2 = vec3(0.95, 0.96, 0.98); // background light gray
-                    vec3 col3 = vec3(0.95, 0.85, 0.65); // gold accents
-                    
-                    vec3 finalColor = mix(col2, col1, clamp(intensity * 0.25, 0.0, 1.0));
-                    finalColor = mix(finalColor, col3, clamp(wave1 * wave2 * 0.15, 0.0, 1.0));
-                    
-                    gl_FragColor = vec4(finalColor, 0.55);
-                }
-            `;
-
-            function createShader(gl, type, source) {
-                const shader = gl.createShader(type);
-                gl.shaderSource(shader, source);
-                gl.compileShader(shader);
-                return shader;
-            }
-
-            const vs = createShader(gl, gl.VERTEX_SHADER, vertexShaderSource);
-            const fs = createShader(gl, gl.FRAGMENT_SHADER, fragmentShaderSource);
-            const program = gl.createProgram();
-            gl.attachShader(program, vs);
-            gl.attachShader(program, fs);
-            gl.linkProgram(program);
-            gl.useProgram(program);
-
-            const buffer = gl.createBuffer();
-            gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
-            gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([
-                -1.0, -1.0,  1.0, -1.0, -1.0,  1.0,
-                -1.0,  1.0,  1.0, -1.0,  1.0,  1.0
-            ]), gl.STATIC_DRAW);
-
-            const posLoc = gl.getAttribLocation(program, 'position');
-            gl.enableVertexAttribArray(posLoc);
-            gl.vertexAttribPointer(posLoc, 2, gl.FLOAT, false, 0, 0);
-
-            const resLoc = gl.getUniformLocation(program, 'u_resolution');
-            const timeLoc = gl.getUniformLocation(program, 'u_time');
-
-            function render(time) {
-                gl.uniform2f(resLoc, width, height);
-                gl.uniform1f(timeLoc, time * 0.001);
-                gl.viewport(0, 0, width, height);
-                gl.drawArrays(gl.TRIANGLES, 0, 6);
-                requestAnimationFrame(render);
-            }
-            requestAnimationFrame(render);
-
-            window.addEventListener('resize', () => {
-                width = canvas.width = window.innerWidth;
-                height = canvas.height = window.innerHeight;
-            });
-        }
-    }
-
-    // Scroll Reveal Intersection
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-    };
-
-    const revealObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-                observer.unobserve(entry.target);
+  <!-- Scripts -->
+  <script>
+    // Specialists Filtering
+    function filterSpecialists(specialty) {
+        const cards = document.querySelectorAll('.doctor-card');
+        const buttons = document.querySelectorAll('.filter-btn');
+        
+        // Update active button styling
+        buttons.forEach(btn => {
+            if (btn.id === `btn-filter-${specialty === 'all' ? 'all' : specialty === 'Plastic Surgery' ? 'plastic' : specialty === 'Hair Restoration' ? 'hair' : specialty.toLowerCase()}`) {
+                btn.classList.remove('bg-white', 'text-slate-600', 'border', 'border-slate-200');
+                btn.classList.add('bg-[#0a6c8f]', 'text-white', 'shadow-sm');
+            } else {
+                btn.classList.remove('bg-[#0a6c8f]', 'text-white', 'shadow-sm');
+                btn.classList.add('bg-white', 'text-slate-600', 'border', 'border-slate-200');
             }
         });
-    }, observerOptions);
 
-    document.querySelectorAll('.reveal-on-scroll').forEach(el => {
-        revealObserver.observe(el);
-    });
-
-    // Toggle FAQ accordion panels
-    function toggleFaq(index) {
-        const content = document.getElementById(`faq-content-${index}`);
-        const icon = document.getElementById(`faq-icon-${index}`);
-        if (content && icon) {
-            if (content.classList.contains('hidden')) {
-                content.classList.remove('hidden');
+        // Show/hide cards with smooth transitions
+        cards.forEach(card => {
+            const cardSpecialty = card.getAttribute('data-specialty');
+            if (specialty === 'all' || cardSpecialty === specialty) {
+                card.classList.remove('hidden');
                 setTimeout(() => {
-                    content.classList.remove('opacity-0', '-translate-y-2');
-                    content.classList.add('opacity-100', 'translate-y-0');
-                }, 10);
-                icon.style.transform = 'rotate(180deg)';
+                    card.style.opacity = '1';
+                    card.style.transform = 'scale(1)';
+                }, 50);
             } else {
-                content.classList.remove('opacity-100', 'translate-y-0');
-                content.classList.add('opacity-0', '-translate-y-2');
+                card.style.opacity = '0';
+                card.style.transform = 'scale(0.95)';
                 setTimeout(() => {
-                    content.classList.add('hidden');
+                    card.classList.add('hidden');
                 }, 300);
-                icon.style.transform = 'rotate(0deg)';
             }
-        }
+        });
     }
 
     // Mobile Navigation Drawer Toggle
@@ -1086,6 +1177,21 @@
             link.addEventListener('click', () => toggleMenu(false));
         });
     }
-</script>
+
+    // Hero Slideshow Loop
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.hero-slide');
+    if (slides.length > 0) {
+        setInterval(() => {
+            slides[currentSlide].classList.remove('opacity-100', 'z-10');
+            slides[currentSlide].classList.add('opacity-0', 'z-0');
+            
+            currentSlide = (currentSlide + 1) % slides.length;
+            
+            slides[currentSlide].classList.remove('opacity-0', 'z-0');
+            slides[currentSlide].classList.add('opacity-100', 'z-10');
+        }, 4000);
+    }
+  </script>
 </body>
 </html>
