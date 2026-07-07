@@ -2089,72 +2089,93 @@ Explore Full Treatment Menu
         </div>
       </div>
       
-      <div class="space-y-3">
-        <label class="font-label-caps text-[9px] font-bold text-on-surface-variant tracking-wider">SELECT PREFER        <div class="glass-card rounded-2xl p-3 border border-glass-border shadow-inner bg-white/40">
-          <!-- Calendar Header -->
-          <div class="flex justify-between items-center mb-2.5">
-            <button type="button" id="calendar-prev-month" class="w-7 h-7 rounded-full flex items-center justify-center hover:bg-primary/10 transition-colors text-primary">
-              <span class="material-symbols-outlined text-sm">chevron_left</span>
-            </button>
-            <div class="text-center">
-              <h5 id="calendar-month-year" class="font-headline-md text-xs font-bold text-on-surface">October 2024</h5>
+         <div class="space-y-3">
+        <label class="font-label-caps text-[9px] font-bold text-on-surface-variant tracking-wider">SELECT PREFERRED DATE & TIME</label>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <!-- Calendar Card -->
+          <div class="glass-card rounded-2xl p-4 border border-glass-border shadow-inner bg-white/40">
+            <!-- Calendar Header -->
+            <div class="flex justify-between items-center mb-2.5">
+              <button type="button" id="calendar-prev-month" class="w-7 h-7 rounded-full flex items-center justify-center hover:bg-primary/10 transition-colors text-primary">
+                <span class="material-symbols-outlined text-sm">chevron_left</span>
+              </button>
+              <div class="text-center">
+                <h5 id="calendar-month-year" class="font-headline-md text-xs font-bold text-on-surface">October 2024</h5>
+              </div>
+              <button type="button" id="calendar-next-month" class="w-7 h-7 rounded-full flex items-center justify-center hover:bg-primary/10 transition-colors text-primary">
+                <span class="material-symbols-outlined text-sm">chevron_right</span>
+              </button>
             </div>
-            <button type="button" id="calendar-next-month" class="w-7 h-7 rounded-full flex items-center justify-center hover:bg-primary/10 transition-colors text-primary">
-              <span class="material-symbols-outlined text-sm">chevron_right</span>
-            </button>
-          </div>
-        
-        <!-- Days of Week -->
-        <div class="grid grid-cols-7 gap-1 mb-2 justify-items-center">
-            <div class="text-[8px] font-bold text-on-surface-variant opacity-50">SUN</div>
-            <div class="text-[8px] font-bold text-on-surface-variant opacity-50">MON</div>
-            <div class="text-[8px] font-bold text-on-surface-variant opacity-50">TUE</div>
-            <div class="text-[8px] font-bold text-on-surface-variant opacity-50">WED</div>
-            <div class="text-[8px] font-bold text-on-surface-variant opacity-50">THU</div>
-            <div class="text-[8px] font-bold text-on-surface-variant opacity-50">FRI</div>
-            <div class="text-[8px] font-bold text-on-surface-variant opacity-50">SAT</div>
-        </div>
+          
+            <!-- Days of Week -->
+            <div class="grid grid-cols-7 gap-1 mb-2 justify-items-center">
+                <div class="text-[8px] font-bold text-on-surface-variant opacity-50">SUN</div>
+                <div class="text-[8px] font-bold text-on-surface-variant opacity-50">MON</div>
+                <div class="text-[8px] font-bold text-on-surface-variant opacity-50">TUE</div>
+                <div class="text-[8px] font-bold text-on-surface-variant opacity-50">WED</div>
+                <div class="text-[8px] font-bold text-on-surface-variant opacity-50">THU</div>
+                <div class="text-[8px] font-bold text-on-surface-variant opacity-50">FRI</div>
+                <div class="text-[8px] font-bold text-on-surface-variant opacity-50">SAT</div>
+            </div>
 
-        <!-- Calendar Grid -->
-        <div class="grid grid-cols-7 gap-1 justify-items-center" id="calendar-grid-container">
-            <!-- Sept Trailing Days -->
-            <button type="button" class="w-7 h-7 rounded-lg flex items-center justify-center text-xs text-on-surface-variant/20 cursor-not-allowed" disabled>29</button>
-            <button type="button" class="w-7 h-7 rounded-lg flex items-center justify-center text-xs text-on-surface-variant/20 cursor-not-allowed" disabled>30</button>
-            <!-- Oct Dates -->
-            <button type="button" class="w-7 h-7 rounded-lg flex items-center justify-center text-xs hover:bg-primary/10 transition-all text-on-surface">1</button>
-            <button type="button" class="w-7 h-7 rounded-lg flex items-center justify-center text-xs hover:bg-primary/10 transition-all text-on-surface">2</button>
-            <button type="button" class="w-7 h-7 rounded-lg flex items-center justify-center text-xs hover:bg-primary/10 transition-all text-on-surface">3</button>
-            <button type="button" class="w-7 h-7 rounded-lg flex items-center justify-center text-xs hover:bg-primary/10 transition-all text-on-surface">4</button>
-            <button type="button" class="w-7 h-7 rounded-lg flex items-center justify-center text-xs hover:bg-primary/10 transition-all text-on-surface">5</button>
-            <button type="button" class="w-7 h-7 rounded-lg flex items-center justify-center text-xs hover:bg-primary/10 transition-all text-on-surface">6</button>
-            <button type="button" class="w-7 h-7 rounded-lg flex items-center justify-center text-xs hover:bg-primary/10 transition-all text-on-surface">7</button>
-            <button type="button" class="w-7 h-7 rounded-lg flex items-center justify-center text-xs hover:bg-primary/10 transition-all text-on-surface">8</button>
-            <button type="button" class="w-7 h-7 rounded-lg flex items-center justify-center text-xs hover:bg-primary/10 transition-all text-on-surface">9</button>
-            <button type="button" class="w-7 h-7 rounded-lg flex items-center justify-center text-xs bg-primary text-white shadow-md shadow-primary/20 font-bold">10</button>
-            <button type="button" class="w-7 h-7 rounded-lg flex items-center justify-center text-xs hover:bg-primary/10 transition-all text-on-surface">11</button>
-            <button type="button" class="w-7 h-7 rounded-lg flex items-center justify-center text-xs hover:bg-primary/10 transition-all text-on-surface">12</button>
-            <button type="button" class="w-7 h-7 rounded-lg flex items-center justify-center text-xs hover:bg-primary/10 transition-all text-on-surface">13</button>
-            <button type="button" class="w-7 h-7 rounded-lg flex items-center justify-center text-xs hover:bg-primary/10 transition-all text-on-surface">14</button>
-            <button type="button" class="w-7 h-7 rounded-lg flex items-center justify-center text-xs hover:bg-primary/10 transition-all text-on-surface">15</button>
-            <button type="button" class="w-7 h-7 rounded-lg flex items-center justify-center text-xs hover:bg-primary/10 transition-all text-on-surface">16</button>
-            <button type="button" class="w-7 h-7 rounded-lg flex items-center justify-center text-xs hover:bg-primary/10 transition-all text-on-surface">17</button>
-            <button type="button" class="w-7 h-7 rounded-lg flex items-center justify-center text-xs hover:bg-primary/10 transition-all text-on-surface">18</button>
-            <button type="button" class="w-7 h-7 rounded-lg flex items-center justify-center text-xs hover:bg-primary/10 transition-all text-on-surface">19</button>
-            <button type="button" class="w-7 h-7 rounded-lg flex items-center justify-center text-xs hover:bg-primary/10 transition-all text-on-surface">20</button>
-            <button type="button" class="w-7 h-7 rounded-lg flex items-center justify-center text-xs hover:bg-primary/10 transition-all text-on-surface">21</button>
-            <button type="button" class="w-7 h-7 rounded-lg flex items-center justify-center text-xs hover:bg-primary/10 transition-all text-on-surface">22</button>
-            <button type="button" class="w-7 h-7 rounded-lg flex items-center justify-center text-xs hover:bg-primary/10 transition-all text-on-surface">23</button>
-            <button type="button" class="w-7 h-7 rounded-lg flex items-center justify-center text-xs hover:bg-primary/10 transition-all text-on-surface">24</button>
-            <button type="button" class="w-7 h-7 rounded-lg flex items-center justify-center text-xs hover:bg-primary/10 transition-all text-on-surface">25</button>
-            <button type="button" class="w-7 h-7 rounded-lg flex items-center justify-center text-xs hover:bg-primary/10 transition-all text-on-surface">26</button>
-            <button type="button" class="w-7 h-7 rounded-lg flex items-center justify-center text-xs hover:bg-primary/10 transition-all text-on-surface">27</button>
-            <button type="button" class="w-7 h-7 rounded-lg flex items-center justify-center text-xs hover:bg-primary/10 transition-all text-on-surface">28</button>
-            <button type="button" class="w-7 h-7 rounded-lg flex items-center justify-center text-xs hover:bg-primary/10 transition-all text-on-surface">29</button>
-            <button type="button" class="w-7 h-7 rounded-lg flex items-center justify-center text-xs hover:bg-primary/10 transition-all text-on-surface">30</button>
-            <button type="button" class="w-7 h-7 rounded-lg flex items-center justify-center text-xs hover:bg-primary/10 transition-all text-on-surface">31</button>
+            <!-- Calendar Grid -->
+            <div class="grid grid-cols-7 gap-1 justify-items-center" id="calendar-grid-container">
+                <!-- Sept Trailing Days -->
+                <button type="button" class="w-7 h-7 rounded-lg flex items-center justify-center text-xs text-on-surface-variant/20 cursor-not-allowed" disabled>29</button>
+                <button type="button" class="w-7 h-7 rounded-lg flex items-center justify-center text-xs text-on-surface-variant/20 cursor-not-allowed" disabled>30</button>
+                <!-- Oct Dates -->
+                <button type="button" class="w-7 h-7 rounded-lg flex items-center justify-center text-xs hover:bg-primary/10 transition-all text-on-surface">1</button>
+                <button type="button" class="w-7 h-7 rounded-lg flex items-center justify-center text-xs hover:bg-primary/10 transition-all text-on-surface">2</button>
+                <button type="button" class="w-7 h-7 rounded-lg flex items-center justify-center text-xs hover:bg-primary/10 transition-all text-on-surface">3</button>
+                <button type="button" class="w-7 h-7 rounded-lg flex items-center justify-center text-xs hover:bg-primary/10 transition-all text-on-surface">4</button>
+                <button type="button" class="w-7 h-7 rounded-lg flex items-center justify-center text-xs hover:bg-primary/10 transition-all text-on-surface">5</button>
+                <button type="button" class="w-7 h-7 rounded-lg flex items-center justify-center text-xs hover:bg-primary/10 transition-all text-on-surface">6</button>
+                <button type="button" class="w-7 h-7 rounded-lg flex items-center justify-center text-xs hover:bg-primary/10 transition-all text-on-surface">7</button>
+                <button type="button" class="w-7 h-7 rounded-lg flex items-center justify-center text-xs hover:bg-primary/10 transition-all text-on-surface">8</button>
+                <button type="button" class="w-7 h-7 rounded-lg flex items-center justify-center text-xs hover:bg-primary/10 transition-all text-on-surface">9</button>
+                <button type="button" class="w-7 h-7 rounded-lg flex items-center justify-center text-xs bg-primary text-white shadow-md shadow-primary/20 font-bold">10</button>
+                <button type="button" class="w-7 h-7 rounded-lg flex items-center justify-center text-xs hover:bg-primary/10 transition-all text-on-surface">11</button>
+                <button type="button" class="w-7 h-7 rounded-lg flex items-center justify-center text-xs hover:bg-primary/10 transition-all text-on-surface">12</button>
+                <button type="button" class="w-7 h-7 rounded-lg flex items-center justify-center text-xs hover:bg-primary/10 transition-all text-on-surface">13</button>
+                <button type="button" class="w-7 h-7 rounded-lg flex items-center justify-center text-xs hover:bg-primary/10 transition-all text-on-surface">14</button>
+                <button type="button" class="w-7 h-7 rounded-lg flex items-center justify-center text-xs hover:bg-primary/10 transition-all text-on-surface">15</button>
+                <button type="button" class="w-7 h-7 rounded-lg flex items-center justify-center text-xs hover:bg-primary/10 transition-all text-on-surface">16</button>
+                <button type="button" class="w-7 h-7 rounded-lg flex items-center justify-center text-xs hover:bg-primary/10 transition-all text-on-surface">17</button>
+                <button type="button" class="w-7 h-7 rounded-lg flex items-center justify-center text-xs hover:bg-primary/10 transition-all text-on-surface">18</button>
+                <button type="button" class="w-7 h-7 rounded-lg flex items-center justify-center text-xs hover:bg-primary/10 transition-all text-on-surface">19</button>
+                <button type="button" class="w-7 h-7 rounded-lg flex items-center justify-center text-xs hover:bg-primary/10 transition-all text-on-surface">20</button>
+                <button type="button" class="w-7 h-7 rounded-lg flex items-center justify-center text-xs hover:bg-primary/10 transition-all text-on-surface">21</button>
+                <button type="button" class="w-7 h-7 rounded-lg flex items-center justify-center text-xs hover:bg-primary/10 transition-all text-on-surface">22</button>
+                <button type="button" class="w-7 h-7 rounded-lg flex items-center justify-center text-xs hover:bg-primary/10 transition-all text-on-surface">23</button>
+                <button type="button" class="w-7 h-7 rounded-lg flex items-center justify-center text-xs hover:bg-primary/10 transition-all text-on-surface">24</button>
+                <button type="button" class="w-7 h-7 rounded-lg flex items-center justify-center text-xs hover:bg-primary/10 transition-all text-on-surface">25</button>
+                <button type="button" class="w-7 h-7 rounded-lg flex items-center justify-center text-xs hover:bg-primary/10 transition-all text-on-surface">26</button>
+                <button type="button" class="w-7 h-7 rounded-lg flex items-center justify-center text-xs hover:bg-primary/10 transition-all text-on-surface">27</button>
+                <button type="button" class="w-7 h-7 rounded-lg flex items-center justify-center text-xs hover:bg-primary/10 transition-all text-on-surface">28</button>
+                <button type="button" class="w-7 h-7 rounded-lg flex items-center justify-center text-xs hover:bg-primary/10 transition-all text-on-surface">29</button>
+                <button type="button" class="w-7 h-7 rounded-lg flex items-center justify-center text-xs hover:bg-primary/10 transition-all text-on-surface">30</button>
+                <button type="button" class="w-7 h-7 rounded-lg flex items-center justify-center text-xs hover:bg-primary/10 transition-all text-on-surface">31</button>
+            </div>
+          </div>
+
+          <!-- Time Slots Card -->
+          <div class="glass-card rounded-2xl p-4 border border-glass-border shadow-inner bg-white/40 flex flex-col justify-between">
+            <span class="text-[9px] font-bold text-deep-navy uppercase tracking-widest block mb-3 font-navigation">Available Time Slots</span>
+            <div class="grid grid-cols-2 gap-2" id="time-slots-container">
+              <button type="button" onclick="selectTimeSlot(this, '09:00 AM')" class="time-slot-btn py-2.5 rounded-xl border text-[10px] font-bold text-center bg-white text-slate-600 border-slate-200 hover:border-primary transition-all font-navigation">09:00 AM</button>
+              <button type="button" onclick="selectTimeSlot(this, '10:30 AM')" class="time-slot-btn py-2.5 rounded-xl border text-[10px] font-bold text-center bg-white text-slate-600 border-slate-200 hover:border-primary transition-all font-navigation">10:30 AM</button>
+              <button type="button" onclick="selectTimeSlot(this, '12:00 PM')" class="time-slot-btn py-2.5 rounded-xl border text-[10px] font-bold text-center bg-white text-slate-600 border-slate-200 hover:border-primary transition-all font-navigation">12:00 PM</button>
+              <button type="button" onclick="selectTimeSlot(this, '01:30 PM')" class="time-slot-btn py-2.5 rounded-xl border text-[10px] font-bold text-center bg-white text-slate-600 border-slate-200 hover:border-primary transition-all font-navigation">01:30 PM</button>
+              <button type="button" onclick="selectTimeSlot(this, '03:00 PM')" class="time-slot-btn py-2.5 rounded-xl border text-[10px] font-bold text-center bg-white text-slate-600 border-slate-200 hover:border-primary transition-all font-navigation">03:00 PM</button>
+              <button type="button" onclick="selectTimeSlot(this, '04:30 PM')" class="time-slot-btn py-2.5 rounded-xl border text-[10px] font-bold text-center bg-white text-slate-600 border-slate-200 hover:border-primary transition-all font-navigation">04:30 PM</button>
+              <button type="button" onclick="selectTimeSlot(this, '06:00 PM')" class="time-slot-btn py-2.5 rounded-xl border text-[10px] font-bold text-center bg-white text-slate-600 border-slate-200 hover:border-primary transition-all font-navigation">06:00 PM</button>
+              <button type="button" onclick="selectTimeSlot(this, '07:30 PM')" class="time-slot-btn py-2.5 rounded-xl border text-[10px] font-bold text-center bg-white text-slate-600 border-slate-200 hover:border-primary transition-all font-navigation">07:30 PM</button>
+            </div>
+            <input type="hidden" id="selected-time-input" name="selected_time" value="">
+          </div>
         </div>
+        <input type="hidden" id="selected-date-input" name="selected_date" value="2024-10-10">
       </div>
-      <input type="hidden" id="selected-date-input" name="selected_date" value="2024-10-10">
 </div>
 <button class="w-full py-4 rounded-full bg-primary text-on-primary font-navigation text-navigation primary-glow mt-4 flex items-center justify-center gap-2 hover:scale-[1.02] transition-transform" type="submit">
   CONFIRM BOOKING
@@ -2175,6 +2196,7 @@ Explore Full Treatment Menu
   <div class="glass-card p-6 rounded-3xl border border-glass-border shadow-inner text-left max-w-sm mx-auto mb-8 bg-white/30 space-y-3">
     <p class="text-xs text-on-surface-variant font-label-caps tracking-wider border-b border-glass-border pb-2">BOOKING CONFIRMATION</p>
     <div class="flex justify-between"><span class="text-xs text-on-surface-variant">SERVICE:</span><span id="summary-service" class="text-xs font-bold text-on-surface"></span></div>
+    <div class="flex justify-between"><span class="text-xs text-on-surface-variant">TIME:</span><span id="summary-time" class="text-xs font-bold text-on-surface"></span></div>
     <div class="flex justify-between"><span class="text-xs text-on-surface-variant">CONFIRMATION ID:</span><span class="text-xs font-bold text-on-surface" id="receipt-id"></span></div>
   </div>
   
@@ -2680,6 +2702,16 @@ Explore Full Treatment Menu
 
         renderCalendar();
 
+        function selectTimeSlot(button, time) {
+            document.querySelectorAll('.time-slot-btn').forEach(btn => {
+                btn.classList.remove('bg-primary', 'text-white', 'border-primary');
+                btn.classList.add('bg-white', 'text-slate-600', 'border-slate-200');
+            });
+            button.classList.remove('bg-white', 'text-slate-600', 'border-slate-200');
+            button.classList.add('bg-primary', 'text-white', 'border-primary');
+            document.getElementById('selected-time-input').value = time;
+        }
+
         function handleHeroBooking(e) {
             e.preventDefault();
             const name = document.getElementById('hero-name').value;
@@ -2738,14 +2770,21 @@ Explore Full Treatment Menu
                 const phoneVal = document.getElementById('patient-phone').value;
                 const treatmentVal = document.getElementById('patient-treatment').value;
                 const dateVal = document.getElementById('selected-date-input').value;
+                const timeVal = document.getElementById('selected-time-input').value;
+                
+                if (!timeVal) {
+                    alert("Please select an appointment time slot.");
+                    return;
+                }
                 
                 document.getElementById('summary-name').textContent = nameVal;
                 document.getElementById('summary-phone').textContent = '+91 ' + phoneVal;
                 document.getElementById('summary-service').textContent = treatmentVal;
+                document.getElementById('summary-time').textContent = timeVal;
                 
                 const d = new Date(dateVal);
                 const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-                document.getElementById('summary-date').textContent = d.toLocaleDateString('en-US', options);
+                document.getElementById('summary-date').textContent = d.toLocaleDateString('en-US', options) + ' at ' + timeVal;
                 
                 document.getElementById('receipt-id').textContent = 'ELX-' + Math.floor(Math.random() * 90000 + 10000);
                 
@@ -2771,6 +2810,13 @@ Explore Full Treatment Menu
                 successState.classList.add('hidden');
                 successState.classList.remove('flex');
                 bookingForm.reset();
+                
+                // Reset time slots
+                document.getElementById('selected-time-input').value = '';
+                document.querySelectorAll('.time-slot-btn').forEach(btn => {
+                    btn.classList.remove('bg-primary', 'text-white', 'border-primary');
+                    btn.classList.add('bg-white', 'text-slate-600', 'border-slate-200');
+                });
                 
                 currentDate = new Date(2024, 9, 10);
                 selectedDate = new Date(2024, 9, 10);
